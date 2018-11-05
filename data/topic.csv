@@ -1,71 +1,74 @@
-name,id,parent_id
-Algorithms,1,9999
-Programming and development,2,9999
-Data representation,3,9999
-Hardware and architecture,4,9999
-Communication and networks,5,9999
-Information technology,6,9999
-CPU,7,4
-Memory,8,4
-Types of computers,9,4
-Primary storage,10,4
-Secondary storage,11,4
-Flash memory,12,4
-Magnetic storage,13,4
-Optical storage,14,4
-Networks,15,5
-VPN,16,5
-Network connection,17,5
-Types of network,18,5
-Network hardware,19,5
-Network topology,20,5
-Network encryption,21,5
-Network addressing,22,5
-Network protocol,23,5
-Network layers,24,5
-Malicious attacks,25,5
-Network policy,26,5
-Hacking,27,5
-Internet services,28,6
-Programs and applications,29,6
-Operating system,30,6
-Libraries,31,6
-Utilities,32,6
-Problem solving,33,1
-Algorithm design,34,1
-Programming and constructs,35,1
-Data Types,36,1
-Program structures,37,1
-Logic gates,38,1
-Boolean algebra,39,1
-Operators,40,2
-Variables and constants,41,2
-Iteration and loops,42,2
-Arrays,43,2
-Storing and accessing data: Files and SQL,44,2
-String manipulation,45,2
-Functions and procedures,46,2
-"Documentation, testing and Debugging",47,2
-Translators,48,2
-Assembly language,49,2
-Assemblers,50,2
-High-level languages,51,2
-Compilers,52,2
-Interpreters,53,2
-Development environment,54,2
-Run-time environment,55,2
-Binary,56,3
-Hexidecimal,57,3
-Characters,58,3
-Images,59,3
-Metadata,60,3
-Sound,61,3
-Data compression,62,3
-Cultural,63,6
-Legal,64,6
-Open-source and propretary software,65,6
-Ethical,66,6
-Automation,67,6
-Artificial Intelligence,68,6
-Environment,69,6
-Computing,9999,
+"id";"name";"parent_id"
+1;"Algorithms";9999
+2;"Programming and development";9999
+3;"Data representation";9999
+4;"Hardware and architecture";9999
+5;"Communication and networks";9999
+6;"Information technology";9999
+7;"CPU";4
+8;"Memory";4
+9;"Types of computers";4
+10;"Primary storage";4
+11;"Secondary storage";4
+12;"Flash memory";4
+13;"Magnetic storage";4
+14;"Optical storage";4
+15;"Networks";5
+16;"VPN";5
+17;"Network connection";5
+18;"Types of network";5
+19;"Network hardware";5
+20;"Network topology";5
+21;"Network protocol";5
+22;"Network encryption";5
+23;"Network addressing";5
+24;"Network protocol";5
+25;"Network layers";5
+26;"Network hardware";5
+27;"Malicious attacks";5
+28;"Network policy";5
+29;"Hacking";5
+30;"Internet services";6
+31;"Programs and applications";6
+32;"Operating system";6
+33;"Libraries";6
+34;"Utilities";6
+35;"Problem solving";1
+36;"Algorithms";1
+37;"Programming and constructs";1
+38;"Data Types";1
+39;"Program structures";1
+40;"Logic gates";1
+41;"Boolean algebra";1
+42;"Operators";2
+43;"Variables and constants";2
+44;"Iteration and loops";2
+45;"Arrays";2
+46;"Storing and accessing data: Files and SQL";2
+47;"String manipulation";2
+48;"Functions and procedures";2
+49;"Documentation, testing and Debugging";2
+50;"Translators";2
+51;"Assembly language";2
+52;"Assemblers";2
+53;"High-level languages";2
+54;"Compilers";2
+55;"Interpreters";2
+56;"Development environment";2
+57;"Run-time environment";2
+58;"Binary";3
+59;"Hexidecimal";3
+60;"Characters";3
+61;"Images";3
+62;"Metadata";3
+63;"Images";3
+64;"Sound";3
+65;"Data compression";3
+66;"Cultural";6
+67;"Legal";6
+68;"Open-source and propretary software";6
+69;"Ethical";6
+70;"Automation";6
+71;"Artificial Intelligence";6
+72;"Environment";6
+9999;"Computing";9999

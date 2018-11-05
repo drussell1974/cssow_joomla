@@ -1,16 +1,16 @@
-Full Description,letter,description,id
-"A - standard algorithms, including binary search and merge sort",A,"standard algorithms, including binary search and merge sort",1
-"B - following and writing algorithms to solve problems, including sequence, selection and iteration, and input, processing and output",B,"following and writing algorithms to solve problems, including sequence, selection and iteration, and input, processing and output",2
-C - how particular programs and algorithms work,C,how particular programs and algorithms work,3
-"D - the concept of data type, including integer, Boolean, real, character and string and data structures, including records and one- and two-dimensional arrays",D,"the concept of data type, including integer, Boolean, real, character and string and data structures, including records and one- and two-dimensional arrays",4
-E - representation of numbers in binary and hexadecimal; conversion between these and decimal; binary addition and shifts,E,representation of numbers in binary and hexadecimal; conversion between these and decimal; binary addition and shifts,5
-"F - representation of text, sound, and graphics inside computers",F,"representation of text, sound, and graphics inside computers",6
-"G - Boolean logic using AND, OR and NOT, combination of these, and the application of logical operators",G,"Boolean logic using AND, OR and NOT, combination of these, and the application of logical operators",7
-"H - the purpose and functionality of systems software, including the operating system and utility software",H,"the purpose and functionality of systems software, including the operating system and utility software",8
-"I - characteristics of systems architectures: CPU architecture, including Von Neumann and the role of components",I,"characteristics of systems architectures: CPU architecture, including Von Neumann and the role of components",9
-"J - characteristics of systems architectures: main and contemporary secondary storage and ways of storing data on devices including magnetic, optical and solid state",J,"characteristics of systems architectures: main and contemporary secondary storage and ways of storing data on devices including magnetic, optical and solid state",10
-K - characteristics of systems architectures: data capacity and calculation of data capacity requirements,K,characteristics of systems architectures: data capacity and calculation of data capacity requirements,11
-"L - networks and the importance of: connectivity, both wired and wireless; types of networks; common network topologies; network security; protocols; layers",L,"networks and the importance of: connectivity, both wired and wireless; types of networks; common network topologies; network security; protocols; layers",12
-M - cyber security: forms of attack; methods of identifying vulnerabilities; way to protect software systems,M,cyber security: forms of attack; methods of identifying vulnerabilities; way to protect software systems,13
-"N - the ethical, legal and environmental impacts of digital technology on wider society, including issues of privacy and cyber security",N,"the ethical, legal and environmental impacts of digital technology on wider society, including issues of privacy and cyber security",14
-"O - characteristics and purpose of different levels of programming language, including low-level language",O,"characteristics and purpose of different levels of programming language, including low-level language",15
+"id";"description";"letter"
+1;"standard algorithms, including binary search and merge sort";"A"
+2;"following and writing algorithms to solve problems, including sequence, selection and iteration, and input, processing and output";"B"
+3;"how particular programs and algorithms work";"C"
+4;"the concept of data type, including integer, Boolean, real, character and string and data structures, including records and one- and two-dimensional arrays";"D"
+5;"representation of numbers in binary and hexadecimal; conversion between these and decimal; binary addition and shifts";"E"
+6;"representation of text, sound, and graphics inside computers";"F"
+7;"Boolean logic using AND, OR and NOT, combination of these, and the application of logical operators";"G"
+8;"the purpose and functionality of systems software, including the operating system and utility software";"H"
+9;"characteristics of systems architectures: CPU architecture, including Von Neumann and the role of components";"I"
+10;"characteristics of systems architectures: main and contemporary secondary storage and ways of storing data on devices including magnetic, optical and solid state";"J"
+11;"characteristics of systems architectures: data capacity and calculation of data capacity requirements";"K"
+12;"networks and the importance of: connectivity, both wired and wireless; types of networks; common network topologies; network security; protocols; layers";"L"
+13;"cyber security: forms of attack; methods of identifying vulnerabilities; way to protect software systems";"M"
+14;"the ethical, legal and environmental impacts of digital technology on wider society, including issues of privacy and cyber security";"N"
+15;"characteristics and purpose of different levels of programming language, including low-level language";"O"

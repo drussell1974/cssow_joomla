@@ -1,6 +1,6 @@
-name,id,abbr
-Abstraction,1,AB
-Decomposition,2,DE
-Algorithmic Thinking,3,AL
-Evaluation,4,EV
-Generalisation,5,GE
+"id";"name";"abbr"
+1;"Abstraction";"AB"
+2;"Decomposition";"DE"
+3;"Algorithmic Thinking";"AL"
+4;"Evaluation";"EV"
+5;"Generalisation";"GE"
