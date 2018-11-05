@@ -1,4 +1,5 @@
 "id";"name";"parent_id"
+0;"Computing";0
 1;"Algorithms";9999
 2;"Programming and development";9999
 3;"Data representation";9999
@@ -71,4 +72,4 @@
 70;"Automation";6
 71;"Artificial Intelligence";6
 72;"Environment";6
-9999;"Computing";9999
+9999;"Computing";0
