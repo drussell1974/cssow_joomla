@@ -1,11 +1,11 @@
 "id";"name";"parent_id"
 0;"Computing";0
-1;"Algorithms";9999
-2;"Programming and development";9999
-3;"Data representation";9999
-4;"Hardware and architecture";9999
-5;"Communication and networks";9999
-6;"Information technology";9999
+1;"Algorithms";0
+2;"Programming and development";0
+3;"Data representation";0
+4;"Hardware and architecture";0
+5;"Communication and networks";0
+6;"Information technology";0
 7;"CPU";4
 8;"Memory";4
 9;"Types of computers";4
