@@ -1,0 +1,12 @@
+[Tue Nov 13 08:59:07.833691 2018] [ssl:warn] [pid 31480:tid 652] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 13 08:59:07.904963 2018] [ssl:warn] [pid 31480:tid 652] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 13 08:59:07.976235 2018] [mpm_winnt:notice] [pid 31480:tid 652] AH00455: Apache/2.4.35 (Win32) OpenSSL/1.1.0i PHP/7.2.11 configured -- resuming normal operations
+[Tue Nov 13 08:59:07.976235 2018] [mpm_winnt:notice] [pid 31480:tid 652] AH00456: Apache Lounge VC15 Server built: Sep 19 2018 15:43:45
+[Tue Nov 13 08:59:07.977211 2018] [core:notice] [pid 31480:tid 652] AH00094: Command line: 'c:\\dev\\cssow\\xampp\\apache\\bin\\httpd.exe -d C:/Dev/cssow/xampp/apache'
+[Tue Nov 13 08:59:07.990881 2018] [mpm_winnt:notice] [pid 31480:tid 652] AH00418: Parent: Created child process 23632
+[Tue Nov 13 08:59:08.853959 2018] [ssl:warn] [pid 23632:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 13 08:59:08.918400 2018] [ssl:warn] [pid 23632:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 13 08:59:08.983814 2018] [mpm_winnt:notice] [pid 23632:tid 692] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 13 09:08:01.313794 2018] [autoindex:error] [pid 23632:tid 1948] [client ::1:8963] AH01276: Cannot serve directory C:/Dev/cssow/xampp/webalizer/: No matching DirectoryIndex (index.php,index.pl,index.cgi,index.asp,index.shtml,index.html,index.htm,default.php,default.pl,default.cgi,default.asp,default.shtml,default.html,default.htm,home.php,home.pl,home.cgi,home.asp,home.shtml,home.html,home.htm) found, and server-generated directory index forbidden by Options directive
+[Tue Nov 13 09:08:27.598886 2018] [php7:warn] [pid 23632:tid 1932] [client ::1:8999] PHP Warning:  session_start(): Failed to read session data: user (path: C:\\Dev\\cssow\\xampp\\tmp) in C:\\Dev\\cssow\\xampp\\webalizer\\cssow\\libraries\\joomla\\session\\handler\\native.php on line 260, referer: http://localhost/webalizer/cssow/installation/index.php
+[Tue Nov 13 09:08:39.720001 2018] [php7:warn] [pid 23632:tid 1956] [client ::1:9000] PHP Warning:  session_start(): Failed to read session data: user (path: C:\\Dev\\cssow\\xampp\\tmp) in C:\\Dev\\cssow\\xampp\\webalizer\\cssow\\libraries\\joomla\\session\\handler\\native.php on line 260
