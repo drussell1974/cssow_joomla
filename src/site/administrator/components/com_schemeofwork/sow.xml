@@ -10,10 +10,20 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>A site admin component for SOW.</description>
 
+        <install> <!-- Runs on install -->
+            <sql>
+                <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+            </sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+            <sql>
+                <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+            </sql>
+	</uninstall>
 	<update> <!-- Runs on update; New since J2.5 -->
 		<schemas>
 			<schemapath type="mysql">sql/updates/mysql</schemapath>
@@ -33,19 +43,23 @@
 	</files>
 
 	<administration>
-		<!-- Administration Menu Section -->
-		<menu link='index.php?option=com_sow'>Scheme of Work</menu>
-		<!-- Administration Main File Copy Section -->
-		<!-- Note the folder attribute: This attribute describes the folder
-			to copy FROM in the package to install therefore files copied
-			in this section are copied from /admin/ in the package -->
-		<files folder="admin">
-			<!-- Admin Main File Copy Section -->
-			<filename>index.html</filename>
-			<filename>schemeofwork.php</filename>
-			<!-- SQL files section -->
-			<folder>sql</folder>
-		</files>
+            <!-- Administration Menu Section -->
+            <menu link='index.php?option=com_sow'>Scheme of Work</menu>
+            <!-- Administration Main File Copy Section -->
+            <!-- Note the folder attribute: This attribute describes the folder
+                    to copy FROM in the package to install therefore files copied
+                    in this section are copied from /admin/ in the package -->
+            <files folder="admin">
+                    <!-- Admin Main File Copy Section -->
+                    <filename>index.html</filename>
+                    <filename>schemeofwork.php</filename>
+                    <!-- SQL files section -->
+                    <folder>sql</folder>			
+                    <!-- tables files section -->
+                    <folder>tables</folder>
+                    <!-- models files section -->
+                    <folder>models</folder>
+            </files>
 	</administration>
 
 </extension>

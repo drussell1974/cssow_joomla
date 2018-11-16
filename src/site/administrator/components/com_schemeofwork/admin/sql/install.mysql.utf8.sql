@@ -1,3 +1,13 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ * Author:  Dave
+ * Created: 16-Nov-2018
+ */
+
 -- ----------------------------------------------------------------------------
 -- MySQL Workbench Migration
 -- Migrated Schemata: cssow
@@ -216,3 +226,25 @@ FROM
     JOIN `cssow`.`sow_year` ON ((`path`.`year_id` = `cssow`.`sow_year`.`id`)))
     JOIN `cssow`.`sow_solo_taxonomy` ON ((`lo`.`solo_taxonomy_id` = `cssow`.`sow_solo_taxonomy`.`id`)));
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+/*
+*
+* Message and greeting (CAN BE REMOVED
+*
+*/
+DROP TABLE IF EXISTS `#__schemeofwork`;
+
+CREATE TABLE `#__schemeofwork` (
+	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
+	`greeting` VARCHAR(25) NOT NULL,
+	`published` tinyint(4) NOT NULL DEFAULT '1',
+	PRIMARY KEY (`id`)
+)
+	ENGINE =MyISAM
+	AUTO_INCREMENT =0
+	DEFAULT CHARSET =utf8;
+
+INSERT INTO `#__schemeofwork` (`greeting`) VALUES
+('Message from db!!!!'),
+('Good bye from db!!!!');

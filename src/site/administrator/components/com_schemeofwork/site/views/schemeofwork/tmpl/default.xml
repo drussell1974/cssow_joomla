@@ -3,17 +3,15 @@
     <layout title="COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC">
         <message>COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC</message>
     </layout>
-    <fields name="request">
+    <fields name="request
+            addfieldpath="/administrator/components/com_schemeofwork/models/fields">
             <fieldset name="request">
                     <field
-                            name="id"
-                            type="list"
-                            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_LABEL"
-                            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_DESC"
-                            default="1">
-                        <option value="1">SOW from XML!!!!!</option>
-                        <option value="2">Good bye SOW from XML!</option>
-                    </field>
+                        name="id"
+                        type="helloworld"
+                        label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_LABEL"
+                        description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_DESC"
+                        />
             </fieldset>
 	</fields>
 </metadata>
