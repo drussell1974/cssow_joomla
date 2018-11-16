@@ -29,11 +29,23 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
 	 */
 	public function getMsg()
 	{
-		if (!isset($this->message))
-		{
-			$this->message = 'Scheme of work';
-		}
+            if (!isset($this->message))
+            {
+                $jinput = JFactory::getApplication()->input;
+                $id     = $jinput->get('id', 1, 'INT');
 
-		return $this->message;
+                switch ($id)
+                {
+                    case 2:
+                        $this->message = 'Good bye SOW!';
+                        break;
+                    default:
+                    case 1:
+                        $this->message = 'Scheme of work!!!!';
+                        break;
+                }
+            }
+
+            return $this->message;
 	}
 }
