@@ -201,10 +201,9 @@ DEFAULT CHARACTER SET = utf8;
 -- ----------------------------------------------------------------------------
 -- View cssow.sow_learning_objectives_by_ks123_pathway_topic
 -- ----------------------------------------------------------------------------
-USE `cssow`;
+
 CREATE OR REPLACE 
-	ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` 
-	SQL SECURITY DEFINER VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic` 
+	VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic` 
 AS 
 	SELECT 
     `lo`.`id` AS `learning_objective_id`,
@@ -246,5 +245,5 @@ CREATE TABLE `#__schemeofwork` (
 	DEFAULT CHARSET =utf8;
 
 INSERT INTO `#__schemeofwork` (`greeting`) VALUES
-('Message from db!!!!'),
-('Good bye from db!!!!');
+('Hellow from db!!!!'),
+('Goodbye from db!!!!');

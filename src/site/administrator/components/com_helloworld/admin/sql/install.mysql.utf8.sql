@@ -1,3 +1,13 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ * Author:  Dave
+ * Created: 16-Nov-2018
+ */
+
 -- ----------------------------------------------------------------------------
 -- MySQL Workbench Migration
 -- Migrated Schemata: cssow
@@ -191,10 +201,10 @@ DEFAULT CHARACTER SET = utf8;
 -- ----------------------------------------------------------------------------
 -- View cssow.sow_learning_objectives_by_ks123_pathway_topic
 -- ----------------------------------------------------------------------------
-# DROP VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic`;
-
+USE `cssow`;
 CREATE OR REPLACE 
-	VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic` 
+	ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` 
+	SQL SECURITY DEFINER VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic` 
 AS 
 	SELECT 
     `lo`.`id` AS `learning_objective_id`,
@@ -216,3 +226,25 @@ FROM
     JOIN `cssow`.`sow_year` ON ((`path`.`year_id` = `cssow`.`sow_year`.`id`)))
     JOIN `cssow`.`sow_solo_taxonomy` ON ((`lo`.`solo_taxonomy_id` = `cssow`.`sow_solo_taxonomy`.`id`)));
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+/*
+*
+* Message and greeting (CAN BE REMOVED
+*
+*/
+DROP TABLE IF EXISTS `#__helloworld`;
+
+CREATE TABLE `#__helloworld` (
+	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
+	`greeting` VARCHAR(25) NOT NULL,
+	`published` tinyint(4) NOT NULL DEFAULT '1',
+	PRIMARY KEY (`id`)
+)
+	ENGINE =MyISAM
+	AUTO_INCREMENT =0
+	DEFAULT CHARSET =utf8;
+
+INSERT INTO `#__helloworld` (`greeting`) VALUES
+('Hellow from db!!!!'),
+('Goodbye from db!!!!');

@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.6</version>
+	<version>0.0.16</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>A site admin component for SOW.</description>
 
@@ -35,11 +35,11 @@
 		to copy FROM in the package to install therefore files copied
 		in this section are copied from /site/ in the package -->
 	<files folder="site">
-		<filename>index.html</filename>
-		<filename>schemeofwork.php</filename>
-                <filename>controller.php</filename>
-		<folder>views</folder>
-                <folder>models</folder>
+            <filename>index.html</filename>
+            <filename>schemeofwork.php</filename>
+            <filename>controller.php</filename>
+            <folder>views</folder>
+            <folder>models</folder>
 	</files>
 
 	<administration>
@@ -50,15 +50,18 @@
                     to copy FROM in the package to install therefore files copied
                     in this section are copied from /admin/ in the package -->
             <files folder="admin">
-                    <!-- Admin Main File Copy Section -->
-                    <filename>index.html</filename>
-                    <filename>schemeofwork.php</filename>
-                    <!-- SQL files section -->
-                    <folder>sql</folder>			
-                    <!-- tables files section -->
-                    <folder>tables</folder>
-                    <!-- models files section -->
-                    <folder>models</folder>
+                <!-- Admin Main File Copy Section -->
+                <filename>index.html</filename>
+                <filename>schemeofwork.php</filename>
+                <filename>controller.php</filename>
+                <!-- SQL files section -->
+                <folder>sql</folder>			
+                <!-- tables files section -->
+                <folder>tables</folder>
+                <!-- models files section -->
+                <folder>models</folder>
+                <!-- views files section -->
+                <folder>views</folder>
             </files>
 	</administration>
 

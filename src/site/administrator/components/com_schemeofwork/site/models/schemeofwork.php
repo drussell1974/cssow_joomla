@@ -59,7 +59,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
 
                 // Get a TableHelloWorld instance
                 $table = $this->getTable();
-
+                
                 // Load the message
                 $table->load($id);
 

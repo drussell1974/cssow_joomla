@@ -15,10 +15,10 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class schemeofworkViewschemeofwork extends JViewLegacy
+class HelloWorldViewHelloWorlds extends JViewLegacy
 {
 	/**
-	 * Display the schemeofwork view
+	 * Display the helloworld view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
@@ -26,7 +26,6 @@ class schemeofworkViewschemeofwork extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
-            #JLog::add('my error message', JLog::ERROR, 'my-error-category');
             // Assign data to the view
             $this->msg = $this->get('Msg');
 

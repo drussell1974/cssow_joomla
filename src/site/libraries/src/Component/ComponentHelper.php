@@ -291,7 +291,7 @@ class ComponentHelper
 	 * @return  string
 	 *
 	 * @since   1.5
-	 * @throws  MissingComponentException
+	 * @throws  MissingComponents
 	 */
 	public static function renderComponent($option, $params = array())
 	{
@@ -319,10 +319,11 @@ class ComponentHelper
 		// Set scope to component name
 		$app->scope = $option;
 
-		// Build the component path.
+                // Build the component path.
 		$option = preg_replace('/[^A-Z0-9_\.-]/i', '', $option);
-		$file = substr($option, 4);
-
+		
+                $file = substr($option, 4);
+                
 		// Define component path.
 		if (!defined('JPATH_COMPONENT'))
 		{
@@ -360,8 +361,8 @@ class ComponentHelper
 		}
 
 		$path = JPATH_COMPONENT . '/' . $file . '.php';
-
-		// If component is disabled throw error
+                
+                // If component is disabled throw error
 		if (!static::isEnabled($option) || !file_exists($path))
 		{
 			throw new MissingComponentException(\JText::_('JLIB_APPLICATION_ERROR_COMPONENT_NOT_FOUND'), 404);
