@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
 
-	<name>Scheme of Work</name>
+	<name>COM_SCHEMEOFWORK</name>
 	<!-- The following elements are optional and free of formatting constraints -->
 	<creationDate>November 2018</creationDate>
 	<author>Dave Russell</author>
@@ -12,7 +12,7 @@
 	<!--  The version string is recorded in the components table -->
 	<version>0.0.16</version>
 	<!-- The description is optional and defaults to the name -->
-	<description>A site admin component for SOW.</description>
+	<description>COM_SCHEMEOFWORK_DESCRIPTION</description>
 
         <install> <!-- Runs on install -->
             <sql>
@@ -41,10 +41,14 @@
             <folder>views</folder>
             <folder>models</folder>
 	</files>
+        
+        <languages folder="site/language">
+            <language tag="en-GB">en-GB/en-GB.com_schemeofwork.ini</language>
+        </languages>
 
 	<administration>
             <!-- Administration Menu Section -->
-            <menu link='index.php?option=com_sow'>Scheme of Work</menu>
+            <menu link='index.php?option=com_sow'>COM_SCHEMEOFWORK_MENU</menu>
             <!-- Administration Main File Copy Section -->
             <!-- Note the folder attribute: This attribute describes the folder
                     to copy FROM in the package to install therefore files copied
@@ -62,7 +66,13 @@
                 <folder>models</folder>
                 <!-- views files section -->
                 <folder>views</folder>
+                <!-- language files section....
+                This folder HAS to include the right subfolders, i.e. language/en-GB/ ... language/fr-FR/ -->
+                <folder>language</folder>
             </files>
+            <languages folder="admin/language">
+                    <language tag="en-GB">en-GB/en-GB.com_schemeofwork.ini</language>
+                    <language tag="en-GB">en-GB/en-GB.com_schemeofwork.sys.ini</language>
+            </languages>
 	</administration>
-
 </extension>
