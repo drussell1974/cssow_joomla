@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * HelloWorld Form Field class for the Scheme of Work Admin component
+ * SchemeOfWork Form Field class for the Scheme of Work Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldSchemeOfWorkAdmin extends JFormFieldList
+class JFormFieldSchemeOfWorks extends JFormFieldList
 {
 	/**
 	 * The field type.
 	 *
 	 * @var         string
 	 */
-	protected $type = 'SchemeOfWorkAdmin';
+	protected $type = 'SchemeOfWorks';
 
 	/**
 	 * Method to get a list of options for a list input.

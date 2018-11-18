@@ -686,10 +686,9 @@ class BaseController extends \JObject
 	 * @throws  \Exception
 	 */
 	public function execute($task)
-	{
-		$this->task = $task;
-
-		$task = strtolower($task);
+	{                
+            $this->task = $task;
+            $task = strtolower($task);
 
 		if (isset($this->taskMap[$task]))
 		{
@@ -706,7 +705,7 @@ class BaseController extends \JObject
 
 		// Record the actual task being fired
 		$this->doTask = $doTask;
-
+                
 		return $this->$doTask();
 	}
 
@@ -777,7 +776,7 @@ class BaseController extends \JObject
 
 			$this->name = strtolower($r[1]);
 		}
-
+                
 		return $this->name;
 	}
 
@@ -835,8 +834,8 @@ class BaseController extends \JObject
 		{
 			$prefix = $this->getName() . 'View';
 		}
-
-		if (empty(self::$views[$name][$type][$prefix]))
+                
+                if (empty(self::$views[$name][$type][$prefix]))
 		{
 			if ($view = $this->createView($name, $prefix, $type, $config))
 			{
@@ -844,6 +843,7 @@ class BaseController extends \JObject
 			}
 			else
 			{
+		
 				throw new \Exception(\JText::sprintf('JLIB_APPLICATION_ERROR_VIEW_NOT_FOUND', $name, $type, $prefix), 404);
 			}
 		}

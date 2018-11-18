@@ -10,11 +10,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SchemeOfWorkAdmin Model
+ * SchemeOfWorks Model
  *
  * @since  0.0.1
  */
-class SchemeOfWorkModelSchemeOfWorkAdmin extends JModelList
+class SchemeOfWorkModelSchemeOfWorks extends JModelList
 {
     /**
      * Method to build an SQL query to load the list data.

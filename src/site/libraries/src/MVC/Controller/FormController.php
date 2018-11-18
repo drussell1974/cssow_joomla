@@ -358,7 +358,7 @@ class FormController extends BaseController
 		\JFactory::getApplication()->allowCache(false);
 
 		$model = $this->getModel();
-		$table = $model->getTable();
+                $table = $model->getTable();
 		$cid   = $this->input->post->get('cid', array(), 'array');
 		$context = "$this->option.edit.$this->context";
 

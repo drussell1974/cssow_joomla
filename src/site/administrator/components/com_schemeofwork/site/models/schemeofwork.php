@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_helloworld
+ * @subpackage  com_schemeofwork
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * HelloWorld Model
+ * SchemeOfWork Model
  *
  * @since  0.0.1
  */
@@ -57,7 +57,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
                 $jinput = JFactory::getApplication()->input;
                 $id     = $jinput->get('id', 1, 'INT');
 
-                // Get a TableHelloWorld instance
+                // Get a TableSchemeOfWork instance
                 $table = $this->getTable();
                 
                 // Load the message

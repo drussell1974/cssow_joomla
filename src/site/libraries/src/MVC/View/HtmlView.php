@@ -650,7 +650,7 @@ class HtmlView extends \JObject
 
 		// Create the template file name based on the layout
 		$file = isset($tpl) ? $layout . '_' . $tpl : $layout;
-
+                
 		// Clean the file name
 		$file = preg_replace('/[^A-Z0-9_\.-]/i', '', $file);
 		$tpl = isset($tpl) ? preg_replace('/[^A-Z0-9_\.-]/i', '', $tpl) : $tpl;
