@@ -62,7 +62,17 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
 
         return $form;
     }
-
+    
+    /**
+    * Method to get the script that have to be included on the form
+    *
+    * @return string	Script files
+    */
+    public function getScript() 
+    {
+            return 'administrator/components/com_schemeofwork/models/forms/helloworld.js';
+    }
+    
     /**
      * Method to get the data that should be injected in the form.
      *
