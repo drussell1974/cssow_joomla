@@ -53,29 +53,29 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                     </tr>
 		</tfoot>
 		<tbody>
-			<?php if (!empty($this->items)) : ?>
-				<?php foreach ($this->items as $i => $row) :
-					$link = JRoute::_('index.php?option=com_schemeofwork&task=schemeofwork.edit&id=' . $row->id);
-				?>
-					<tr>
-						<td><?php echo $this->pagination->getRowOffset($i); ?></td>
-						<td>
-							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
-						</td>
-						<td>
-							<a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_EDIT_SCHEMEOFWORK'); ?>">
-								<?php echo $row->greeting; ?>
-							</a>
-						</td>
-						<td align="center">
-							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'schemeofworks.', true, 'cb'); ?>
-						</td>
-						<td align="center">
-							<?php echo $row->id; ?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-			<?php endif; ?>
+                    <?php if (!empty($this->items)) : ?>
+                        <?php foreach ($this->items as $i => $row) :
+                                $link = JRoute::_('index.php?option=com_schemeofwork&task=schemeofwork.edit&id=' . $row->id);
+                        ?>
+                            <tr>
+                                <td><?php echo $this->pagination->getRowOffset($i); ?></td>
+                                <td>
+                                        <?php echo JHtml::_('grid.id', $i, $row->id); ?>
+                                </td>
+                                <td>
+                                        <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_EDIT_SCHEMEOFWORK'); ?>">
+                                                <?php echo $row->greeting; ?>
+                                        </a>
+                                </td>
+                                <td align="center">
+                                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'schemeofworks.', true, 'cb'); ?>
+                                </td>
+                                <td align="center">
+                                        <?php echo $row->id; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
 		</tbody>
 	</table>
 	<input type="hidden" name="task" value=""/>
