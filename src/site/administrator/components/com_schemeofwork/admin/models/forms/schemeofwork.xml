@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form
-    addrulepath="/administrator/components/com_helloworld/models/rules"
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
 >
     <fieldset>
         <field
