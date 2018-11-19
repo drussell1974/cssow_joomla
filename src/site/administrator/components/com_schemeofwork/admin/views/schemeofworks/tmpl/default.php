@@ -46,11 +46,11 @@ $listDirn      = $this->escape($this->filter_order_Dir);
 		</tr>
 		</thead>
 		<tfoot>
-			<tr>
-				<td colspan="5">
-					<?php "echo this->pagination->getListFooter();" ?>
-				</td>
-			</tr>
+                    <tr>
+                        <td colspan="5">
+                            <?php echo $this->pagination->getListFooter(); ?>
+                        </td>
+                    </tr>
 		</tfoot>
 		<tbody>
 			<?php if (!empty($this->items)) : ?>
