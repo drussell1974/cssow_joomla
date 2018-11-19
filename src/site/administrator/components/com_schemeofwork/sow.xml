@@ -45,10 +45,14 @@
         <languages folder="site/language">
             <language tag="en-GB">en-GB/en-GB.com_schemeofwork.ini</language>
         </languages>
+        <media destination="com_schemeofwork" folder="media">
+            <filename>index.html</filename>
+            <folder>images</folder>
+        </media> 
 
 	<administration>
             <!-- Administration Menu Section -->
-            <menu link='index.php?option=com_sow'>COM_SCHEMEOFWORK_MENU</menu>
+            <menu link='index.php?option=com_sow' img="../media/com_schemeofwork/images/16x16.png">COM_SCHEMEOFWORK_MENU</menu>
             <!-- Administration Main File Copy Section -->
             <!-- Note the folder attribute: This attribute describes the folder
                     to copy FROM in the package to install therefore files copied
@@ -76,6 +80,6 @@
             <languages folder="admin/language">
                     <language tag="en-GB">en-GB/en-GB.com_schemeofwork.ini</language>
                     <language tag="en-GB">en-GB/en-GB.com_schemeofwork.sys.ini</language>
-            </languages>
+            </languages>   
 	</administration>
 </extension>

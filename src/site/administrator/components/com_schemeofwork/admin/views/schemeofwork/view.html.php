@@ -25,7 +25,7 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 	protected $form = null;
 
 	/**
-	 * Display the Hello World view
+	 * Display the Scheme of Work  view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
@@ -51,6 +51,9 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 
 		// Display the template
 		parent::display($tpl);
+                
+                // Set the document
+		$this->setDocument();
 	}
 
 	/**
@@ -84,5 +87,18 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 			'schemeofwork.cancel',
 			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
 		);
+	}
+        
+        /**
+	 * Method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument() 
+	{
+		$isNew = ($this->item->id < 1);
+		$document = JFactory::getDocument();
+		$document->setTitle($isNew ? JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_CREATING') :
+                JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_EDITING'));
 	}
 }

@@ -18,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 {
 	/**
-	 * Display the Hello World view
+	 * Display the Scheme of Works view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
@@ -26,10 +26,20 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
+            
+		// Get application
+		$app = JFactory::getApplication();
+		$context = "schemeofwork.list.admin.schemeofwork";
+            
 		// Get data from the model
 		$this->items		= $this->get('Items');
 		$this->pagination	= $this->get('Pagination');
-
+                
+		$this->state		= $this->get('State');
+		$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'greeting', 'cmd');
+		$this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+		$this->filterForm    	= $this->get('FilterForm');
+		$this->activeFilters 	= $this->get('ActiveFilters');
                 // Check for errors.
                 
                 $error_count = count($this->get('Errors'));
@@ -41,11 +51,14 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 			return false;
 		}
 
-		// Set the toolbar
+		// Set the toolbar and number of found items
 		$this->addToolBar();
 
 		// Display the template
 		parent::display($tpl);
+                
+                // Set the document
+                $this->setDocument();
 	}
 
 	/**
@@ -57,9 +70,26 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-		JToolbarHelper::title(JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORK'));
-		JToolbarHelper::addNew('schemeofwork.add');
-		JToolbarHelper::editList('schemeofwork.edit');
+                $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+
+		if ($this->pagination->total)
+		{
+			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+		}
+
+		JToolBarHelper::title($title, 'schemeofwork');
 		JToolbarHelper::deleteList('', 'schemeofworks.delete');
+		JToolbarHelper::editList('schemeofwork.edit');
+		JToolbarHelper::addNew('schemeofwork.add');
+	}
+	/**
+	 * Method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument() 
+	{
+		$document = JFactory::getDocument();
+		$document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
 	}
 }

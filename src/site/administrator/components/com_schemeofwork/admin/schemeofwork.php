@@ -23,6 +23,10 @@ JLog::addLogger(
         array(JText::_('LOG_CATEGORY'))
     );
 
+// Set some global property
+$document = JFactory::getDocument();
+$document->addStyleDeclaration('.icon-helloworld {background-image: url(../media/com_schemeofwork/images/16x16.png);}');
+
 // Get an instance of the controller prefixed by SchemeOfWorks
 $controller = JControllerLegacy::getInstance('SchemeOfWork');
 
