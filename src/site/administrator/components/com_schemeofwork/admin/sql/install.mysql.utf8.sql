@@ -19,7 +19,7 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_cs_concept
+-- Table sow_cs_concept
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_cs_concept` (
   `id` INT(11) NOT NULL,
@@ -30,7 +30,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_exam_board
+-- Table sow_exam_board
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_exam_board` (
   `id` INT(11) NOT NULL,
@@ -40,7 +40,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_key_stage
+-- Table sow_key_stage
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_key_stage` (
   `id` INT(11) NOT NULL,
@@ -50,7 +50,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_ks123_pathway
+-- Table sow_ks123_pathway
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_ks123_pathway` (
   `id` INT(11) NOT NULL,
@@ -80,7 +80,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_content
+-- Table sow_content
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_content` (
   `id` INT(11) NOT NULL,
@@ -92,7 +92,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_learning_objective
+-- Table sow_learning_objective
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_learning_objective` (
   `id` INT(11) NOT NULL,
@@ -122,7 +122,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_learning_objective_has_ks123_pathway
+-- Table sow_learning_objective_has_ks123_pathway
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_learning_objective_has_ks123_pathway` (
   `learning_objective_id` INT(11) NOT NULL,
@@ -140,7 +140,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_play_based
+-- Table sow_play_based
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_play_based` (
   `id` INT(11) NOT NULL,
@@ -150,7 +150,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_solo_taxonomy
+-- Table sow_solo_taxonomy
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_solo_taxonomy` (
   `id` INT(11) NOT NULL,
@@ -162,7 +162,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_subject_purpose
+-- Table sow_subject_purpose
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_subject_purpose` (
   `id` INT(11) NOT NULL,
@@ -172,7 +172,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_topic
+-- Table sow_topic
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_topic` (
   `id` INT(11) NOT NULL,
@@ -184,7 +184,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_year
+-- Table sow_year
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_year` (
   `id` INT(11) NOT NULL,
@@ -199,7 +199,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- ----------------------------------------------------------------------------
--- View cssow.sow_learning_objectives_by_ks123_pathway_topic
+-- View sow_learning_objectives_by_ks123_pathway_topic
 -- ----------------------------------------------------------------------------
 
 CREATE OR REPLACE 
@@ -248,9 +248,9 @@ INSERT INTO `#__schemeofwork` (`greeting`) VALUES
 
 
 -- ----------------------------------------------------------------------------
--- Table cssow.sow_year
+-- Table sow_year
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS cssow.sow_schemeofwork (
+CREATE TABLE IF NOT EXISTS sow_schemeofwork (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(25) NOT NULL,
 	`published` tinyint(4) NOT NULL DEFAULT '1',
@@ -261,7 +261,7 @@ CREATE TABLE IF NOT EXISTS cssow.sow_schemeofwork (
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
 
-INSERT INTO cssow.sow_subject (`name`) VALUES
+INSERT INTO sow_subject (`name`) VALUES
 ('GCSE Computer Science'),
 ('KS3 Computing'),
 ('KS2 IT Computing');

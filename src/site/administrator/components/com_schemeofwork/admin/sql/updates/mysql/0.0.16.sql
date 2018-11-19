@@ -1,5 +1,5 @@
 CREATE OR REPLACE 
-	VIEW `cssow`.`sow_learning_objectives_by_ks123_pathway_topic` 
+	VIEW `sow_learning_objectives_by_ks123_pathway_topic` 
 AS 
 	SELECT 
     `lo`.`id` AS `learning_objective_id`,
