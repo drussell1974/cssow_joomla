@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC">
+        <message>COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC</message>
+    </layout>
+    <fields 
+        name="request"
+        addfieldpath="/administrator/components/com_schemeofwork/models/fields">
+        <fieldset name="request">
+            <field
+                name="id"
+                type="schemeofwork"
+                label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_LABEL"
+                description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_DESC"
+                />
+        </fieldset>
+    </fields>
+</metadata>
