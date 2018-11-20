@@ -74,17 +74,18 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-                $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
 
-		if ($this->pagination->total)
-		{
-			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
-		}
+            if ($this->pagination->total)
+            {
+                    $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+            }
 
-		JToolBarHelper::title($title, 'schemeofwork');
-		JToolbarHelper::deleteList('', 'schemeofworks.delete');
-		JToolbarHelper::editList('schemeofwork.edit');
-		JToolbarHelper::addNew('schemeofwork.add');
+            JToolBarHelper::title($title, 'schemeofwork');
+            JToolbarHelper::editList('schemeofwork.edit');
+            JToolbarHelper::addNew('schemeofwork.add');
+            JToolbarHelper::deleteList('', 'schemeofworks.delete');
+            JToolBarHelper::preferences('com_schemeofwork');
 	}
 	/**
 	 * Method to set up the document properties

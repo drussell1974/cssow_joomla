@@ -90,7 +90,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
 
         if (empty($data))
         {
-                $data = $this->getItem();
+            $data = $this->getItem();
         }
 
         return $data;

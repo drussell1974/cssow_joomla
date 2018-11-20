@@ -7,4 +7,4 @@
  * Author:  Dave
  * Created: 16-Nov-2018
  */
-
+DROP TABLE sow_schemeofwork
