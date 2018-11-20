@@ -1,7 +1,7 @@
 jQuery(function() {
     document.formvalidator.setHandler('name',
         function (value) {
-            regex= /^\s+$/;
+            regex=/^[^0-9]+$/;
             return regex.test(value);
         });
 });
