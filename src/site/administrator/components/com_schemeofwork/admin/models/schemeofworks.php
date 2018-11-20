@@ -48,18 +48,22 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
         // Initialize variables.
         $db    = JFactory::getDbo();
         $query = $db->getQuery(true);
-
+        
         // Create the base select statement.
-        $query->select('*')
-        ->from($db->quoteName('sow_schemeofwork'));
+        $query->select('sow.id as id, sow.name as name, sow.published as published')
+                  ->from($db->quoteName('sow_schemeofwork', 'sow'));
 
+        // Join over the categories.
+        $query->select($db->quoteName('c.title', 'category_title'))
+                ->join('LEFT', $db->quoteName('#__categories', 'c') . ' ON c.id = sow.catid');
+        
         // Filter: like / search
         $search = $this->getState('filter.search');
 
         if (!empty($search))
         {
-                $like = $db->quote('%' . $search . '%');
-                $query->where('name LIKE ' . $like);
+            $like = $db->quote('%' . $search . '%');
+            $query->where('name LIKE ' . $like);
         }
 
         // Filter by published state
@@ -67,11 +71,11 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
 
         if (is_numeric($published))
         {
-                $query->where('published = ' . (int) $published);
+            $query->where('sow.published = ' . (int) $published);
         }
         elseif ($published === '')
         {
-                $query->where('(published IN (0, 1))');
+            $query->where('sow.published = ' . (int) $published);
         }
 
         // Add the list ordering clause.

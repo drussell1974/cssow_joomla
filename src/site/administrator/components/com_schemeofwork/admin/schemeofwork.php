@@ -27,7 +27,10 @@ JLog::addLogger(
 $document = JFactory::getDocument();
 $document->addStyleDeclaration('.icon-helloworld {background-image: url(../media/com_schemeofwork/images/16x16.png);}');
 
-// Get an instance of the controller prefixed by SchemeOfWorks
+// Require helper file
+JLoader::register('SchemeOfWorkHelper', JPATH_COMPONENT . '/helpers/schemofwork.php');
+
+//Get an instance of the controller prefixed by SchemeOfWorks
 $controller = JControllerLegacy::getInstance('SchemeOfWork');
 
 // Perform the Request task

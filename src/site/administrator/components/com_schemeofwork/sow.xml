@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.18</version>
+	<version>0.0.19</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_SCHEMEOFWORK_DESCRIPTION</description>
 
@@ -62,6 +62,7 @@
                 <filename>index.html</filename>
                 <filename>schemeofwork.php</filename>
                 <filename>controller.php</filename>
+                <filename>access.xml</filename>
                 <!-- SQL files section -->
                 <folder>sql</folder>			
                 <!-- tables files section -->
@@ -72,6 +73,8 @@
                 <folder>views</folder>
                 <!-- controller files section -->
                 <folder>controllers</folder>
+                <!-- helpers files section -->
+                <folder>helpers</folder>
                 
                 <!-- language files section....
                 This folder HAS to include the right subfolders, i.e. language/en-GB/ ... language/fr-FR/ -->
