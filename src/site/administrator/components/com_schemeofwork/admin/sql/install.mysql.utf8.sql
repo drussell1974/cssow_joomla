@@ -231,6 +231,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS sow_schemeofwork (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
+	`asset_id` INT(10)     NOT NULL DEFAULT '0',
 	`name` VARCHAR(25) NOT NULL,
 	`published` tinyint(4) NOT NULL DEFAULT '1',
 	`catid`	    int(11)    NOT NULL DEFAULT '0',

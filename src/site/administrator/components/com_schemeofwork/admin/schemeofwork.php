@@ -25,7 +25,13 @@ JLog::addLogger(
 
 // Set some global property
 $document = JFactory::getDocument();
-$document->addStyleDeclaration('.icon-helloworld {background-image: url(../media/com_schemeofwork/images/16x16.png);}');
+$document->addStyleDeclaration('.icon-schemeofwork {background-image: url(../media/com_schemeofwork/images/16x16.png);}');
+
+// Access check: is this user allowed to access the backend of this component?
+if (!JFactory::getUser()->authorise('core.manage', 'com_schemeofwork')) 
+{
+    throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+}
 
 // Require helper file
 JLoader::register('SchemeOfWorkHelper', JPATH_COMPONENT . '/helpers/schemofwork.php');

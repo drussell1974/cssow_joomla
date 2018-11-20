@@ -41,13 +41,17 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
             $this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
             $this->filterForm    	= $this->get('FilterForm');
             $this->activeFilters 	= $this->get('ActiveFilters');
+            // What Access Permissions does this user have? What can (s)he do?
+            $this->canDo = JHelperContent::getActions('com_schemeofwork');
+
+
             // Check for errors.
 
             $error_count = count($this->get('Errors'));
 
             if ($error_count > 0)
             {
-                JError::raiseError(500, implode('<br />', $errors));
+                throw new Exception(implode("\n", $errors), 500);
 
                 return false;
             }
@@ -82,10 +86,23 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
             }
 
             JToolBarHelper::title($title, 'schemeofwork');
-            JToolbarHelper::editList('schemeofwork.edit');
-            JToolbarHelper::addNew('schemeofwork.add');
-            JToolbarHelper::deleteList('', 'schemeofworks.delete');
-            JToolBarHelper::preferences('com_schemeofwork');
+            if ($this->canDo->get('core.create')) 
+            {
+                JToolbarHelper::addNew('schemeofwork.add');
+            }
+            if ($this->canDo->get('core.edit')) 
+            {
+                JToolbarHelper::editList('schemeofwork.edit');
+            }
+            if ($this->canDo->get('core.delete')) 
+            {
+               JToolbarHelper::deleteList('', 'schemeofworks.delete');
+            }
+            if ($this->canDo->get('core.admin')) 
+            {
+                JToolBarHelper::divider();
+                JToolBarHelper::preferences('com_schemeofwork');
+            }
 	}
 	/**
 	 * Method to set up the document properties
