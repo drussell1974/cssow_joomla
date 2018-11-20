@@ -29,25 +29,25 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 
 	public static function addSubmenu($submenu) 
 	{
-		JHtmlSidebar::addEntry(
-			JText::_('COM_SCHEMEOFWORK_SUBMENU_MESSAGES'),
-			'index.php?option=com_schemeofwork',
-			$submenu == 'schemeofworks'
-		);
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_SUBMENU_SOWS'),
+                'index.php?option=com_schemeofwork',
+                $submenu == 'schemeofworks'
+            );
 
-		JHtmlSidebar::addEntry(
-			JText::_('COM_SCHEMEOFWORK_SUBMENU_CATEGORIES'),
-			'index.php?option=com_categories&view=categories&extension=com_schemeofwork',
-			$submenu == 'categories'
-		);
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_SUBMENU_CATEGORIES'),
+                'index.php?option=com_categories&view=categories&extension=com_schemeofwork',
+                $submenu == 'categories'
+            );
 
-		// Set some global property
-		$document = JFactory::getDocument();
-		$document->addStyleDeclaration('.icon-48-helloworld ' .
-										'{background-image: url(../media/com_schemeofwork/images/tux-48x48.png);}');
-		if ($submenu == 'categories') 
-		{
-			$document->setTitle(JText::_('COM_HELLOWORLD_ADMINISTRATION_CATEGORIES'));
-		}
+            // Set some global property
+            $document = JFactory::getDocument();
+            $document->addStyleDeclaration('.icon-48-helloworld ' .
+                '{background-image: url(../media/com_schemeofwork/images/48x48.png);}');
+            if ($submenu == 'categories') 
+            {
+                $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION_CATEGORIES'));
+            }
 	}
 }
