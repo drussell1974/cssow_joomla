@@ -64,7 +64,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
                 $table->load($id);
 
                 // Assign the message
-                $this->messages[$id] = $table->greeting;
+                $this->messages[$id] = $table->name;
             }
 
             return $this->messages[$id];

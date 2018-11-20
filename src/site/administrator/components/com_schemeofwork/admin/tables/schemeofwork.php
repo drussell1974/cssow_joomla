@@ -23,6 +23,6 @@ class SchemeOfWorkTableSchemeOfWork extends JTable
      */
     function __construct(&$db)
     {
-        parent::__construct('#__schemeofwork', 'id', $db);
+        parent::__construct('sow_schemeofwork', 'id', $db);
     }
 }

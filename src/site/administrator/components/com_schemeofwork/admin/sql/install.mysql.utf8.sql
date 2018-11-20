@@ -226,29 +226,8 @@ FROM
     JOIN `sow_solo_taxonomy` ON ((`lo`.`solo_taxonomy_id` = `sow_solo_taxonomy`.`id`)));
 SET FOREIGN_KEY_CHECKS = 1;
 
-
 -- ----------------------------------------------------------------------------
--- Table #__schemeofwork
--- ----------------------------------------------------------------------------
-DROP TABLE IF EXISTS `#__schemeofwork`;
-
-CREATE TABLE `#__schemeofwork` (
-	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-	`greeting` VARCHAR(25) NOT NULL,
-	`published` tinyint(4) NOT NULL DEFAULT '1',
-	PRIMARY KEY (`id`)
-)
-	ENGINE =MyISAM
-	AUTO_INCREMENT =0
-	DEFAULT CHARSET =utf8;
-
-INSERT INTO `#__schemeofwork` (`greeting`) VALUES
-('Message from db!!!!'),
-('Good bye from db!!!!');
-
-
--- ----------------------------------------------------------------------------
--- Table sow_year
+-- Table scheme_of_work
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS sow_schemeofwork (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
@@ -261,7 +240,7 @@ CREATE TABLE IF NOT EXISTS sow_schemeofwork (
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
 
-INSERT INTO sow_subject (`name`) VALUES
+INSERT INTO sow_schemeofwork (`name`) VALUES
 ('GCSE Computer Science'),
 ('KS3 Computing'),
 ('KS2 IT Computing');
