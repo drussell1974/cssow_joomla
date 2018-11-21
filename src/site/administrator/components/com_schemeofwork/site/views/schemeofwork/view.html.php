@@ -26,17 +26,20 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
-            #JLog::add('my error message', JLog::ERROR, 'my-error-category');
-            
+            \JLog::add("SchemeOfWorkViewSchemeOfWork::display(tpl):".$tpl, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
+
             // Assign data to the view
             $this->item = $this->get('Item');
             
             // Check for errors.
-            if (count($errors = $this->get('Errors')))
-            {
-                    JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
+            $errors = $this->get('Errors');
+            $error_count = count($errors);
 
-                    return false;
+            if ($error_count)
+            {
+                JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
+
+                return false;
             }
             // Display the view
             parent::display($tpl);

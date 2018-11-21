@@ -17,8 +17,8 @@ JHtml::_('behavior.formvalidator');
 // with id="jform_title" and sets its value as the 'title' parameter to send in the Ajax request
 JFactory::getDocument()->addScriptDeclaration('
 	jQuery(document).ready(function() {
-        greeting = jQuery("#jform_greeting").val();
-		jQuery("#jform_title").val(greeting);
+        schemeofwork = jQuery("#jform_schemeofwork").val();
+		jQuery("#jform_title").val(schemeofwork);
 	});
 ');
 

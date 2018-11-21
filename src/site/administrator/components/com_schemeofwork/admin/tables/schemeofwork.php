@@ -74,7 +74,7 @@ class SchemeOfWorkTableSchemeOfWork extends JTable
     */
    protected function _getAssetTitle()
    {
-        return $this->greeting;
+        return $this->schemeofwork;
    }
    /**
     * Method to get the asset-parent-id of the item

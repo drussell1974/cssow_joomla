@@ -31,14 +31,13 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
             // Get application
             $app = JFactory::getApplication();
             $context = "schemeofwork.list.admin.schemeofwork";
-
             // Get data from the model
             $this->items		= $this->get('Items');
-            $this->pagination	= $this->get('Pagination');
-
+            $this->pagination           = $this->get('Pagination');
             $this->state		= $this->get('State');
-            $this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'name', 'cmd');
-            $this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+            // Remove the old ordering mechanism
+            //$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'name', 'cmd');
+            //$this->filter_order_Dir     = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
             $this->filterForm    	= $this->get('FilterForm');
             $this->activeFilters 	= $this->get('ActiveFilters');
             // What Access Permissions does this user have? What can (s)he do?
@@ -46,11 +45,12 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 
 
             // Check for errors.
-
-            $error_count = count($this->get('Errors'));
+            $errors = $this->get('Errors');
+            $error_count = count($errors);
 
             if ($error_count > 0)
             {
+                \JLog::add("Errors:".$error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 throw new Exception(implode("\n", $errors), 500);
 
                 return false;
@@ -111,7 +111,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function setDocument() 
 	{
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
+            $document = JFactory::getDocument();
+            $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
 	}
 }

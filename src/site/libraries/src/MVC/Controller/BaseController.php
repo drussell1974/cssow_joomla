@@ -619,7 +619,8 @@ class BaseController extends \JObject
 		$viewLayout = $this->input->get('layout', 'default', 'string');
 
 		$view = $this->getView($viewName, $viewType, '', array('base_path' => $this->basePath, 'layout' => $viewLayout));
-
+                \JLog::add("viewType:".$viewType.", viewName:".$viewName."view:".$view, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                
 		// Get/Create the model
 		if ($model = $this->getModel($viewName))
 		{
@@ -628,8 +629,7 @@ class BaseController extends \JObject
 		}
 
 		$view->document = $document;
-
-		// Display the view
+                // Display the view
 		if ($cachable && $viewType !== 'feed' && \JFactory::getConfig()->get('caching') >= 1)
 		{
 			$option = $this->input->get('option');

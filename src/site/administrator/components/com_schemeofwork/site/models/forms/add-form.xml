@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+    >
+    <fieldset
+        name="add-form"
+        label="COM_SCHEMEOFWORK_SCHEMEOFWORK_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+            />
+        <field
+            name="name"
+            type="text"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_DESC"
+            size="40"
+            class="inputbox"
+            validate="schemeofworkname"
+            required="true"
+            hint="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_HINT"
+            default=""
+            />
+        <field
+            name="catid"
+            type="category"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default=""
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_CATID_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_CATID_DESC"
+            required="true"
+            >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        <field
+            name="name"
+            type="textarea"
+            rows="5"
+            cols="80"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_DESC"
+            hint="COM_SCHEMEOFWORK_SCHEMEOFWORK_MESSAGE_HINT"
+            required="true"
+            >   
+        </field>
+        <fields name="params">
+            <field
+                name="show_category"
+                type="list"
+                label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_SHOW_CATEGORY_LABEL"
+                description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_SHOW_CATEGORY_DESC"
+                default=""
+                useglobal="true"
+            >
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>
+        </fields>
+    </fieldset>
+</form>

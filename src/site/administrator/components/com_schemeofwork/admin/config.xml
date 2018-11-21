@@ -2,8 +2,8 @@
 <config>
     <fieldset
         name="schemesofwork"
-        label="COM_SCHEMEOFWORK_CONFIG_GREETING_SETTINGS_LABEL"
-        description="COM_SCHEMEOFWORK_CONFIG_GREETING_SETTINGS_DESC"
+        label="COM_SCHEMEOFWORK_CONFIG_SCHEMEOFWORK_SETTINGS_LABEL"
+        description="COM_SCHEMEOFWORK_CONFIG_SCHEMEOFWORK_SETTINGS_DESC"
     >
         <field
             name="show_category"
@@ -14,6 +14,26 @@
         >
             <option value="0">JHIDE</option>
             <option value="1">JSHOW</option>
+        </field>
+        <field
+            name="captcha"
+            type="plugins"
+            folder="captcha"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_CAPTCHA_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_CAPTCHA_DESC"
+            default="0"
+            filter="cmd"
+            >
+            <option value="">JOPTION_USE_DEFAULT</option>
+            <option value="0">JOPTION_DO_NOT_USE</option>
+        </field>
+        <field
+            name="user_to_email"
+            type="user"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_USER_TO_EMAIL_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_USER_TO_EMAIL_DESC"
+            default="0"
+        >
         </field>
     </fieldset>
     <fieldset
