@@ -8,13 +8,13 @@
             type="hidden"
             />
         <field
-            name="greeting"
+            name="name"
             type="text"
-            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_GREETING_LABEL"
-            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_GREETING_DESC"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_DESC"
             size="40"
-            class="inputbox validate-greeting"
-            validate="greeting"
+            class="inputbox validate-schemeofworkname"
+            validate="schemeofworkname"
             required="true"
             default=""
             />

@@ -229,14 +229,14 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 /*
 *
-* Message and greeting (CAN BE REMOVED
+* Scheme of work
 *
 */
-DROP TABLE IF EXISTS `#__schemeofwork`;
+DROP TABLE IF EXISTS `sow_schemeofwork`;
 
-CREATE TABLE `#__schemeofwork` (
+CREATE TABLE `sow_schemeofwork` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-	`greeting` VARCHAR(25) NOT NULL,
+	`name` VARCHAR(25) NOT NULL,
 	`published` tinyint(4) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 )
@@ -244,6 +244,5 @@ CREATE TABLE `#__schemeofwork` (
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
 
-INSERT INTO `#__schemeofwork` (`greeting`) VALUES
-('Hellow from db!!!!'),
-('Goodbye from db!!!!');
+INSERT INTO `sow_schemeofwork` (`name`) VALUES
+('Computer Science');

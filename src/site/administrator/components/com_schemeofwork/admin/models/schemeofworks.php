@@ -30,7 +30,7 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
         {
              $config['filter_fields'] = array(
                      'id',
-                     'greeting',
+                     'name',
                      'published'
              );
         }
@@ -59,7 +59,7 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
         if (!empty($search))
         {
                 $like = $db->quote('%' . $search . '%');
-                $query->where('greeting LIKE ' . $like);
+                $query->where('name LIKE ' . $like);
         }
 
         // Filter by published state
@@ -75,7 +75,7 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
         }
 
         // Add the list ordering clause.
-        $orderCol	= $this->state->get('list.ordering', 'greeting');
+        $orderCol	= $this->state->get('list.ordering', 'name');
         $orderDirn 	= $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));

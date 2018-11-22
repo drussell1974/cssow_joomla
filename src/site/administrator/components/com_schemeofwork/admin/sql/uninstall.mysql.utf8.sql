@@ -8,4 +8,4 @@
  * Created: 16-Nov-2018
  */
 
-DROP TABLE IF EXISTS `#__schemeofwork`;
+DROP TABLE IF EXISTS `sow_schemeofwork`;

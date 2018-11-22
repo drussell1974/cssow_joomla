@@ -10,8 +10,8 @@
             <field
                 name="id"
                 type="schemeofwork"
-                label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_LABEL"
-                description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_GREETING_DESC"
+                label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_NAME_LABEL"
+                description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_NAME_DESC"
                 />
         </fieldset>
     </fields>

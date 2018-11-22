@@ -35,8 +35,8 @@ class JFormFieldSchemeOfWorks extends JFormFieldList
 	{
             $db    = JFactory::getDBO();
             $query = $db->getQuery(true);
-            $query->select('id,greeting');
-            $query->from('#__schemeofwork');
+            $query->select('id,name');
+            $query->from('sow_schemeofwork');
             $db->setQuery((string) $query);
             $messages = $db->loadObjectList();
             $options  = array();
@@ -45,7 +45,7 @@ class JFormFieldSchemeOfWorks extends JFormFieldList
             {
                 foreach ($messages as $message)
                 {
-                    $options[] = JHtml::_('select.option', $message->id, $message->greeting);
+                    $options[] = JHtml::_('select.option', $message->id, $message->schemeofwork);
                 }
             }
 
