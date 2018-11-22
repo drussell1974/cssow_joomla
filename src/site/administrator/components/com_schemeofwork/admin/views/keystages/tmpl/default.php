@@ -48,7 +48,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
 		<tfoot>
                     <tr>
                         <td colspan="5">
-                            <!--php echo $this->pagination->getListFooter(); ?-->
+                            <?php echo $this->pagination->getListFooter(); ?>
                         </td>
                     </tr>
 		</tfoot>

@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Form Rule class for the Joomla Framework.
  */
-class JFormRuleSchemeOfWorkName extends JFormRule
+class JFormRuleKeyStageName extends JFormRule
 {
     /**
      * The regular expression.
@@ -22,5 +22,6 @@ class JFormRuleSchemeOfWorkName extends JFormRule
      * @var		string
      * @since	2.5
      */
-    protected $regex = '^[^0-9]+$';
+    protected $regex = '/^[a-zA-Z]{3}$/
+';
 }

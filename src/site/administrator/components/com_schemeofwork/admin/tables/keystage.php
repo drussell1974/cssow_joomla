@@ -22,8 +22,7 @@ class SchemeOfWorkTableKeyStage extends JTable
      * @param   JDatabaseDriver  &$db  A database connector object
      */
     function __construct(&$db)
-    {
-        \JLog::add("SchemeOfWorkTableKeyStage.__contruct(db)".$db, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-        parent::__construct('com_schemeofwork', 'id', $db);
+    { 
+        parent::__construct('sow_key_stage', 'id', $db);
     }
 }

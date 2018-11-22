@@ -29,7 +29,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
             
 		// Get application
 		$app = JFactory::getApplication();
-		$context = "schemeofwork.list.admin.keystage";
+		$context = "keystage.list.admin.keystage";
             
 		// Get data from the model
 		$this->items		= $this->get('Items');
@@ -52,7 +52,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 		}
 
 		// Set the toolbar and number of found items
-		//$this->addToolBar();
+		$this->addToolBar();
 
 		// Display the template
 		parent::display($tpl);
@@ -70,7 +70,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_KEYSTAGES');
 
             if ($this->pagination->total)
             {

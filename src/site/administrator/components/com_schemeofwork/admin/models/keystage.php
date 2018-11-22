@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
+class SchemeOfWorkModelKeyStage extends JModelAdmin
 {
     /**
      * Method to get a table object, load it if necessary.
@@ -28,7 +28,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
      *
      * @since   1.6
      */
-    public function getTable($type = 'SchemeOfWork', $prefix = 'SchemeOfWorkTable', $config = array())
+    public function getTable($type = 'KeyStage', $prefix = 'SchemeOfWorkTable', $config = array())
     {
         return JTable::getInstance($type, $prefix, $config);
     }

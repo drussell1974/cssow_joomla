@@ -17,7 +17,7 @@ JFormHelper::loadFieldClass('list');
  *
  * @since  0.0.1
  */
-class JFormFieldSchemeOfWorks extends JFormFieldList
+class JFormFieldKeyStages extends JFormFieldList
 {
 	/**
 	 * The field type.
@@ -38,14 +38,14 @@ class JFormFieldSchemeOfWorks extends JFormFieldList
             $query->select('id,name');
             $query->from('sow_key_stage');
             $db->setQuery((string) $query);
-            $messages = $db->loadObjectList();
+            $keystages = $db->loadObjectList();
             $options  = array();
 
-            if ($messages)
+            if ($keystages)
             {
-                foreach ($messages as $message)
+                foreach ($keystages as $keystage)
                 {
-                    $options[] = JHtml::_('select.option', $message->id, $message->schemeofworkname);
+                    $options[] = JHtml::_('select.option', $keystage->id, $keystage->KeyStageName);
                 }
             }
 

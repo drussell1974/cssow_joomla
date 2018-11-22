@@ -15,7 +15,7 @@ JHtml::_('behavior.formvalidator');
     method="post" name="adminForm" id="adminForm" class="form-validate">
     <div class="form-horizontal">
         <fieldset class="adminform">
-            <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_DETAILS'); ?></legend>
+            <legend><?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_DETAILS'); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
                     <?php foreach ($this->form->getFieldset() as $field): ?>
