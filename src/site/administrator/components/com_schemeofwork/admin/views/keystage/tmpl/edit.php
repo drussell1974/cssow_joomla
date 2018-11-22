@@ -28,6 +28,6 @@ JHtml::_('behavior.formvalidator');
             </div>
         </fieldset>
     </div>
-    <input type="hidden" name="task" value="schemeofwork.edit" />
+    <input type="hidden" name="task" value="keystage.edit" />
     <?php echo JHtml::_('form.token'); ?>
 </form>

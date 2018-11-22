@@ -15,16 +15,16 @@ JHtml::_('formbehavior.chosen', 'select');
 $listOrder     = $this->escape($this->filter_order);
 $listDirn      = $this->escape($this->filter_order_Dir);
 ?>
-<form action="index.php?option=com_schemeofwork&view=schemeofworks" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_schemeofwork&view=keystages" method="post" id="adminForm" name="adminForm">
         <div class="row-fluid">
             <div class="span6">
                     <?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORKS_FILTER'); ?>
-                    <?php
+                    <!--php
                             echo JLayoutHelper::render(
                                     'joomla.searchtools.default',
                                     array('view' => $this)
                             );
-                    ?>
+                    ?-->
             </div>
 	</div>
 	<table class="table table-striped table-hover">
@@ -48,14 +48,14 @@ $listDirn      = $this->escape($this->filter_order_Dir);
 		<tfoot>
                     <tr>
                         <td colspan="5">
-                            <?php echo $this->pagination->getListFooter(); ?>
+                            <!--php echo $this->pagination->getListFooter(); ?-->
                         </td>
                     </tr>
 		</tfoot>
 		<tbody>
                     <?php if (!empty($this->items)) : ?>
                         <?php foreach ($this->items as $i => $row) :
-                                $link = JRoute::_('index.php?option=com_schemeofwork&task=schemeofwork.edit&id=' . $row->id);
+                                $link = JRoute::_('index.php?option=com_schemeofwork&task=keystage.edit&id=' . $row->id);
                         ?>
                             <tr>
                                 <td><?php echo $this->pagination->getRowOffset($i); ?></td>
@@ -68,7 +68,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                                         </a>
                                 </td>
                                 <td align="center">
-                                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'schemeofworks.', true, 'cb'); ?>
+                                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'keystages.', true, 'cb'); ?>
                                 </td>
                                 <td align="center">
                                         <?php echo $row->id; ?>

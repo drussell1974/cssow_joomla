@@ -10,11 +10,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SchemeOfWorks Model
+ * KeyStages Model
  *
  * @since  0.0.1
  */
-class SchemeOfWorkModelSchemeOfWorks extends JModelList
+class SchemeOfWorkModelKeyStages extends JModelList
 {
     /**
     * Constructor.
@@ -51,7 +51,7 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
 
         // Create the base select statement.
         $query->select('*')
-        ->from($db->quoteName('#__schemeofwork'));
+        ->from($db->quoteName('sow_key_stage'));
 
         // Filter: like / search
         $search = $this->getState('filter.search');
@@ -79,7 +79,7 @@ class SchemeOfWorkModelSchemeOfWorks extends JModelList
         $orderDirn 	= $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
-
+        \JLog::add("SchemeOfWorkModelKeyStages.getListQuery=".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         return $query;
     }
 }

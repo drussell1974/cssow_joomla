@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
+class SchemeOfWorkViewKeyStage extends JViewLegacy
 {
 	/**
 	 * View form
@@ -82,10 +82,10 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
                 $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORK_EDIT');
             }
 
-            JToolbarHelper::title($title, 'schemeofwork');
-            JToolbarHelper::save('schemeofwork.save');
+            JToolbarHelper::title($title, 'keystage');
+            JToolbarHelper::save('keystage.save');
             JToolbarHelper::cancel(
-                'schemeofwork.cancel',
+                'keystage.cancel',
                 $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
             );
 	}
@@ -103,7 +103,7 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
             JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_EDITING'));
             $document->addScript(JURI::root() . $this->script);
             $document->addScript(JURI::root() . "/administrator/components/com_schemeofwork"
-                                              . "/views/schemeofwork/submitbutton.js");
+                                              . "/views/keystage/submitbutton.js");
             JText::script('COM_SCHEMEOFWORK_SCHEMEOFWORK_ERROR_UNACCEPTABLE');
 	}
 }

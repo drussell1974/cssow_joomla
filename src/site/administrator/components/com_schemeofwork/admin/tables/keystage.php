@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkTableSchemeOfWork extends JTable
+class SchemeOfWorkTableKeyStage extends JTable
 {
     /**
      * Constructor
@@ -23,6 +23,7 @@ class SchemeOfWorkTableSchemeOfWork extends JTable
      */
     function __construct(&$db)
     {
-        parent::__construct('#__schemeofwork', 'id', $db);
+        \JLog::add("SchemeOfWorkTableKeyStage.__contruct(db)".$db, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+        parent::__construct('com_schemeofwork', 'id', $db);
     }
 }

@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkControllerSchemeOfWorks extends JControllerAdmin
+class SchemeOfWorkControllerKeyStages extends JControllerAdmin
 {
     /**
      * Proxy for getModel.
@@ -27,7 +27,7 @@ class SchemeOfWorkControllerSchemeOfWorks extends JControllerAdmin
      *
      * @since   1.6
      */
-    public function getModel($name = 'SchemeOfWork', $prefix = 'SchemeOfWorkModel', $config = array('ignore_request' => true))
+    public function getModel($name = 'KeyStages', $prefix = 'SchemeOfWorkModel', $config = array('ignore_request' => true))
     {
         $model = parent::getModel($name, $prefix, $config);
 

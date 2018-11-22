@@ -9,7 +9,7 @@
         <fieldset name="request">
             <field
                 name="id"
-                type="schemeofwork"
+                type="keystage"
                 label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_NAME_LABEL"
                 description="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_NAME_DESC"
                 />

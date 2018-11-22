@@ -23,8 +23,8 @@ JLog::addLogger(
         array(JText::_('LOG_CATEGORY'))
     );      
 
-// Get an instance of the controller prefixed by SchemeOfWork
-$controller = JControllerLegacy::getInstance('schemeofwork');
+// Get an instance of the controller prefixed by KeyStage
+$controller = JControllerLegacy::getInstance('keystage');
 
 // Perform the Request task
 $input = JFactory::getApplication()->input; 

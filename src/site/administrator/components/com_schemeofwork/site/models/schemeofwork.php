@@ -15,12 +15,12 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkModelSchemeOfWork extends JModelItem
+class SchemeOfWorkModelKeyStage extends JModelItem
 {
 	/**
-	 * @var string message
+	 * @var string keystage
 	 */
-	protected $messages;
+	protected $keystages;
 
 	/**
 	 * Method to get a table object, load it if necessary.
@@ -33,7 +33,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($type = 'SchemeOfWork', $prefix = 'SchemeOfWorkTable', $config = array())
+	public function getTable($type = 'KeyStage', $prefix = 'SchemeOfWorkTable', $config = array())
 	{
             return JTable::getInstance($type, $prefix, $config);
 	}
@@ -46,12 +46,12 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
 	{
             $id = 0;
             
-            if (!is_array($this->messages))
+            if (!is_array($this->keystages))
             {
-                $this->messages = array();
+                $this->keystages = array();
             }
 
-            if (!isset($this->messages[$id]))
+            if (!isset($this->keystages[$id]))
             {
                 // Request the selected id
                 $jinput = JFactory::getApplication()->input;
@@ -64,9 +64,9 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
                 $table->load($id);
 
                 // Assign the message
-                $this->messages[$id] = $table->name;
+                $this->keystages[$id] = $table->name;
             }
 
-            return $this->messages[$id];
+            return $this->keystages[$id];
 	}
 }

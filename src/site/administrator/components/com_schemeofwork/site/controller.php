@@ -13,6 +13,6 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.2
  */
-class schemeofworkController extends JControllerLegacy
+class keystageController extends JControllerLegacy
 {
 }

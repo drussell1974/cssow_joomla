@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
+class SchemeOfWorkViewKeyStages extends JViewLegacy
 {
 	/**
 	 * Display the Scheme of Works view
@@ -29,7 +29,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
             
 		// Get application
 		$app = JFactory::getApplication();
-		$context = "schemeofwork.list.admin.schemeofwork";
+		$context = "schemeofwork.list.admin.keystage";
             
 		// Get data from the model
 		$this->items		= $this->get('Items');
@@ -42,9 +42,9 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 		$this->activeFilters 	= $this->get('ActiveFilters');
                 // Check for errors.
                 
-                $error_count = count($this->get('Errors'));
+                $errors = $this->get('Errors');
                 
-                if ($error_count > 0)
+                if (empty($errors) === 1)
 		{
 			JError::raiseError(500, implode('<br />', $errors));
 
@@ -52,7 +52,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 		}
 
 		// Set the toolbar and number of found items
-		$this->addToolBar();
+		//$this->addToolBar();
 
 		// Display the template
 		parent::display($tpl);
@@ -70,17 +70,17 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-                $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
 
-		if ($this->pagination->total)
-		{
-			$title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
-		}
+            if ($this->pagination->total)
+            {
+                    $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+            }
 
-		JToolBarHelper::title($title, 'schemeofwork');
-		JToolbarHelper::deleteList('', 'schemeofworks.delete');
-		JToolbarHelper::editList('schemeofwork.edit');
-		JToolbarHelper::addNew('schemeofwork.add');
+            JToolBarHelper::title($title, 'keystage');
+            JToolbarHelper::deleteList('', 'keystages.delete');
+            JToolbarHelper::editList('keystage.edit');
+            JToolbarHelper::addNew('keystage.add');
 	}
 	/**
 	 * Method to set up the document properties
@@ -89,7 +89,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function setDocument() 
 	{
-		$document = JFactory::getDocument();
-		$document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
+            $document = JFactory::getDocument();
+            $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
 	}
 }

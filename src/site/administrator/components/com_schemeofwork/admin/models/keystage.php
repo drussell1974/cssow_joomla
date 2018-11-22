@@ -47,8 +47,8 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
     {
         // Get the form.
         $form = $this->loadForm(
-            'com_schemeofwork.schemeofwork',
-            'schemeofwork',
+            'com_schemeofwork.keystage',
+            'keystage',
             array(
                 'control' => 'jform',
                 'load_data' => $loadData
@@ -84,7 +84,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
     {
         // Check the session for previously entered form data.
         $data = JFactory::getApplication()->getUserState(
-                'com_schemeofwork.edit.schemeofwork.data',
+                'com_schemeofwork.edit.keystage.data',
                 array()
         );
 

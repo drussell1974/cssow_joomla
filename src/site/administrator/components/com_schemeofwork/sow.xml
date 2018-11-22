@@ -36,7 +36,7 @@
 		in this section are copied from /site/ in the package -->
 	<files folder="site">
             <filename>index.html</filename>
-            <filename>schemeofwork.php</filename>
+            <filename>keystage.php</filename>
             <filename>controller.php</filename>
             <folder>views</folder>
             <folder>models</folder>

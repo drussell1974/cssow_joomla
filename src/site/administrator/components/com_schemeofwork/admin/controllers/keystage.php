@@ -16,6 +16,6 @@ defined('_JEXEC') or die('Restricted access');
  * @subpackage  com_schemeofwork
  * @since       0.0.9
  */
-class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
+class SchemeOfWorkControllerKeyStage extends JControllerForm
 {
 }
