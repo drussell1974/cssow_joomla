@@ -9,22 +9,19 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-
+ 
 /**
- * General Controller of Scheme Of Work Admin component
- *
- * @package     Joomla.Administrator
- * @subpackage  com_schemeofwork
- * @since       0.0.7
+ * Form Rule class for the Joomla Framework.
  */
-class SchemeOfWorkController extends JControllerLegacy
+class JFormRuleKeyStageName extends JFormRule
 {
     /**
-     * The default view for the display method.
+     * The regular expression.
      *
-     * @var string
-     * @since 12.2
+     * @access	protected
+     * @var		string
+     * @since	2.5
      */
-    protected $default_view = 'schemeofworkmanager';
+    // 1 - 3 alphanumeric characters
+    protected $regex = '^[A-Za-z0-9]{1,3}$';
 }
-

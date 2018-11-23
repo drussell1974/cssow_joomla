@@ -22,7 +22,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Table sow_cs_concept
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_cs_concept` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
   `abbr` CHAR(2) NOT NULL,
   PRIMARY KEY (`id`))
@@ -33,7 +33,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_exam_board
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_exam_board` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -43,7 +43,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_key_stage
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_key_stage` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(3) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -53,7 +53,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_ks123_pathway
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_ks123_pathway` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `objective` VARCHAR(1000) NOT NULL,
   `year_id` INT(11) NOT NULL,
   `topic_id` INT(11) NOT NULL,
@@ -83,7 +83,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_content
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_content` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(500) NOT NULL,
   `letter` CHAR(1) NOT NULL,
   `key_stage` INT(11) NOT NULL DEFAULT '4',
@@ -95,7 +95,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_learning_objective
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_learning_objective` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(1000) NOT NULL,
   `solo_taxonomy_id` INT(11) NULL DEFAULT NULL,
   `topic_id` INT(11) NOT NULL,
@@ -143,7 +143,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_play_based
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_play_based` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -153,7 +153,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_solo_taxonomy
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_solo_taxonomy` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `level` CHAR(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`id`),
@@ -165,7 +165,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_subject_purpose
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_subject_purpose` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -175,7 +175,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_topic
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_topic` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `parent_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -187,7 +187,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_year
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_year` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(3) NOT NULL,
   `keystage_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `keystage_id`),
