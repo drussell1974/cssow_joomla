@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <layout title="COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC">
-        <message>COM_SCHEMEOFWORK_SCHEMEOFWORK_VIEW_DEFAULT_DESC</message>
+    <layout title="COM_SCHEMEOFWORK_DEFAULT_VIEW_DESC">
+        <message>COM_SCHEMEOFWORK_DEFAULT_VIEW_DESC</message>
     </layout>
     <fields 
         name="request"

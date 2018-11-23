@@ -78,7 +78,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+            $title = JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_MANAGER');
 
             if ($this->pagination->total)
             {
@@ -112,6 +112,6 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 	protected function setDocument() 
 	{
             $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
+            $document->setTitle(JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_ADMINISTRATION'));
 	}
 }

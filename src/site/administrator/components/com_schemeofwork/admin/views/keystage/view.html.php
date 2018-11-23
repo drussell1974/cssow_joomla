@@ -75,11 +75,11 @@ class SchemeOfWorkViewKeyStage extends JViewLegacy
 
             if ($isNew)
             {
-                $title = JText::_('COM_SCHEMEOFWORK_MANAGER_KEYSTAGE_NEW');
+                $title = JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER_NEW');
             }
             else
             {
-                $title = JText::_('COM_SCHEMEOFWORK_MANAGER_KEYSTAGE_EDIT');
+                $title = JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER_EDIT');
             }
 
             JToolbarHelper::title($title, 'keystage');
@@ -104,6 +104,6 @@ class SchemeOfWorkViewKeyStage extends JViewLegacy
             $document->addScript(JURI::root() . $this->script);
             $document->addScript(JURI::root() . "/administrator/components/com_schemeofwork"
                                               . "/views/keystage/submitbutton.js");
-            JText::script('COM_SCHEMEOFWORK_SCHEMEOFWORK_ERROR_UNACCEPTABLE');
+            JText::script('COM_SCHEMEOFWORK_KEYSTAGE_ERROR_UNACCEPTABLE');
 	}
 }

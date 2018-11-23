@@ -12,7 +12,7 @@
 	<!--  The version string is recorded in the components table -->
 	<version>0.0.24</version>
 	<!-- The description is optional and defaults to the name -->
-	<description>COM_SCHEMEOFWORK_DESCRIPTION</description>
+	<description>COM_SCHEMEOFWORK_DEFAULT_DESCRIPTION</description>
 
         <install> <!-- Runs on install -->
             <sql>
@@ -53,7 +53,7 @@
 
 	<administration>
             <!-- Administration Menu Section -->
-            <menu link='index.php?option=com_sow' img="../media/com_schemeofwork/images/16x16.png">COM_SCHEMEOFWORK_MENU</menu>
+            <menu link='index.php?option=com_sow' img="../media/com_schemeofwork/images/16x16.png">COM_SCHEMEOFWORK_DEFAULT_MENU</menu>
             <!-- Administration Main File Copy Section -->
             <!-- Note the folder attribute: This attribute describes the folder
                     to copy FROM in the package to install therefore files copied

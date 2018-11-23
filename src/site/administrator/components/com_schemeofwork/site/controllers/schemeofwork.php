@@ -28,7 +28,7 @@ class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
         // set up the redirect back to the same form
         $this->setRedirect(
             (string)JUri::getInstance(), 
-            JText::_(COM_SCHEMEOFWORK_ADD_CANCELLED)
+            JText::_(COM_SCHEMEOFWORK_SCHEMEOFWORK_ADD_CANCELLED)
 		);
     }
     
@@ -169,7 +169,7 @@ class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
 
         $this->setRedirect(
             $currentUri,
-            JText::_('COM_SCHEMEOFWORK_ADD_SUCCESSFUL')
+            JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_ADD_SUCCESSFUL')
             );
 
         return true;

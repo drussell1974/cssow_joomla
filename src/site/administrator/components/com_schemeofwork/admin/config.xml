@@ -2,8 +2,8 @@
 <config>
     <fieldset
         name="schemesofwork"
-        label="COM_SCHEMEOFWORK_CONFIG_SCHEMEOFWORK_SETTINGS_LABEL"
-        description="COM_SCHEMEOFWORK_CONFIG_SCHEMEOFWORK_SETTINGS_DESC"
+        label="COM_SCHEMEOFWORK_SCHEMEOFWORK_CONFIG_SETTINGS_LABEL"
+        description="COM_SCHEMEOFWORK_SCHEMEOFWORK_CONFIG_SETTINGS_DESC"
     >
         <field
             name="show_category"

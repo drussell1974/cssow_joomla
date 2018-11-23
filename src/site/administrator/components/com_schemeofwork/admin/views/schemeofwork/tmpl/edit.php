@@ -30,9 +30,9 @@ JFactory::getDocument()->addScriptDeclaration('
     <div class="form-horizontal">
         <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', 
-            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_TAB_NEW_SCHEMEOFWORK') : JText::_('COM_SCHEMEOFWORK_TAB_EDIT_SCHEMEOFWORK')); ?>
+            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_NEW') : JText::_('COM_SCHEMEOFWORK_TAB_EDIT_SCHEMEOFWORK')); ?>
             <fieldset class="adminform">
-                <legend><?php echo JText::_('COM_SCHEMEOFWORK_LEGEND_DETAILS') ?></legend>
+                <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_LEGEND_DETAILS') ?></legend>
                 <div class="row-fluid">
                     <div class="span6">
                         <?php echo $this->form->renderFieldset('details');  ?>
@@ -41,9 +41,9 @@ JFactory::getDocument()->addScriptDeclaration('
             </fieldset>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
 
-        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'params', JText::_('COM_SCHEMEOFWORK_TAB_PARAMS')); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'params', JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_PARAMS')); ?>
             <fieldset class="adminform">
-                <legend><?php echo JText::_('COM_SCHEMEOFWORK_LEGEND_PARAMS') ?></legend>
+                <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_LEGEND_PARAMS') ?></legend>
                 <div class="row-fluid">
                     <div class="span6">
                         <?php echo $this->form->renderFieldset('params');  ?>
@@ -52,9 +52,9 @@ JFactory::getDocument()->addScriptDeclaration('
             </fieldset>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
 
-        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'permissions', JText::_('COM_SCHEMEOFWORK_TAB_PERMISSIONS')); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'permissions', JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_PERMISSIONS')); ?>
             <fieldset class="adminform">
-                <legend><?php echo JText::_('COM_SCHEMEOFWORK_LEGEND_PERMISSIONS') ?></legend>
+                <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_LEGEND_PERMISSIONS') ?></legend>
                 <div class="row-fluid">
                     <div class="span12">
                         <?php echo $this->form->renderFieldset('accesscontrol');  ?>

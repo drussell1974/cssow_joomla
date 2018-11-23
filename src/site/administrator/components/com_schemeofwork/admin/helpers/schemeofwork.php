@@ -47,7 +47,7 @@ abstract class SchemeOfWorkHelper extends JHelperContent
                 '{background-image: url(../media/com_schemeofwork/images/48x48.png);}');
             if ($submenu == 'categories') 
             {
-                $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION_CATEGORIES'));
+                $document->setTitle(JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_ADMINISTRATION_CATEGORIES'));
             }
 	}
 }

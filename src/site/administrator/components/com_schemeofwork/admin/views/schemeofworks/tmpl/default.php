@@ -34,7 +34,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 	<table class="table table-striped table-hover">
 		<thead>
 		<tr>
-                    <th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_NUM'); ?></th>
+                    <th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_NUM'); ?></th>
                     <th width="2%">
                             <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
@@ -42,16 +42,16 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                         <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORKS_NAME', 'name', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_AUTHOR', 'author', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_AUTHOR', 'author', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_PUBLISHED', 'published', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_PUBLISHED', 'published', $listDirn, $listOrder); ?>
                     </th>
                     <th width="2%">
-			<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_ID', 'id', $listDirn, $listOrder); ?>
+			<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_ID', 'id', $listDirn, $listOrder); ?>
                     </th>
 		</tr>
 		</thead>
@@ -73,7 +73,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                                     <?php echo JHtml::_('grid.id', $i, $row->id); ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_EDIT_SCHEMEOFWORK'); ?>">
+                                    <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_EDIT'); ?>">
                                         <?php echo $row->name; ?>
                                     </a>
                                     <div class="small">

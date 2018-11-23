@@ -42,7 +42,7 @@ class SchemeOfWorkViewSchemeOfWorkManager extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORKS');
+            $title = JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORKS_MANAGER');
 
             if ($this->pagination->total)
             {

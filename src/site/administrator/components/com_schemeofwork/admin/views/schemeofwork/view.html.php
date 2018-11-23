@@ -76,8 +76,8 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 
             $isNew = ($this->item->id == 0);
             
-            JToolBarHelper::title($isNew ? JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORK_NEW')
-		                             : JText::_('COM_SCHEMEOFWORK_MANAGER_SCHEMEOFWORK_EDIT'), 'schemeofwork');
+            JToolBarHelper::title($isNew ? JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_MANAGER_NEW')
+		                             : JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_MANAGER_EDIT'), 'schemeofwork');
             
             // Build the actions for new and existing records.
             if ($isNew)

@@ -54,7 +54,7 @@
     </fields>
     <fieldset
         name="accesscontrol"
-        label="COM_SCHEMEOFWORK_FIELDSET_RULES"
+        label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELDSET_RULES"
     >
     	<field
             name="asset_id"
@@ -64,7 +64,7 @@
     	<field
             name="rules"
             type="rules"
-            label="COM_SCHEMEOFWORK_FIELD_RULES_LABEL"
+            label="COM_SCHEMEOFWORK_SCHEMEOFWORK_FIELD_RULES_LABEL"
             filter="rules"
             validate="rules"
             class="inputbox"

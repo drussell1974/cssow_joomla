@@ -18,7 +18,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
 <form action="index.php?option=com_schemeofwork&view=keystages" method="post" id="adminForm" name="adminForm">
         <div class="row-fluid">
             <div class="span6">
-                    <?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORKS_FILTER'); ?>
+                    <?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_FILTER'); ?>
                     <?php
                             echo JLayoutHelper::render(
                                     'joomla.searchtools.default',
@@ -30,18 +30,18 @@ $listDirn      = $this->escape($this->filter_order_Dir);
 	<table class="table table-striped table-hover">
 		<thead>
 		<tr>
-			<th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_NUM'); ?></th>
+			<th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_NUM'); ?></th>
 			<th width="2%">
 				<?php echo JHtml::_('grid.checkall'); ?>
 			</th>
 			<th width="90%">
-				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORKS_NAME', 'name', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_NAME', 'name', $listDirn, $listOrder); ?>
 			</th>
 			<th width="5%">
-				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_PUBLISHED', 'published', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_PUBLISHED', 'published', $listDirn, $listOrder); ?>
 			</th>
 			<th width="2%">
-				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_ID', 'id', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_ID', 'id', $listDirn, $listOrder); ?>
 			</th>
 		</tr>
 		</thead>
@@ -63,7 +63,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                                         <?php echo JHtml::_('grid.id', $i, $row->id); ?>
                                 </td>
                                 <td>
-                                        <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_EDIT_SCHEMEOFWORK'); ?>">
+                                        <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_EDIT'); ?>">
                                                 <?php echo $row->name; ?>
                                         </a>
                                 </td>

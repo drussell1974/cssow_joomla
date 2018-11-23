@@ -41,8 +41,8 @@ JHtml::_('formbehavior.chosen', 'select');
 
                 <tr>
                     <td>
-                        <a href="index.php?option=com_schemeofwork&view=keystages" title="<?php echo JText::_('COM_SCHEMEOFWORK_EDIT_KEYSTAGES'); ?>">
-                            <?php echo JText::_('COM_SCHEMEOFWORK_EDIT_KEYSTAGES'); ?>
+                        <a href="index.php?option=com_schemeofwork&view=keystages" title="<?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER'); ?>">
+                            <?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER'); ?>
                         </a>
                     </td>
                 </tr>

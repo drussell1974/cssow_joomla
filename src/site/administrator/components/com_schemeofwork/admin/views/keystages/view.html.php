@@ -70,7 +70,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-            $title = JText::_('COM_SCHEMEOFWORK_MANAGER_KEYSTAGES');
+            $title = JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER');
 
             if ($this->pagination->total)
             {
