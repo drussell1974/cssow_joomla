@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_helloworld
+ * @subpackage  com_schemeofwork
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * HelloWorld component helper.
+ * SchemeOfWork component helper.
  *
  * @param   string  $submenu  The name of the active view.
  *
@@ -43,7 +43,7 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 
             // Set some global property
             $document = JFactory::getDocument();
-            $document->addStyleDeclaration('.icon-48-helloworld ' .
+            $document->addStyleDeclaration('.icon-48-schemeofwork ' .
                 '{background-image: url(../media/com_schemeofwork/images/48x48.png);}');
             if ($submenu == 'categories') 
             {

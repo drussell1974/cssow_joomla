@@ -25,12 +25,12 @@ JFactory::getDocument()->addScriptDeclaration('
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_schemeofwork&layout=edit&id=' . (int) $this->item->id); ?>"
     method="post" name="adminForm" id="adminForm" class="form-validate">
-    <input id="jform_title" type="hidden" name="schemeofwork-message-title"/>
+    <input id="jform_title" type="hidden" name="schemeofwork-name-title"/>
     
     <div class="form-horizontal">
         <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', 
-            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_TAB_NEW_MESSAGE') : JText::_('COM_SCHEMEOFWORK_TAB_EDIT_MESSAGE')); ?>
+            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_TAB_NEW_SCHEMEOFWORK') : JText::_('COM_SCHEMEOFWORK_TAB_EDIT_SCHEMEOFWORK')); ?>
             <fieldset class="adminform">
                 <legend><?php echo JText::_('COM_SCHEMEOFWORK_LEGEND_DETAILS') ?></legend>
                 <div class="row-fluid">

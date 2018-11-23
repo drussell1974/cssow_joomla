@@ -22,5 +22,5 @@ class JFormRuleSchemeOfWorkName extends JFormRule
      * @var		string
      * @since	2.5
      */
-    protected $regex = '^[^0-9]+$';
+    protected $regex = '^[A-Za-z0-9 ]+{1,25}$';
 }

@@ -18,9 +18,9 @@ defined('_JEXEC') or die('Restricted access');
 class SchemeOfWorkModelSchemeOfWork extends JModelItem
 {
     /**
-     * @var string message
+     * @var string scheme of work
      */
-    protected $messages;
+    protected $schemeofworks;
 
     /**
      * @var object item
@@ -41,7 +41,7 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
      */
     protected function populateState()
     {
-        // Get the message id
+        // Get the scheme of work id
         $jinput = JFactory::getApplication()->input;
         $id     = $jinput->get('id', 1, 'INT');
         $this->setState('name.id', $id);
@@ -67,8 +67,8 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
         return JTable::getInstance($type, $prefix, $config);
     }
     /**
-     * Get the message
-     * @return object The message to be displayed to the user
+     * Get the scheme of work
+     * @return object The scheme of work to be displayed to the user
      */
     public function getItem()
     {

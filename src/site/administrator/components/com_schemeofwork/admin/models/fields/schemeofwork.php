@@ -39,15 +39,15 @@ class JFormFieldSchemeOfWorks extends JFormFieldList
             $query->from('sow_schemeofwork as sow');
             $query->leftJoin('#__categories as cat on sow.catid=cat.id');
             $db->setQuery((string) $query);
-            $messages = $db->loadObjectList();
+            $sows = $db->loadObjectList();
             $options  = array();
 
-            if ($messages)
+            if ($schemeofworks)
             {
-                foreach ($messages as $message)
+                foreach ($schemeofworks as $schemeofwork)
                 {
-                    $options[] = JHtml::_('select.option', $message->id, $message->name . 
-                            ($message->catid ? ' (' . $message->category . ')' : ''));
+                    $options[] = JHtml::_('select.option', $schemeofwork->id, $schemeofwork->name . 
+                            ($schemeofwork->catid ? ' (' . $schemeofwork->category . ')' : ''));
                 }
             }
 

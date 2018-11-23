@@ -41,7 +41,7 @@
             cols="80"
             label="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_LABEL"
             description="COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME_DESC"
-            hint="COM_SCHEMEOFWORK_SCHEMEOFWORK_MESSAGE_HINT"
+            hint="COM_SCHEMEOFWORK_SCHEMEOFWORK_SCHEMEOFWORK_HINT"
             required="true"
             >   
         </field>

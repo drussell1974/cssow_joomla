@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
  * @subpackage  com_schemeofwork
  *
  * Used to handle the http POST from the front-end form which allows 
- * users to enter a new schemeofwork message
+ * users to enter a new schemeofwork scheme of work
  *
  */
 class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
@@ -134,7 +134,7 @@ class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
         // clear the data in the form
         $app->setUserState($context . '.data', null);
 
-        // notify the administrator that a new schemeofwork message has been added on the front end
+        // notify the administrator that a new scheme of work has been added on the front end
 
         // get the id of the person to notify from global config
         $params   = $app->getParams();
