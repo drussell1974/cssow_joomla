@@ -25,6 +25,6 @@ class SchemeOfWorkController extends JControllerLegacy
      * @var string
      * @since 12.2
      */
-    protected $default_view = 'keystages'; // TODO: Change to show list of records
+    protected $default_view = 'schemeofworkmanager';
 }
 

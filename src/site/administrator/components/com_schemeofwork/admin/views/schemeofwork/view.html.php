@@ -9,19 +9,13 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
- 
+
 /**
- * Form Rule class for the Joomla Framework.
+ * SchemeOfWorks View
+ *
+ * @since  0.0.1
  */
-class JFormRuleKeyStageName extends JFormRule
+class SchemeOfWorkViewSchemeOfWorkManager extends JViewLegacy
 {
-    /**
-     * The regular expression.
-     *
-     * @access	protected
-     * @var		string
-     * @since	2.5
-     */
-    // 1 - 3 alphanumeric characters
-    protected $regex = '^[A-Za-z0-9]{1,3}$';
+	
 }

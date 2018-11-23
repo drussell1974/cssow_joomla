@@ -686,7 +686,7 @@ class BaseController extends \JObject
 	 * @throws  \Exception
 	 */
 	public function execute($task)
-	{                
+	{   
             $this->task = $task;
             $task = strtolower($task);
 

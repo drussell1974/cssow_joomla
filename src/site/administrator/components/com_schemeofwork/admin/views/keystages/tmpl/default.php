@@ -19,12 +19,12 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         <div class="row-fluid">
             <div class="span6">
                     <?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORKS_FILTER'); ?>
-                    <!--php
+                    <?php
                             echo JLayoutHelper::render(
                                     'joomla.searchtools.default',
                                     array('view' => $this)
                             );
-                    ?-->
+                    ?>
             </div>
 	</div>
 	<table class="table table-striped table-hover">

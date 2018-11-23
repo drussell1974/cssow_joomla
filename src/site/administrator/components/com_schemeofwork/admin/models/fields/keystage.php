@@ -45,7 +45,7 @@ class JFormFieldKeyStages extends JFormFieldList
             {
                 foreach ($keystages as $keystage)
                 {
-                    $options[] = JHtml::_('select.option', $keystage->id, $keystage->KeyStageName);
+                    $options[] = JHtml::_('select.option', $keystage->id, $keystage->name);
                 }
             }
 

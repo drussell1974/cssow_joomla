@@ -13,7 +13,7 @@
             label="COM_SCHEMEOFWORK_KEYSTAGE_NAME_LABEL"
             description="COM_SCHEMEOFWORK_KEYSTAGE_NAME_DESC"
             size="40"
-            class="inputbox validate-KeyStageName"
+            class="inputbox"
             validate="KeyStageName"
             required="true"
             default=""
