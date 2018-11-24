@@ -38,8 +38,11 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                     <th width="2%">
                             <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
-                    <th width="30%">
+                    <th width="20%">
                         <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_NAME', 'name', $listDirn, $listOrder); ?>
+                    </th>
+                    <th width="10%">
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_ABBREVIATION', 'abbreviation', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
                         <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_AUTHOR', 'author', $listDirn, $listOrder); ?>
@@ -76,6 +79,9 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                                         <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_CSCONCEPT_EDIT'); ?>">
                                                 <?php echo $row->name; ?>
                                         </a>
+                                </td>
+                                <td>
+                                    <?php echo $row->abbreviation; ?>
                                 </td>
                                 <td align="center">
                                     <?php echo $row->author; ?>
