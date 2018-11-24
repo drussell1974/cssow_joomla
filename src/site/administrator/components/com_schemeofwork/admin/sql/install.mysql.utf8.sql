@@ -22,9 +22,10 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Table sow_cs_concept
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_cs_concept` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(20) NOT NULL,
-  `abbr` CHAR(2) NOT NULL,
+  `id`              INT(11)         NOT NULL AUTO_INCREMENT,
+  `name`            VARCHAR(20)     NOT NULL,
+  `abbr`            CHAR(2)         NOT NULL,
+  `published`       tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -43,8 +44,9 @@ DEFAULT CHARACTER SET = utf8;
 -- Table sow_key_stage
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_key_stage` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(3) NOT NULL,
+  `id`              INT(11)         NOT NULL AUTO_INCREMENT,
+  `name`            VARCHAR(3)      NOT NULL,
+  `published`       tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;

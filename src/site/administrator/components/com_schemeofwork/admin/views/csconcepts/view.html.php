@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkViewKeyStages extends JViewLegacy
+class SchemeOfWorkViewCSConcepts extends JViewLegacy
 {
 	/**
 	 * Display the Scheme of Works view
@@ -29,7 +29,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
             
 		// Get application
 		$app = JFactory::getApplication();
-		$context = "keystage.list.admin.keystage";
+		$context = "csconcept.list.admin.csconcept";
             
 		// Get data from the model
 		$this->items		= $this->get('Items');
@@ -42,7 +42,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 		$this->activeFilters 	= $this->get('ActiveFilters');
                 // What Access Permissions does this user have? What can (s)he do?
                 //$this->canDo = JHelperContent::getActions('com_schemeofwork');
-                
+               
                 // Check for errors.
                 $errors = $this->get('Errors');
                 
@@ -57,7 +57,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
                 // Set the submenu
                 // TODO: Error... Class 'SchemeOfWorkHelper' not found
                 //SchemeOfWorkHelper::addSubmenu('schemeofworks');
-
+                //
 		// Set the toolbar and number of found items
 		$this->addToolBar();
 
@@ -77,21 +77,20 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-            $title = JText::_('COM_SCHEMEOFWORK_KEYSTAGE_MANAGER');
+            $title = JText::_('COM_SCHEMEOFWORK_CSCONCEPT_MANAGER');
 
             if ($this->pagination->total)
             {
                     $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
             }
 
-            JToolBarHelper::title($title, 'keystage');
+            JToolBarHelper::title($title, 'csconcept');
             
-            JToolbarHelper::addNew('keystage.add');
-            JToolbarHelper::editList('keystage.edit');
-            JToolbarHelper::deleteList('', 'keystages.delete');
+            JToolbarHelper::addNew('csconcept.add');
+            JToolbarHelper::editList('csconcept.edit');
+            JToolbarHelper::deleteList('', 'csconcepts.delete');
             JToolBarHelper::divider();
             JToolBarHelper::preferences('com_schemeofwork');
-
 	}
 	/**
 	 * Method to set up the document properties

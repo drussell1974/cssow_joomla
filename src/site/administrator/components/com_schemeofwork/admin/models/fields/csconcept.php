@@ -17,7 +17,7 @@ JFormHelper::loadFieldClass('list');
  *
  * @since  0.0.1
  */
-class JFormFieldSchemeOfWorks extends JFormFieldList
+class JFormFieldCSConcepts extends JFormFieldList
 {
 	/**
 	 * The field type.
@@ -35,19 +35,17 @@ class JFormFieldSchemeOfWorks extends JFormFieldList
 	{
             $db    = JFactory::getDBO();
             $query = $db->getQuery(true);
-            $query->select('sow.id as id, sow.name as name, cat.title as category, sow.catid as catid');
-            $query->from('sow_schemeofwork as sow');
-            $query->leftJoin('#__categories as cat on sow.catid=cat.id');
+            $query->select('id,name,abbr');
+            $query->from('sow_cs_concept');
             $db->setQuery((string) $query);
             $items = $db->loadObjectList();
             $options  = array();
 
             if ($items)
             {
-                foreach ($schemeofworks as $item)
+                foreach ($items as $item)
                 {
-                    $options[] = JHtml::_('select.option', $item->id, $item->name . 
-                            ($item->catid ? ' (' . $item->category . ')' : ''));
+                    $options[] = JHtml::_('select.option', $item->id, $item->name);
                 }
             }
 

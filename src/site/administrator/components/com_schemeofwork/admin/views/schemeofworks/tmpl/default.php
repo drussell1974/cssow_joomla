@@ -22,7 +22,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
     <div id="j-main-container" class="span10">
         <div class="row-fluid">
             <div class="span6">
-                    <?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORKS_FILTER'); ?>
+                    <?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_FILTER'); ?>
                     <?php
                             echo JLayoutHelper::render(
                                     'joomla.searchtools.default',
@@ -39,7 +39,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                             <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORKS_NAME', 'name', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_NAME', 'name', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
                         <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SCHEMEOFWORK_AUTHOR', 'author', $listDirn, $listOrder); ?>

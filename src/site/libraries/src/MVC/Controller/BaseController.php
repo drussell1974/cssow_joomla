@@ -273,10 +273,14 @@ class BaseController extends \JObject
 
 		// Get the controller class name.
 		$class = ucfirst($prefix) . 'Controller' . ucfirst($type);
-
+                
+                \JLog::add("BaseController.getInstance.class:".$class, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                
 		// Include the class if not present.
 		if (!class_exists($class))
 		{
+                    \JLog::add("BaseController.getInstance.path:".$path, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                
 			// If the controller file path exists, include it.
 			if (file_exists($path))
 			{
@@ -291,8 +295,8 @@ class BaseController extends \JObject
 				throw new \InvalidArgumentException(\JText::sprintf('JLIB_APPLICATION_ERROR_INVALID_CONTROLLER', $type, $format));
 			}
 		}
-
-		// Instantiate the class.
+                   
+                // Instantiate the class.
 		if (!class_exists($class))
 		{
 			throw new \InvalidArgumentException(\JText::sprintf('JLIB_APPLICATION_ERROR_INVALID_CONTROLLER_CLASS', $class));

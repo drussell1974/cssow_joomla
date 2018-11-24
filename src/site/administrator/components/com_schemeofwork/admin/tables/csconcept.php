@@ -10,11 +10,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * KeyStage Table class
+ * CSConcept Table class
  *
  * @since  0.0.1
  */
-class SchemeOfWorkTableKeyStage extends JTable
+class SchemeOfWorkTableCSConcept extends JTable
 {
     /**
      * Constructor
@@ -23,6 +23,6 @@ class SchemeOfWorkTableKeyStage extends JTable
      */
     function __construct(&$db)
     { 
-        parent::__construct('sow_key_stage', 'id', $db);
+        parent::__construct('sow_cs_concept', 'id', $db);
     }
 }

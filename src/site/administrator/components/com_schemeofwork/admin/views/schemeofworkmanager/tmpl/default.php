@@ -46,6 +46,13 @@ JHtml::_('formbehavior.chosen', 'select');
                         </a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="index.php?option=com_schemeofwork&view=csconcepts" title="<?php echo JText::_('COM_SCHEMEOFWORK_CSCONCEPT_MANAGER'); ?>">
+                            <?php echo JText::_('COM_SCHEMEOFWORK_CSCONCEPT_MANAGER'); ?>
+                        </a>
+                    </td>
+                </tr>
             </tbody>
     </table>
     <input type="hidden" name="task" value=""/>

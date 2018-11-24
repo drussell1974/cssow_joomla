@@ -29,9 +29,11 @@ class SchemeOfWorkModelKeyStages extends JModelList
         if (empty($config['filter_fields']))
         {
              $config['filter_fields'] = array(
-                     'id',
-                     'name',
-                     'published'
+                'id',
+                'name',
+                'author',
+                'created',
+                'published'
              );
         }
 
@@ -50,8 +52,12 @@ class SchemeOfWorkModelKeyStages extends JModelList
         $query = $db->getQuery(true);
 
         // Create the base select statement.
-        $query->select('*')
-        ->from($db->quoteName('sow_key_stage'));
+        $query->select('ks.id as id, ks.name as name, ks.published as published, ks.created as created')
+        ->from($db->quoteName('sow_key_stage', 'ks'));
+
+        // Join with users table to get the username of the author
+        $query->select($db->quoteName('u.username', 'author'))
+            ->join('LEFT', $db->quoteName('#__users', 'u') . ' ON u.id = ks.created_by');
 
         // Filter: like / search
         $search = $this->getState('filter.search');
@@ -59,7 +65,7 @@ class SchemeOfWorkModelKeyStages extends JModelList
         if (!empty($search))
         {
                 $like = $db->quote('%' . $search . '%');
-                $query->where('name LIKE ' . $like);
+                $query->where('ks.name LIKE ' . $like);
         }
 
         // Filter by published state
@@ -79,7 +85,9 @@ class SchemeOfWorkModelKeyStages extends JModelList
         $orderDirn 	= $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
+        
         \JLog::add("SchemeOfWorkModelKeyStages.getListQuery=".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+        
         return $query;
     }
 }

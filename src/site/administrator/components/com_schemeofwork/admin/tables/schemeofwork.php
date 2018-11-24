@@ -10,7 +10,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Hello Table class
+ * SchemeOfWork Table class
  *
  * @since  0.0.1
  */

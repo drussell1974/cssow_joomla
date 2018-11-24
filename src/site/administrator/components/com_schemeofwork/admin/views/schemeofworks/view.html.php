@@ -17,101 +17,99 @@ defined('_JEXEC') or die('Restricted access');
  */
 class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 {
-	/**
-	 * Display the Scheme of Works view
-	 *
-	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
-	 *
-	 * @return  void
-	 */
-	function display($tpl = null)
-	{
-            $errors = [];
-            
-            // Get application
-            $app = JFactory::getApplication();
-            $context = "schemeofwork.list.admin.schemeofwork";
-            // Get data from the model
-            $this->items		= $this->get('Items');
-            $this->pagination           = $this->get('Pagination');
-            $this->state		= $this->get('State');
-            // Remove the old ordering mechanism
-            //$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'name', 'cmd');
-            //$this->filter_order_Dir     = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
-            $this->filterForm    	= $this->get('FilterForm');
-            $this->activeFilters 	= $this->get('ActiveFilters');
-            // What Access Permissions does this user have? What can (s)he do?
-            $this->canDo = JHelperContent::getActions('com_schemeofwork');
+    /**
+     * Display the Scheme of Works view
+     *
+     * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
+     *
+     * @return  void
+     */
+    function display($tpl = null)
+    {
+        $errors = [];
+
+        // Get application
+        $app = JFactory::getApplication();
+        $context = "schemeofwork.list.admin.schemeofwork";
+        // Get data from the model
+        $this->items		= $this->get('Items');
+        $this->pagination           = $this->get('Pagination');
+        $this->state		= $this->get('State');
+        $this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'name', 'cmd');
+        $this->filter_order_Dir     = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+        $this->filterForm    	= $this->get('FilterForm');
+        $this->activeFilters 	= $this->get('ActiveFilters');
+        // What Access Permissions does this user have? What can (s)he do?
+        $this->canDo = JHelperContent::getActions('com_schemeofwork');
 
 
-            // Check for errors.
-            $errors = $this->get('Errors');
-            $error_count = count($errors);
+        // Check for errors.
+        $errors = $this->get('Errors');
 
-            if ($error_count > 0)
-            {
-                \JLog::add("Errors:".$error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-                throw new Exception(implode("\n", $errors), 500);
+        if (empty($errors) === 1)
+        {
+            \JLog::add("Errors:".$error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            throw new Exception(implode("\n", $errors), 500);
 
-                return false;
-            }
+            return false;
+        }
 
-            // Set the submenu
-            SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        // Set the submenu
+        SchemeOfWorkHelper::addSubmenu('schemeofworks');
 
-            // Set the toolbar and number of found items
-            $this->addToolBar();
+        // Set the toolbar and number of found items
+        $this->addToolBar();
 
-            // Display the template
-            parent::display($tpl);
+        // Display the template
+        parent::display($tpl);
 
-            // Set the document
-            $this->setDocument();
-	}
+        // Set the document
+        $this->setDocument();
+    }
 
-	/**
-	 * Add the page title and toolbar.
-	 *
-	 * @return  void
-	 *
-	 * @since   1.6
-	 */
-	protected function addToolBar()
-	{
-            $title = JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_MANAGER');
+    /**
+     * Add the page title and toolbar.
+     *
+     * @return  void
+     *
+     * @since   1.6
+     */
+    protected function addToolBar()
+    {
+        $title = JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_MANAGER');
 
-            if ($this->pagination->total)
-            {
-                    $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
-            }
+        if ($this->pagination->total)
+        {
+                $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+        }
 
-            JToolBarHelper::title($title, 'schemeofwork');
-            if ($this->canDo->get('core.create')) 
-            {
-                JToolbarHelper::addNew('schemeofwork.add');
-            }
-            if ($this->canDo->get('core.edit')) 
-            {
-                JToolbarHelper::editList('schemeofwork.edit');
-            }
-            if ($this->canDo->get('core.delete')) 
-            {
-               JToolbarHelper::deleteList('', 'schemeofworks.delete');
-            }
-            if ($this->canDo->get('core.admin')) 
-            {
-                JToolBarHelper::divider();
-                JToolBarHelper::preferences('com_schemeofwork');
-            }
-	}
-	/**
-	 * Method to set up the document properties
-	 *
-	 * @return void
-	 */
-	protected function setDocument() 
-	{
-            $document = JFactory::getDocument();
-            $document->setTitle(JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_ADMINISTRATION'));
-	}
+        JToolBarHelper::title($title, 'schemeofwork');
+        if ($this->canDo->get('core.create')) 
+        {
+            JToolbarHelper::addNew('schemeofwork.add');
+        }
+        if ($this->canDo->get('core.edit')) 
+        {
+            JToolbarHelper::editList('schemeofwork.edit');
+        }
+        if ($this->canDo->get('core.delete')) 
+        {
+           JToolbarHelper::deleteList('', 'schemeofworks.delete');
+        }
+        if ($this->canDo->get('core.admin')) 
+        {
+            JToolBarHelper::divider();
+            JToolBarHelper::preferences('com_schemeofwork');
+        }
+    }
+    /**
+     * Method to set up the document properties
+     *
+     * @return void
+     */
+    protected function setDocument() 
+    {
+        $document = JFactory::getDocument();
+        $document->setTitle(JText::_('COM_SCHEMEOFWORK_ADMINISTRATION'));
+    }
 }

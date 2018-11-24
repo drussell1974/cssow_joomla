@@ -22,7 +22,7 @@ class SchemeOfWorkViewForm extends JViewLegacy
 	protected $canDo;
 
 	/**
-	 * Display the Hello World view
+	 * Display the Form view
 	 *
 	 * @param   string  $tpl  The name of the layout file to parse.
 	 *

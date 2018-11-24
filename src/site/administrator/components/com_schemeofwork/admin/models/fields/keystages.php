@@ -35,19 +35,17 @@ class JFormFieldKeyStages extends JFormFieldList
 	{
             $db    = JFactory::getDBO();
             $query = $db->getQuery(true);
-            $query->select('ks.id as id, ks.name as name, cat.title as category, ks.catid as catid');
+            $query->select('ks.id as id, ks.name as name');
             $query->from('sow_key_stage as ks');
-            $query->leftJoin('#__categories as cat on ks.catid=cat.id');
             $db->setQuery((string) $query);
-            $messages = $db->loadObjectList();
+            $items = $db->loadObjectList();
             $options  = array();
 
-            if ($messages)
+            if ($items)
             {
-                foreach ($messages as $message)
+                foreach ($messages as $item)
                 {
-                    $options[] = JHtml::_('select.option', $message->id, $message->name . 
-                            ($message->catid ? ' (' . $message->category . ')' : ''));
+                    $options[] = JHtml::_('select.option', $item->id, $item->name);
                 }
             }
 

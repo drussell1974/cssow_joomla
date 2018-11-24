@@ -12,17 +12,17 @@ defined('_JEXEC') or die('Restricted Access');
 
 JHtml::_('formbehavior.chosen', 'select');
 
-$listOrder     = $this->escape($this->state->get('list.ordering'));
-$listDirn      = $this->escape($this->state->get('list.direction'));
+$listOrder     = $this->escape($this->filter_order);
+$listDirn      = $this->escape($this->filter_order_Dir);
 ?>
-<form action="index.php?option=com_schemeofwork&view=keystages" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_schemeofwork&view=csconcept" method="post" id="adminForm" name="adminForm">
     <div id="j-sidebar-container" class="span2">
         <?php echo JHtmlSidebar::render(); ?>
     </div>
     <div id="j-main-container" class="span10">   
         <div class="row-fluid">
             <div class="span6">
-                    <?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_FILTER'); ?>
+                    <?php echo JText::_('COM_SCHEMEOFWORK_CSCONCEPT_FILTER'); ?>
                     <?php
                             echo JLayoutHelper::render(
                                     'joomla.searchtools.default',
@@ -39,19 +39,19 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                             <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_NAME', 'name', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_NAME', 'name', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_AUTHOR', 'author', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_AUTHOR', 'author', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
-                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_PUBLISHED', 'published', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_PUBLISHED', 'published', $listDirn, $listOrder); ?>
                     </th>
                     <th width="2%">
-			<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_KEYSTAGE_ID', 'id', $listDirn, $listOrder); ?>
+			<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_CSCONCEPT_ID', 'id', $listDirn, $listOrder); ?>
                     </th>
 		</tr>
 		</thead>
@@ -65,7 +65,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
 		<tbody>
                     <?php if (!empty($this->items)) : ?>
                         <?php foreach ($this->items as $i => $row) :
-                                $link = JRoute::_('index.php?option=com_schemeofwork&task=keystage.edit&id=' . $row->id);
+                                $link = JRoute::_('index.php?option=com_schemeofwork&task=csconcept.edit&id=' . $row->id);
                         ?>
                             <tr>
                                 <td><?php echo $this->pagination->getRowOffset($i); ?></td>
@@ -73,9 +73,9 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                                         <?php echo JHtml::_('grid.id', $i, $row->id); ?>
                                 </td>
                                 <td>
-                                    <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_KEYSTAGE_EDIT'); ?>">
-                                        <?php echo $row->name; ?>
-                                    </a>
+                                        <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_CSCONCEPT_EDIT'); ?>">
+                                                <?php echo $row->name; ?>
+                                        </a>
                                 </td>
                                 <td align="center">
                                     <?php echo $row->author; ?>
@@ -84,7 +84,7 @@ $listDirn      = $this->escape($this->state->get('list.direction'));
                                     <?php echo substr($row->created, 0, 10); ?>
                                 </td>
                                 <td align="center">
-                                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'keystages.', true, 'cb'); ?>
+                                        <?php echo JHtml::_('jgrid.published', $row->published, $i, 'csconcepts.', true, 'cb'); ?>
                                 </td>
                                 <td align="center">
                                         <?php echo $row->id; ?>
