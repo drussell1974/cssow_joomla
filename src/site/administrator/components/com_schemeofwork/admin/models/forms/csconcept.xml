@@ -15,8 +15,20 @@
             type="text"
             label="COM_SCHEMEOFWORK_CSCONCEPT_NAME_LABEL"
             description="COM_SCHEMEOFWORK_CSCONCEPT_NAME_DESC"
-            size="40"
-            class="inputbox"
+            size="20"
+            class="inputbox validate-csconceptname"
+            validate="csconceptname"
+            required="true"
+            default=""
+            />
+        <field
+            name="abbr"
+            type="text"
+            label="COM_SCHEMEOFWORK_CSCONCEPT_ABBREVIATION_LABEL"
+            description="COM_SCHEMEOFWORK_CSCONCEPT_ABBRREVIATION_DESC"
+            size="2"
+            class="inputbox validate-csconceptabbr"
+            validate="csconceptabbr"
             required="true"
             default=""
             />

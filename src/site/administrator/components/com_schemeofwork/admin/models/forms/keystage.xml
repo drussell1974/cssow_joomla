@@ -15,7 +15,7 @@
             type="text"
             label="COM_SCHEMEOFWORK_KEYSTAGE_NAME_LABEL"
             description="COM_SCHEMEOFWORK_KEYSTAGE_NAME_DESC"
-            size="40"
+            size="3"
             class="inputbox validate-keystagename"
             validate="keystagename"
             required="true"
