@@ -52,7 +52,7 @@ class SchemeOfWorkViewPlayBasedObjectives extends JViewLegacy {
         }
 
         // Set the submenu
-        //SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('schemeofworks');
 
         // Set the toolbar and number of found items
         $this->addToolBar();

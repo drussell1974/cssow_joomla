@@ -53,8 +53,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 		}
 
                 // Set the submenu
-                // TODO: Error... Class 'SchemeOfWorkHelper' not found
-                //SchemeOfWorkHelper::addSubmenu('schemeofworks');
+                SchemeOfWorkHelper::addSubmenu('schemeofworks');
 
 		// Set the toolbar and number of found items
 		$this->addToolBar();

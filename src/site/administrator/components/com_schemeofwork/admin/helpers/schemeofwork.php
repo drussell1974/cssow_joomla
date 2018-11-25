@@ -29,14 +29,27 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 
 	public static function addSubmenu($submenu) 
 	{
+            
             JHtmlSidebar::addEntry(
-                JText::_('COM_SCHEMEOFWORK_SUBMENU_SOWS'),
-                'index.php?option=com_schemeofwork',
-                $submenu == 'schemeofworks'
+                JText::_('COM_SCHEMEOFWORK_CSCONCEPT_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=csconcepts',
+                $submenu == 'csconcepts'
             );
-
+            
             JHtmlSidebar::addEntry(
-                JText::_('COM_SCHEMEOFWORK_SUBMENU_CATEGORIES'),
+                JText::_('COM_SCHEMEOFWORK_KEYSTAGE_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=keystages',
+                $submenu == 'keystages'
+            );
+            
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_PLAYBASEDOBJECTIVE_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=playbasedobjectives',
+                $submenu == 'playbasedobjectives'
+            );
+            
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_CATEGORIES_SUBMENU'),
                 'index.php?option=com_categories&view=categories&extension=com_schemeofwork',
                 $submenu == 'categories'
             );
