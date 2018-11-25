@@ -23,6 +23,6 @@ class JFormRulePlayBasedObjectiveName extends JFormRule {
      * @since	2.5
      */
     // 1 - 3 alphanumeric characters
-    protected $regex = '^[A-Za-z0-9 ]{1,40}$';
+    protected $regex = '^[A-Za-z0-9 -]{1,100}$';
 
 }

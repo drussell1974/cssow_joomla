@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * ${component_name__camel_case} Table class
+ * PlayBasedObjective Table class
  *
  * @since  0.0.1
  */

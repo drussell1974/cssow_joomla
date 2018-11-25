@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SchemeOfWork Model
+ * PlayBasedObjective Model
  *
  * @since  0.0.1
  */
@@ -45,10 +45,12 @@ class SchemeOfWorkModelPlayBasedObjective extends JModelAdmin {
     public function getForm($data = array(), $loadData = true) {
         // Get the form.
         $form = $this->loadForm(
-                'com_schemeofwork.PlayBasedObjective', 'playbasedobjective', array(
-            'control' => 'jform',
-            'load_data' => $loadData
-                )
+                'com_schemeofwork.playbasedobjective',
+                'playbasedobjective', 
+            array(
+                'control' => 'jform',
+                'load_data' => $loadData
+            )
         );
 
         if (empty($form)) {
