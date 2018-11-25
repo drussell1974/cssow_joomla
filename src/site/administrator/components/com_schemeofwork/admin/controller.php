@@ -25,6 +25,6 @@ class SchemeOfWorkController extends JControllerLegacy
      * @var string
      * @since 12.2
      */
-    protected $default_view = 'csconcepts';
+    protected $default_view = 'schemeofworks';
 }
 

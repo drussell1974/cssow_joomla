@@ -30,7 +30,7 @@ JFactory::getDocument()->addScriptDeclaration('
     <div class="form-horizontal">
         <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', 
-            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_NEW') : JText::_('COM_SCHEMEOFWORK_TAB_EDIT_SCHEMEOFWORK')); ?>
+            empty($this->item->id) ? JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_NEW') : JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_TAB_EDIT')); ?>
             <fieldset class="adminform">
                 <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_LEGEND_DETAILS') ?></legend>
                 <div class="row-fluid">
