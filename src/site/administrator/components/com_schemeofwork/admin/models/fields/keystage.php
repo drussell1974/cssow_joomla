@@ -24,7 +24,7 @@ class JFormFieldKeyStages extends JFormFieldList
 	 *
 	 * @var         string
 	 */
-	protected $type = 'SchemeOfWorks';
+	protected $type = 'KeyStages';
 
 	/**
 	 * Method to get a list of options for a list input.
@@ -38,14 +38,14 @@ class JFormFieldKeyStages extends JFormFieldList
             $query->select('id,name');
             $query->from('sow_key_stage');
             $db->setQuery((string) $query);
-            $keystages = $db->loadObjectList();
+            $items = $db->loadObjectList();
             $options  = array();
 
-            if ($keystages)
+            if ($items)
             {
-                foreach ($keystages as $keystage)
+                foreach ($items as $item)
                 {
-                    $options[] = JHtml::_('select.option', $keystage->id, $keystage->name);
+                    $options[] = JHtml::_('select.option', $item->id, $item->name);
                 }
             }
 

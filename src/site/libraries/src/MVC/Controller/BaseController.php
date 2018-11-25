@@ -233,6 +233,11 @@ class BaseController extends \JObject
 		$format   = $input->getWord('format');
 		$command  = $input->get('task', 'display');
 
+                \JLog::add("BaseController.getInstance.basePath:".$basePath, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                \JLog::add("BaseController.getInstance.format:".$format, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));                 
+                \JLog::add("BaseController.getInstance.command:".$command, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                
+                
 		// Check for array format.
 		$filter = \JFilterInput::getInstance();
 
@@ -690,7 +695,8 @@ class BaseController extends \JObject
 	 * @throws  \Exception
 	 */
 	public function execute($task)
-	{                
+	{       
+            \JLog::add("BaseController.execute(task = ".$task.")", \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             $this->task = $task;
             $task = strtolower($task);
 

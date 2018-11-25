@@ -53,6 +53,13 @@ JHtml::_('formbehavior.chosen', 'select');
                         </a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="index.php?option=com_schemeofwork&view=playbasedobjectives" title="<?php echo JText::_('COM_SCHEMEOFWORK_PLAYBASEDOBJECTIVE_MANAGER'); ?>">
+                            <?php echo JText::_('COM_SCHEMEOFWORK_PLAYBASEDOBJECTIVE_MANAGER'); ?>
+                        </a>
+                    </td>
+                </tr>
             </tbody>
     </table>
     <input type="hidden" name="task" value=""/>

@@ -990,8 +990,8 @@ abstract class AdminModel extends FormModel
 	{
 		$table = $this->getTable();
 		$key = $table->getKeyName();
-
-		// Get the pk of the record from the request.
+                \JLog::add("AdminModel.populateState.table = ".$table.", .key".$key, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                // Get the pk of the record from the request.
 		$pk = \JFactory::getApplication()->input->getInt($key);
 		$this->setState($this->getName() . '.id', $pk);
 

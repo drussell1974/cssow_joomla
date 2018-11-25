@@ -43,7 +43,7 @@ class JFormFieldKeyStages extends JFormFieldList
 
             if ($items)
             {
-                foreach ($messages as $item)
+                foreach ($items as $item)
                 {
                     $options[] = JHtml::_('select.option', $item->id, $item->name);
                 }

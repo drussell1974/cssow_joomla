@@ -29,16 +29,14 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
             
 		// Get application
 		$app = JFactory::getApplication();
-		$context = "keystage.list.admin.keystage";
-            
+		$context = "keystage.list.admin.keystage";            
 		// Get data from the model
 		$this->items		= $this->get('Items');
-		$this->pagination	= $this->get('Pagination');
-                
-		$this->state		= $this->get('State');
+		$this->pagination	= $this->get('Pagination');                
+                $this->state		= $this->get('State');
 		$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'name', 'cmd');
 		$this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
-		$this->filterForm    	= $this->get('FilterForm');
+	        $this->filterForm    	= $this->get('FilterForm');
 		$this->activeFilters 	= $this->get('ActiveFilters');
                 // What Access Permissions does this user have? What can (s)he do?
                 //$this->canDo = JHelperContent::getActions('com_schemeofwork');
@@ -81,7 +79,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 
             if ($this->pagination->total)
             {
-                    $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
+                $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
             }
 
             JToolBarHelper::title($title, 'keystage');

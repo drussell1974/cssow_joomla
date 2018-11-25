@@ -11,11 +11,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * CSConcept View
+ * PlayBasedObjective View
  *
  * @since  0.0.1
  */
-class SchemeOfWorkViewCSConcepts extends JViewLegacy {
+class SchemeOfWorkViewPlayBasedObjectives extends JViewLegacy {
 
     /**
      * Display the SchemeOfWorks view
@@ -25,11 +25,10 @@ class SchemeOfWorkViewCSConcepts extends JViewLegacy {
      * @return  void
      */
     function display($tpl = null) {
-        $errors = [];
 
         // Get application
         $app = JFactory::getApplication();
-        $context = "schemeofwork.list.admin.schemeofwork";
+        $context = "playbasedobjective.list.admin.playbasedobjective";
         // Get data from the model
         $this->items = $this->get('Items');
         $this->pagination = $this->get('Pagination');
@@ -39,21 +38,21 @@ class SchemeOfWorkViewCSConcepts extends JViewLegacy {
         $this->filterForm = $this->get('FilterForm');
         $this->activeFilters = $this->get('ActiveFilters');
         // What Access Permissions does this user have? What can (s)he do?
-        $this->canDo = JHelperContent::getActions('com_schemeofwork');
+        //$this->canDo = JHelperContent::getActions('com_schemeofwork');
 
 
         // Check for errors.
         $errors = $this->get('Errors');
 
         if (empty($errors) === 1) {
-            \JLog::add("Errors:" . $error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
+            \JLog::add("Errors:" . $errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
             throw new Exception(implode("\n", $errors), 500);
 
             return false;
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        //SchemeOfWorkHelper::addSubmenu('schemeofworks');
 
         // Set the toolbar and number of found items
         $this->addToolBar();
@@ -73,26 +72,26 @@ class SchemeOfWorkViewCSConcepts extends JViewLegacy {
      * @since   1.6
      */
     protected function addToolBar() {
-        $title = JText::_('COM_SCHEMEOFWORK_CSCONCEPT_MANAGER');
-
+        $title = JText::_('COM_SCHEMEOFWORK_PLAYBASEDOBJECTIVE_MANAGER');
+        
         if ($this->pagination->total) {
             $title .= "<span style='font-size: 0.5em; vertical-align: middle;'>(" . $this->pagination->total . ")</span>";
         }
 
         JToolBarHelper::title($title, 'schemeofwork');
-        if ($this->canDo->get('core.create')) {
-            JToolbarHelper::addNew('csconcept.add');
-        }
-        if ($this->canDo->get('core.edit')) {
-            JToolbarHelper::editList('csconcept.edit');
-        }
-        if ($this->canDo->get('core.delete')) {
-            JToolbarHelper::deleteList('', 'csconcepts.delete');
-        }
-        if ($this->canDo->get('core.admin')) {
+        //if ($this->canDo->get('core.create')) {
+            JToolbarHelper::addNew('playbasedobjective.add');
+        //}
+        //if ($this->canDo->get('core.edit')) {
+            JToolbarHelper::editList('playbasedobjective.edit');
+        //}
+        //if ($this->canDo->get('core.delete')) {
+            JToolbarHelper::deleteList('', 'playbasedobjectives.delete');
+        //}
+        //if ($this->canDo->get('core.admin')) {
             JToolBarHelper::divider();
             JToolBarHelper::preferences('com_schemeofwork');
-        }
+        //}
     }
 
     /**

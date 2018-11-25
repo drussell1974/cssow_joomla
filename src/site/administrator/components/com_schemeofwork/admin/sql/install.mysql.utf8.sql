@@ -25,7 +25,9 @@ CREATE TABLE IF NOT EXISTS `sow_cs_concept` (
   `id`              INT(11)         NOT NULL AUTO_INCREMENT,
   `name`            VARCHAR(20)     NOT NULL,
   `abbr`            CHAR(2)         NOT NULL,
-  `published`       tinyint(4)      NOT NULL DEFAULT '1',
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -36,6 +38,9 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `sow_exam_board` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(15) NOT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -46,7 +51,9 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `sow_key_stage` (
   `id`              INT(11)         NOT NULL AUTO_INCREMENT,
   `name`            VARCHAR(3)      NOT NULL,
-  `published`       tinyint(4)      NOT NULL DEFAULT '1',
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -65,6 +72,9 @@ CREATE TABLE IF NOT EXISTS `sow_ks123_pathway` (
   `Algorithmic Thinking` VARCHAR(5) NULL DEFAULT NULL,
   `Evaluation` VARCHAR(5) NULL DEFAULT NULL,
   `Generalisation` VARCHAR(5) NULL DEFAULT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   INDEX `fk_sow_pathway_topic1_idx` (`topic_id` ASC),
   INDEX `fk_sow_pathway_year_idx` (`year_id` ASC) ,
@@ -89,6 +99,9 @@ CREATE TABLE IF NOT EXISTS `sow_content` (
   `description` VARCHAR(500) NOT NULL,
   `letter` CHAR(1) NOT NULL,
   `key_stage` INT(11) NOT NULL DEFAULT '4',
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -103,6 +116,9 @@ CREATE TABLE IF NOT EXISTS `sow_learning_objective` (
   `topic_id` INT(11) NOT NULL,
   `content_id` INT(11) NOT NULL,
   `exam_board_id` INT(11) NOT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   INDEX `fk_sow_learning_objective_topic1_idx` (`topic_id` ASC),
   INDEX `fk_sow_learning_objective_content_idx` (`content_id` ASC),
@@ -147,6 +163,9 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `sow_play_based` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -158,6 +177,9 @@ CREATE TABLE IF NOT EXISTS `sow_solo_taxonomy` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `level` CHAR(1) NOT NULL DEFAULT 'A',
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 ENGINE = InnoDB
@@ -169,6 +191,9 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `sow_subject_purpose` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NOT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -180,6 +205,9 @@ CREATE TABLE IF NOT EXISTS `sow_topic` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `parent_id` INT(11) NULL DEFAULT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   INDEX `fk_sow_topic_topic1_idx` (`parent_id` ASC))
 ENGINE = InnoDB
@@ -192,6 +220,9 @@ CREATE TABLE IF NOT EXISTS `sow_year` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(3) NOT NULL,
   `keystage_id` INT(11) NOT NULL,
+  `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`, `keystage_id`),
   INDEX `fk_sow_year_keystage_idx` (`keystage_id` ASC),
   CONSTRAINT `fk_sow_year_keystage`
@@ -233,10 +264,10 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS sow_schemeofwork (
 	`id`            INT(11)         NOT NULL AUTO_INCREMENT,
+	`name`          VARCHAR(25)     NOT NULL,
 	`asset_id`      INT(10)         NOT NULL DEFAULT '0',
 	`created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
 	`created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`name`          VARCHAR(25)     NOT NULL,
 	`published`     tinyint(4)      NOT NULL DEFAULT '1',
 	`catid`         int(11)         NOT NULL DEFAULT '0',
 	`params`        VARCHAR(1024)   NOT NULL DEFAULT '',

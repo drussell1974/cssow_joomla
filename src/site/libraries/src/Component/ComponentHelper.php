@@ -399,10 +399,11 @@ class ComponentHelper
 	 */
 	protected static function executeComponent($path)
 	{
+            \JLog::add("ComponentHelper.executeComponent = ".$path, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+               
 		ob_start();
 		require_once $path;
-
-		return ob_get_clean();
+                 return ob_get_clean();
 	}
 
 	/**
