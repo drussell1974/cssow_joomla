@@ -235,7 +235,7 @@ class BaseController extends \JObject
 
                 \JLog::add("BaseController.getInstance.basePath:".$basePath, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 \JLog::add("BaseController.getInstance.format:".$format, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));                 
-                \JLog::add("BaseController.getInstance.command:".$command, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                \JLog::add("BaseController.getInstance.command:".$comm, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 
                 
 		// Check for array format.
