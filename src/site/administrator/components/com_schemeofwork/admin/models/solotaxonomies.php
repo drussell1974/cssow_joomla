@@ -11,11 +11,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SoloTaxonomys Model
+ * SoloTaxonomies Model
  *
  * @since  0.0.1
  */
-class SchemeOfWorkModelSoloTaxonomys extends JModelList {
+class SchemeOfWorkModelSoloTaxonomies extends JModelList {
 
     /**
      * Constructor.
@@ -32,6 +32,7 @@ class SchemeOfWorkModelSoloTaxonomys extends JModelList {
             $config['filter_fields'] = array(
                 'id',
                 'name',
+                'level',
                 'author',
                 'created',
                 'published'
@@ -52,7 +53,7 @@ class SchemeOfWorkModelSoloTaxonomys extends JModelList {
         $query = $db->getQuery(true);
 
         // Create the base select statement.
-        $query->select('solo.id as id, solo.name as name, solo.published as published, solo.created as created')
+        $query->select('solo.id as id, solo.name as name, solo.level as level, solo.published as published, solo.created as created')
                 ->from($db->quoteName('sow_solo_taxonomy', 'solo'));
 
         // Join with users table to get the username of the author

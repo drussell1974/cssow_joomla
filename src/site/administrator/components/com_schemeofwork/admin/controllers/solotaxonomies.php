@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class SchemeOfWorkControllerSoloTaxonomys extends JControllerAdmin {
+class SchemeOfWorkControllerSoloTaxonomies extends JControllerAdmin {
 
     /**
      * Proxy for getModel.
@@ -28,7 +28,7 @@ class SchemeOfWorkControllerSoloTaxonomys extends JControllerAdmin {
      *
      * @since   1.6
      */
-    public function getModel($name = 'SoloTaxonomys', $prefix = 'SchemeOfWorkModel', $config = array('ignore_request' => true)) {
+    public function getModel($name = 'SoloTaxonomies', $prefix = 'SchemeOfWorkModel', $config = array('ignore_request' => true)) {
         $model = parent::getModel($name, $prefix, $config);
 
         return $model;

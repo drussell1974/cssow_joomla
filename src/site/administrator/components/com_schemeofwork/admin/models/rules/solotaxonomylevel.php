@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Form Rule class for the Joomla Framework.
  */
-class JFormRuleSoloTaxonomyName extends JFormRule {
+class JFormRuleSoloTaxonomyLevel extends JFormRule {
 
     /**
      * The regular expression.
@@ -23,6 +23,6 @@ class JFormRuleSoloTaxonomyName extends JFormRule {
      * @since	2.5
      */
     // 1 - 3 alphanumeric characters
-    protected $regex = '^[0-9]{1,3}$';
+    protected $regex = '^[A-Z]{1}$';
 
 }

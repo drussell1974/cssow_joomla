@@ -14,7 +14,7 @@ JHtml::_('formbehavior.chosen', 'select');
 $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn = $this->escape($this->state->get('list.direction'));
 ?>
-<form action="index.php?option=com_schemeofwork&view=solotaxonomys" method="post" id="adminForm" name="adminForm">
+<form action="index.php?option=com_schemeofwork&view=solotaxonomies" method="post" id="adminForm" name="adminForm">
     <div id="j-sidebar-container" class="span2">
         <?php echo JHtmlSidebar::render(); ?>
     </div>
@@ -89,7 +89,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                 <?php echo substr($row->created, 0, 10); ?>
                             </td>
                             <td align="center">
-                                <?php echo JHtml::_('jgrid.published', $row->published, $i, 'solotaxonomys.', true, 'cb'); ?>
+                                <?php echo JHtml::_('jgrid.published', $row->published, $i, 'solotaxonomies.', true, 'cb'); ?>
                             </td>
                             <td align="center">
                                 <?php echo $row->id; ?>

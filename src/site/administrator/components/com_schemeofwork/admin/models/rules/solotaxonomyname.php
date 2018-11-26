@@ -23,6 +23,6 @@ class JFormRuleSoloTaxonomyName extends JFormRule {
      * @since	2.5
      */
     // 1 - 3 alphanumeric characters
-    protected $regex = '^[a-zA-Z0-9-, .]{1,100}$}$';
+    protected $regex = '^[a-zA-Z0-9-, .:;\']{1,100}$';
 
 }

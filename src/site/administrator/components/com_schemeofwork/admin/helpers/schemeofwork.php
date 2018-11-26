@@ -61,8 +61,8 @@ abstract class SchemeOfWorkHelper extends JHelperContent
             
             JHtmlSidebar::addEntry(
                 JText::_('COM_SCHEMEOFWORK_SOLOTAXONOMY_SUBMENU'),
-                'index.php?option=com_schemeofwork&view=solotaxonomys',
-                $submenu == 'solotaxonomys'
+                'index.php?option=com_schemeofwork&view=solotaxonomies',
+                $submenu == 'solotaxonomies'
             );
             
             JHtmlSidebar::addEntry(

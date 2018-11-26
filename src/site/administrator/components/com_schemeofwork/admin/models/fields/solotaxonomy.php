@@ -17,14 +17,14 @@ JFormHelper::loadFieldClass('list');
  *
  * @since  0.0.1
  */
-class JFormFieldSoloTaxonomys extends JFormFieldList {
+class JFormFieldSoloTaxonomies extends JFormFieldList {
 
     /**
      * The field type.
      *
      * @var         string
      */
-    protected $type = 'SoloTaxonomys';
+    protected $type = 'SoloTaxonomies';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,7 +34,7 @@ class JFormFieldSoloTaxonomys extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('id,name');
+        $query->select('id,name,level');
         $query->from('sow_solo_taxonomy');
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();

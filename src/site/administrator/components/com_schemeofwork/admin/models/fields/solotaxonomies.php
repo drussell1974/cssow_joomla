@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * SoloTaxonomys Form Field class for the SchemeOfWork Admin component
+ * SoloTaxonomies Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldSoloTaxonomys extends JFormFieldList {
+class JFormFieldSoloTaxonomies extends JFormFieldList {
 
     /**
      * The field type.
      *
      * @var         string
      */
-    protected $type = 'SoloTaxonomys';
+    protected $type = 'SoloTaxonomies';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,7 +34,7 @@ class JFormFieldSoloTaxonomys extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('solo.id as id, solo.name as name');
+        $query->select('solo.id as id, solo.name as name, solo.level as level');
         $query->from('sow_solo_taxonomy as solo');
         //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
         $db->setQuery((string) $query);

@@ -25,7 +25,7 @@
             label="COM_SCHEMEOFWORK_SOLOTAXONOMY_LIST_FULL_ORDERING"
             description="COM_SCHEMEOFWORK_SOLOTAXONOMY_LIST_FULL_ORDERING_DESC"
             onchange="this.form.submit();"
-            default="name ASC"
+            default="level ASC"
         >
             <option value="">JGLOBAL_SORT_BY</option>
             <option value="name ASC">COM_SCHEMEOFWORK_SOLOTAXONOMY_ORDERING_ASC</option>

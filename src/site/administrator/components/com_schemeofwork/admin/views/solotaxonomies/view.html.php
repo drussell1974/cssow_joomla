@@ -11,11 +11,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SoloTaxonomy View
+ * SoloTaxonomies View
  *
  * @since  0.0.1
  */
-class SchemeOfWorkViewSoloTaxonomys extends JViewLegacy {
+class SchemeOfWorkViewSoloTaxonomies extends JViewLegacy {
 
     /**
      * Display the SchemeOfWorks view
@@ -86,7 +86,7 @@ class SchemeOfWorkViewSoloTaxonomys extends JViewLegacy {
         //}
         //if ($this->canDo->get('core.delete')) 
         //{
-        JToolbarHelper::deleteList('', 'solotaxonomys.delete');
+        JToolbarHelper::deleteList('', 'solotaxonomies.delete');
         //}
         //if ($this->canDo->get('core.admin')) 
         //{
