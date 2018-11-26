@@ -16,8 +16,6 @@
             label="COM_SCHEMEOFWORK_SUBJECTPURPOSE_NAME_LABEL"
             description="COM_SCHEMEOFWORK_SUBJECTPURPOSE_NAME_DESC"
             size="20"
-            class="inputbox validate-subjectpurposename"
-            validate="subjectpurposename"
             required="true"
             default=""
         />

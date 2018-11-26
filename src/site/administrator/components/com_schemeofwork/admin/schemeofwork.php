@@ -36,7 +36,7 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_schemeofwork'))
 // Require helper file
 JLoader::register('SchemeOfWorkHelper', JPATH_COMPONENT . '/helpers/schemofwork.php');
 
-//Get an instance of the controller prefixed by SchemeOfWorks
+// Get an instance of the controller prefixed by SchemeOfWorks
 $controller = JControllerLegacy::getInstance('SchemeOfWork');
 
 // Perform the Request task

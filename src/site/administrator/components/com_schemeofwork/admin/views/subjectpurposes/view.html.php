@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * SubjectPurpose View
+ * SubjectPurposes View
  *
  * @since  0.0.1
  */

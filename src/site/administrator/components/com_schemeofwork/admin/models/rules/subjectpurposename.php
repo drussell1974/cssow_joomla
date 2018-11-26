@@ -15,13 +15,13 @@ defined('_JEXEC') or die('Restricted access');
  */
 class JFormRuleSubjectPurposeName extends JFormRule
 {
-/**
- * The regular expression.
- *
- * @access	protected
- * @var		string
- * @since	2.5
- */
-// 1 - 3 alphanumeric characters
-protected $regex = '^[a-zA-Z0-9-, .:;\']{1, 20}$}$';
+    /**
+     * The regular expression.
+     *
+     * @access	protected
+     * @var     string
+     * @since	2.5
+     */
+    // 1 - 20 alphanumeric characters
+    protected $regex = '^[A-Za-z0-9 -]{1,20}$';
 }

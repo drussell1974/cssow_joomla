@@ -32,36 +32,36 @@ $listDirn = $this->escape($this->state->get('list.direction'));
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_NUM'); ?></th>
+                    <th width="1%"><?php echo JText::_('COM_SCHEMEOFWORK_SUBJECTPURPOSE_NUM'); ?></th>
                     <th width="2%">
-<?php echo JHtml::_('grid.checkall'); ?>
+                        <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
                     <th width="30%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_NAME', 'name', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_NAME', 'name', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_AUTHOR', 'author', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_AUTHOR', 'author', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
                     </th>
-                    <th width="5%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_PUBLISHED', 'published', $listDirn, $listOrder); ?>
+                    <th width="5%"> 
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_PUBLISHED', 'published', $listDirn, $listOrder); ?>
                     </th>
                     <th width="2%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_ID', 'id', $listDirn, $listOrder); ?>
+                        <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_SUBJECTPURPOSE_ID', 'id', $listDirn, $listOrder); ?>
                     </th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
                     <td colspan="5">
-<?php echo $this->pagination->getListFooter(); ?>
+                        <?php echo $this->pagination->getListFooter(); ?>
                     </td>
                 </tr>
             </tfoot>
             <tbody>
-<?php if (!empty($this->items)) : ?>
+                <?php if (!empty($this->items)) : ?>
                     <?php
                     foreach ($this->items as $i => $row) :
                         $link = JRoute::_('index.php?option=com_schemeofwork&task=subjectpurpose.edit&id=' . $row->id);

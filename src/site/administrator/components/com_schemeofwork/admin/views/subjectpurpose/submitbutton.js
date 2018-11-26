@@ -26,7 +26,7 @@ Joomla.submitbutton = function (task)
             return true;
         } else
         {
-            alert(Joomla.JText._('COM_${package_name__upper_case}_${component_name__upper_case}_ERROR_UNACCEPTABLE',
+            alert(Joomla.JText._('COM_SCHEMEOFWORK_SUBJECTPURPOSE_ERROR_UNACCEPTABLE',
                     'Some values are unacceptable'));
             return false;
         }
