@@ -28,8 +28,8 @@
             default="name ASC"
         >
             <option value="">JGLOBAL_SORT_BY</option>
-            <option value="name ASC">COM_SCHEMEOFWORK_YEAR_ORDERING_ASC</option>
-            <option value="name DESC">COM_SCHEMEOFWORK_YEAR_ORDERING_DESC</option>
+            <option value="name ASC">COM_SCHEMEOFWORK_YEAR_NAME_ORDERING_ASC</option>
+            <option value="name DESC">COM_SCHEMEOFWORK_YEAR_NAME_ORDERING_DESC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
             <option value="published ASC">COM_SCHEMEOFWORK_YEAR_PUBLISHED_ASC</option>
