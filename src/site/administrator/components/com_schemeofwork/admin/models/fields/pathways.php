@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * PlayBasedObjectives Form Field class for the SchemeOfWork Admin component
+ * Pathways Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldPlayBasedObjectives extends JFormFieldList {
+class JFormFieldPathways extends JFormFieldList {
 
     /**
      * The field type.
      *
      * @var         string
      */
-    protected $type = 'PlayBasedObjectives';
+    protected $type = 'Pathways';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,8 +34,8 @@ class JFormFieldPlayBasedObjectives extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('play.id as id, play.name as name');
-        $query->from('sow_play_based as play');
+        $query->select('path.id as id, path.objective as objective, path.year_id, path.topic_id,path.subject_purpose_id,path.[Abstraction],path.[Decomposition],path.[Algorithmic Thinking],path.[Evaluation],path.[Generalisation]');
+        $query->from('sow_ks123_pathway as path');
         //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();
@@ -43,7 +43,7 @@ class JFormFieldPlayBasedObjectives extends JFormFieldList {
 
         if ($items) {
             foreach ($items as $item) {
-                $options[] = JHtml::_('select.option', $item->id, $item->name);
+                $options[] = JHtml::_('select.option', $item->id, $item->objective);
             }
         }
 

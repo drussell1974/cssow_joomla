@@ -34,15 +34,14 @@ class JFormFieldYears extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('yr.id as id, yr.name as name, sow_key_stage.name as key_stage_name, sow_content.key_stage_id as key_stage_id');
+        $query->select('yr.id as id, yr.name as name');
         $query->from('sow_year as yr');
-        //$query->leftJoin('sow_key_stage as ks on yr.key_stage_id = ks.id');
         $db->setQuery((string) $query);
-        $messages = $db->loadObjectList();
+        $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
-            foreach ($messages as $item) {
+            foreach ($items as $item) {
                 $options[] = JHtml::_('select.option', $item->id, $item->name);
             }
         }

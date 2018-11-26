@@ -32,12 +32,12 @@
             <option value="name DESC">COM_SCHEMEOFWORK_YEAR_NAME_ORDERING_DESC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
-            <option value="published ASC">COM_SCHEMEOFWORK_YEAR_PUBLISHED_ASC</option>
-            <option value="published DESC">COM_SCHEMEOFWORK_YEAR_PUBLISHED_DESC</option>
-            <option value="author ASC">COM_SCHEMEOFWORK_YEAR_AUTHOR_ASC</option>
-            <option value="author DESC">COM_SCHEMEOFWORK_YEAR_AUTHOR_DESC</option>
-            <option value="created ASC">COM_SCHEMEOFWORK_YEAR_CREATED_ASC</option>
-            <option value="created DESC">COM_SCHEMEOFWORK_YEAR_CREATED_DESC</option>
+            <option value="published ASC">COM_SCHEMEOFWORK_YEAR_PUBLISHED_ORDERING_ASC</option>
+            <option value="published DESC">COM_SCHEMEOFWORK_YEAR_PUBLISHED_ORDERING_DESC</option>
+            <option value="author ASC">COM_SCHEMEOFWORK_YEAR_AUTHOR_ORDERING_ASC</option>
+            <option value="author DESC">COM_SCHEMEOFWORK_YEAR_AUTHOR_ORDERING_DESC</option>
+            <option value="created ASC">COM_SCHEMEOFWORK_YEAR_CREATED_ORDERING_ASC</option>
+            <option value="created DESC">COM_SCHEMEOFWORK_YEAR_CREATED_ORDERING_DESC</option>
         </field>
         <field
             name="limit"

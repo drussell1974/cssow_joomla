@@ -39,12 +39,12 @@ class JFormFieldCSConcepts extends JFormFieldList
             $query->from('sow_cs_concept as con');
             //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
             $db->setQuery((string) $query);
-            $messages = $db->loadObjectList();
+            $items = $db->loadObjectList();
             $options  = array();
 
             if ($items)
             {
-                foreach ($messages as $item)
+                foreach ($items as $item)
                 {
                     $options[] = JHtml::_('select.option', $item->id, $item->name);
                 }

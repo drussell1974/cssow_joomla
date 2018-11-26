@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_PATHWAY_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="objective"
+            type="text"
+            label="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_DESC"
+            size="1000"
+            class="inputbox validate-pathwayobjective"
+            validate="pathwayobjective"
+            required="true"
+            default=""
+        />
+        <field
+            name="objective"
+            type="text"
+            label="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_DESC"
+            size="1000"
+            class="inputbox validate-pathwayobjective"
+            validate="pathwayobjective"
+            required="true"
+            default=""
+        />
+        <field
+            name="year_id"
+            type="Years"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_PATHWAY_YEAR_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_YEAR_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_PATHWAY_JOPTION_SELECT_YEAR_NAME</option>
+        </field>
+        <field
+            name="topic_id"
+            type="Topics"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_PATHWAY_TOPIC_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_TOPIC_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_TOPIC_JOPTION_SELECT_TOPIC_NAME</option>
+        </field>
+        <field
+            name="subject_purpose_id"
+            type="SubjectPurposes"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_PATHWAY_SUBJECTPURPOSE_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_SUBJECTPURPOSE_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_TOPIC_JOPTION_SELECT_SUBJECTPURPOSE_NAME</option>
+        </field>
+        <field
+            name="Abstraction"
+            type="select"
+            label="COM_SCHEMEOFWORK_PATHWAY_ABSTRACTION_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_ABSTRACTION_DESC"
+            class="inputbox validate-pathwaytrueorfalse"
+            validate="pathwaytrueorfalse"
+            required="true"
+            default="False"
+        >
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </field>
+        <field
+            name="Decomposition"
+            type="select"
+            label="COM_SCHEMEOFWORK_PATHWAY_DECOMPOSITION_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_DECOMPOSITION_DESC"
+            class="inputbox validate-pathwaytrueorfalse"
+            validate="pathwaytrueorfalse"
+            required="true"
+            default="False"
+        >
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </field>
+        <field
+            name="Algorithmic Thinking"
+            type="select"
+            label="COM_SCHEMEOFWORK_PATHWAY_ALGORITHMICTHINKING_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_ALGORITHMICTHINKING_DESC"
+            class="select"
+            required="true"
+            default="False"
+        >
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </field>
+        <field
+            name="Evaluation"
+            type="select"
+            label="COM_SCHEMEOFWORK_PATHWAY_EVALUATION_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_EVALUATION_DESC"
+            class="select"
+            required="true"
+            default="False"
+        >
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </field>
+        <field
+            name="Generalistion"
+            type="select"
+            label="COM_SCHEMEOFWORK_PATHWAY_GENERALISATION_LABEL"
+            description="COM_SCHEMEOFWORK_PATHWAY_GENERALISATION_DESC"
+            class="select"
+            required="true"
+            default="false"
+        >
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </field>
+    </fieldset>
+</form>

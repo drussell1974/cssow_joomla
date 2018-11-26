@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field
+            name="search"
+            type="text"
+            label="COM_BANNERS_SEARCH_IN_TITLE"
+            hint="JSEARCH_FILTER"
+            class="js-stools-search-string"
+        />
+        <field
+            name="published"
+            type="status"
+            label="JOPTION_SELECT_PUBLISHED"
+            description="JOPTION_SELECT_PUBLISHED_DESC"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+    </fields>
+    <fields name="list">
+        <field
+            name="fullordering"
+            type="list"
+            label="COM_SCHEMEOFWORK_PATHWAY_LIST_FULL_ORDERING"
+            description="COM_SCHEMEOFWORK_PATHWAY_LIST_FULL_ORDERING_DESC"
+            onchange="this.form.submit();"
+            default="year ASC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="path.objective ASC">COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_ORDERING_ASC</option>
+            <option value="path.objective DESC">COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_ORDERING_DESC</option>
+            <option value="yr.name ASC">COM_SCHEMEOFWORK_PATHWAY_YEAR_ORDERING_ASC</option>
+            <option value="yr.name DESC">COM_SCHEMEOFWORK_PATHWAY_YEAR_ORDERING_DESC</option>
+            <option value="top.name ASC">COM_SCHEMEOFWORK_PATHWAY_TOPIC_ORDERING_ASC</option>
+            <option value="top.name DESC">COM_SCHEMEOFWORK_PATHWAY_TOPIC_ORDERING_DESC</option>
+            <option value="sub.name ASC">COM_SCHEMEOFWORK_PATHWAY_SUBJECTPURPOSE_ORDERING_ASC</option>
+            <option value="sub.name DESC">COM_SCHEMEOFWORK_PATHWAY_SUBJECTPURPOSE_ORDERING_DESC</option>
+            <option value="path.id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="path.id DESC">JGRID_HEADING_ID_DESC</option>
+            <option value="path.published ASC">COM_SCHEMEOFWORK_PATHWAY_PUBLISHED_ORDERING_ASC</option>
+            <option value="path.published DESC">COM_SCHEMEOFWORK_PATHWAY_PUBLISHED_ORDERING_DESC</option>
+            <option value="path.author ASC">COM_SCHEMEOFWORK_PATHWAY_AUTHOR_ORDERING_ASC</option>
+            <option value="path.author DESC">COM_SCHEMEOFWORK_PATHWAY_AUTHOR_ORDERING_DESC</option>
+            <option value="path.created ASC">COM_SCHEMEOFWORK_PATHWAY_CREATED_ORDERING_ASC</option>
+            <option value="path.created DESC">COM_SCHEMEOFWORK_PATHWAY_CREATED_ORDERING_DESC</option>
+        </field>
+        <field
+            name="limit"
+            type="limitbox"
+            class="input-mini"
+            default="25"
+            label="COM_CONTENT_LIST_LIMIT"
+            description="COM_SCHEMEOFWORK_LIST_LIMIT_DESC"
+            onchange="this.form.submit();"
+        />
+    </fields>
+</form>

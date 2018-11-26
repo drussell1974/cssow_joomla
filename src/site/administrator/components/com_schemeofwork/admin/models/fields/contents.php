@@ -38,11 +38,11 @@ class JFormFieldContents extends JFormFieldList {
         $query->from('sow_content as cnt');
         //$query->leftJoin('sow_key_stage as ks on yr.key_stage_id = ks.id');
         $db->setQuery((string) $query);
-        $messages = $db->loadObjectList();
+        $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
-            foreach ($messages as $item) {
+            foreach ($items as $item) {
                 $options[] = JHtml::_('select.option', $item->id, $item->name);
             }
         }
