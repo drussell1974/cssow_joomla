@@ -25,13 +25,13 @@
             label="COM_SCHEMEOFWORK_CONTENT_LIST_FULL_ORDERING"
             description="COM_SCHEMEOFWORK_CONTENT_LIST_FULL_ORDERING_DESC"
             onchange="this.form.submit();"
-            default="description ASC"
+            default="letter ASC"
         >
             <option value="">JGLOBAL_SORT_BY</option>
-            <option value="letter ASC">COM_SCHEMEOFWORK_CONTENT_LETTER_ORDERING_ASC</option>
-            <option value="letter DESC">COM_SCHEMEOFWORK_CONTENT_LETTER_ORDERING_DESC</option>
             <option value="description ASC">COM_SCHEMEOFWORK_CONTENT_DESCRIPTION_ORDERING_ASC</option>
             <option value="description DESC">COM_SCHEMEOFWORK_CONTENT_DESCRIPTION_ORDERING_DESC</option>
+            <option value="letter ASC">COM_SCHEMEOFWORK_CONTENT_LETTER_ORDERING_ASC</option>
+            <option value="letter DESC">COM_SCHEMEOFWORK_CONTENT_LETTER_ORDERING_DESC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
             <option value="published ASC">COM_SCHEMEOFWORK_CONTENT_PUBLISHED_ASC</option>

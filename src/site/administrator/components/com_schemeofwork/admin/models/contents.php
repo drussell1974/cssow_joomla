@@ -31,7 +31,8 @@ class SchemeOfWorkModelContents extends JModelList {
 
             $config['filter_fields'] = array(
                 'id',
-                'name',
+                'description',
+                'letter',
                 'author',
                 'created',
                 'published'
@@ -64,7 +65,7 @@ class SchemeOfWorkModelContents extends JModelList {
 
         if (!empty($search)) {
             $like = $db->quote('%' . $search . '%');
-            $query->where('cnt.name LIKE ' . $like);
+            $query->where('cnt.description LIKE ' . $like);
         }
 
         // Filter by published state
@@ -77,7 +78,7 @@ class SchemeOfWorkModelContents extends JModelList {
         }
 
         // Add the list ordering clause.
-        $orderCol = $this->state->get('list.ordering', 'name');
+        $orderCol = $this->state->get('list.ordering', 'description');
         $orderDirn = $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
