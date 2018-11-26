@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_SOLOTAXONOMY_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="name"
+            type="text"
+            label="COM_SCHEMEOFWORK_SOLOTAXONOMY_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_SOLOTAXONOMY_NAME_DESC"
+            size="100 "
+            class="inputbox validate-solotaxonomyname"
+            validate="solotaxonomyname"
+            required="true"
+            default=""
+        />
+        <field
+            name="level"
+            type="text"
+            label="COM_SCHEMEOFWORK_SOLOTAXONOMY_LEVEL_LABEL"
+            description="COM_SCHEMEOFWORK_SOLOTAXONOMY_LEVEL_DESC"
+            size="3"
+            class="inputbox validate-solotaxonomylevel"
+            validate="solotaxonomylevel"
+            required="true"
+            default=""
+        />
+    </fieldset>
+</form>
