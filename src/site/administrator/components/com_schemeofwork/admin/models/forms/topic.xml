@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_TOPIC_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="name"
+            type="text"
+            label="COM_SCHEMEOFWORK_TOPIC_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_TOPIC_NAME_DESC"
+            size="45 "
+            class="inputbox validate-topicname"
+            validate="topicname"
+            required="true"
+            default=""
+        />
+        <field
+            name="parent_id"
+            type="Topics"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_TOPIC_PARENT_LABEL"
+            description="COM_SCHEMEOFWORK_TOPIC_PARENT_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_TOPIC_JOPTION_SELECT_PARENT_NAME</option>
+        </field>
+    </fieldset>
+</form>

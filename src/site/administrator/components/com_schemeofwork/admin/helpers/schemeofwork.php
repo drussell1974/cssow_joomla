@@ -78,6 +78,12 @@ abstract class SchemeOfWorkHelper extends JHelperContent
                 'index.php?option=com_schemeofwork&view=subjectpurposes',
                 $submenu == 'subjectpurposes'
             );
+ 
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_TOPIC_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=topics',
+                $submenu == 'topics'
+            );
             
             JHtmlSidebar::addEntry(
                 JText::_('COM_SCHEMEOFWORK_YEAR_SUBMENU'),
