@@ -24,7 +24,7 @@ class JFormFieldContents extends JFormFieldList {
      *
      * @var         string
      */
-    protected $type = 'SchemeOfWorks';
+    protected $type = 'Contents';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,15 +34,19 @@ class JFormFieldContents extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('id, description, letter, key_stage');
+        $query->select('id, description, letter, sow_key_stage.name as key_stage_name, sow_content.key_stage_id as key_stage_id');
         $query->from('sow_content');
+        $query->leftJoin('sow_key_stage on sow_content.key_stage_id = sow_key_stage.id');
+        // Retrieve only published items
+	$query->where('sow_content.published = 1');
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
             foreach ($items as $item) {
-                $options[] = JHtml::_('select.option', $item->id, $item->name);
+                $options[] = JHtml::_('select.option', $item->id, $item->description .
+                        ($item->key_stage_id ? ' (' . $item->name . ')' : ''));
             }
         }
 

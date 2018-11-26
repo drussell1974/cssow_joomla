@@ -78,6 +78,9 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                 <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_CONTENT_EDIT'); ?>">
                                     <?php echo $row->description; ?>
                                 </a>
+                                <div class="small">
+                                    <?php echo JText::_('COM_SCHEMEOFWORK_CONTENT_HEADING_KEYSTAGE') . ': ' . $this->escape($row->key_stage_name); ?>
+                                </div>
                             </td>
                             <td align="center">
                                 <?php echo $row->letter; ?>

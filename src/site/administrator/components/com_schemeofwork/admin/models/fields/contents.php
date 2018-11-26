@@ -34,7 +34,7 @@ class JFormFieldContents extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter, cnt.key_stage as keystage');
+        $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter, cnt.key_stage_id as key_stage_id');
         $query->from('sow_content as cnt');
         //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
         $db->setQuery((string) $query);
