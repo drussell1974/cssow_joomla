@@ -221,7 +221,7 @@ DEFAULT CHARACTER SET = utf8;
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_year` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(3) NOT NULL,
+  `name` VARCHAR(4) NOT NULL,
   `key_stage_id` INT(11) NOT NULL,
   `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
