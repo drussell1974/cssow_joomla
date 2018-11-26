@@ -98,11 +98,14 @@ CREATE TABLE IF NOT EXISTS `sow_content` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(500) NOT NULL,
   `letter` CHAR(1) NOT NULL,
-  `key_stage` INT(11) NOT NULL DEFAULT '4',
+  `key_stage_id` INT(11) NOT NULL DEFAULT '4',
   `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
   `published`     tinyint(4)      NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_sow_content_key_stage`
+    FOREIGN KEY (`keystage_id`)
+    REFERENCES `sow_key_stage` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

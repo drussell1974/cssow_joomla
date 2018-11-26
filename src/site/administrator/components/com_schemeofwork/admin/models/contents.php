@@ -33,6 +33,7 @@ class SchemeOfWorkModelContents extends JModelList {
                 'id',
                 'description',
                 'letter',
+                'key_stage_id',
                 'author',
                 'created',
                 'published'
@@ -56,6 +57,10 @@ class SchemeOfWorkModelContents extends JModelList {
         $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter, cnt.published as published, cnt.created as created')
                 ->from($db->quoteName('sow_content', 'cnt'));
 
+        // Join over the keystages.
+        $query->select($db->quoteName('ks.name', 'key_stage_name'))
+                ->join('LEFT', $db->quoteName('sow_key_stage', 'ks') . ' ON ks.id = cnt.key_stage_id');
+
         // Join with users table to get the username of the author
         $query->select($db->quoteName('u.username', 'author'))
                 ->join('LEFT', $db->quoteName('#__users', 'u') . ' ON u.id = cnt.created_by');
@@ -72,9 +77,9 @@ class SchemeOfWorkModelContents extends JModelList {
         $published = $this->getState('filter.published');
 
         if (is_numeric($published)) {
-            $query->where('published = ' . (int) $published);
+            $query->where('cnt.published = ' . (int) $published);
         } elseif ($published === '') {
-            $query->where('(published IN (0, 1))');
+            $query->where('(cnt.published IN (0, 1))');
         }
 
         // Add the list ordering clause.

@@ -24,7 +24,7 @@ class JFormFieldCSConcepts extends JFormFieldList
 	 *
 	 * @var         string
 	 */
-	protected $type = 'SchemeOfWorks';
+	protected $type = 'CSConcepts';
 
 	/**
 	 * Method to get a list of options for a list input.
