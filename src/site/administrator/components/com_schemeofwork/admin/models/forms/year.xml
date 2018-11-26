@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_YEAR_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="name"
+            type="text"
+            label="COM_SCHEMEOFWORK_YEAR_NAME_LABEL"
+            description="COM_SCHEMEOFWORK_YEAR_NAME_DESC"
+            size="4"
+            class="inputbox validate-yearname"
+            validate="yearname"
+            required="true"
+            default=""
+        />
+        <field
+            name="key_stage_id"
+            type="KeyStages"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_YEAR_KEYSTAGE_LABEL"
+            description="COM_SCHEMEOFWORK_YEAR_KEYSTAGE_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_YEAR_JOPTION_SELECT_KEYSTAGE_NAME</option>
+        </field>
+    </fieldset>
+</form>

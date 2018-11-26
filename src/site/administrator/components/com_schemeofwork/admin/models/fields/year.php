@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * Contents Form Field class for the SchemeOfWork Admin component
+ * SchemeOfWork Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldContents extends JFormFieldList {
+class JFormFieldYears extends JFormFieldList {
 
     /**
      * The field type.
      *
      * @var         string
      */
-    protected $type = 'Contents';
+    protected $type = 'Years';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,15 +34,14 @@ class JFormFieldContents extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter, cnt.key_stage_id as key_stage_id');
-        $query->from('sow_content as cnt');
-        //$query->leftJoin('sow_key_stage as ks on yr.key_stage_id = ks.id');
+        $query->select('id,name');
+        $query->from('sow_year');
         $db->setQuery((string) $query);
-        $messages = $db->loadObjectList();
+        $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
-            foreach ($messages as $item) {
+            foreach ($items as $item) {
                 $options[] = JHtml::_('select.option', $item->id, $item->name);
             }
         }

@@ -221,15 +221,15 @@ DEFAULT CHARACTER SET = utf8;
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sow_year` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(3) NOT NULL,
-  `keystage_id` INT(11) NOT NULL,
+  `name` VARCHAR(4) NOT NULL,
+  `key_stage_id` INT(11) NOT NULL,
   `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
   `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`, `keystage_id`),
-  INDEX `fk_sow_year_keystage_idx` (`keystage_id` ASC),
+  INDEX `fk_sow_year_keystage_idx` (`key_stage_id` ASC),
   CONSTRAINT `fk_sow_year_keystage`
-    FOREIGN KEY (`keystage_id`)
+    FOREIGN KEY (`key_stage_id`)
     REFERENCES `sow_key_stage` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
