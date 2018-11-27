@@ -23,7 +23,9 @@ class SchemeOfWorkViewContent extends JViewLegacy {
      * @var         form
      */
     protected $form = null;
-
+    protected $item;
+    protected $script;
+    protected $canDo;
     /**
      * Display the SchemeOfWork  view
      *
@@ -36,6 +38,9 @@ class SchemeOfWorkViewContent extends JViewLegacy {
         $this->form = $this->get('Form');
         $this->item = $this->get('Item');
         $this->script = $this->get('Script');
+
+        // What Access Permissions does this user have? What can (s)he do?
+        $this->canDo = JHelperContent::getActions('com_helloworld', 'helloworld', $this->item->id);
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {

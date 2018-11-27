@@ -35,7 +35,7 @@ JFactory::getDocument()->addScriptDeclaration('
                 <legend><?php echo JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_LEGEND_DETAILS') ?></legend>
                 <div class="row-fluid">
                     <div class="span6">
-                        <?php echo $this->form->renderFieldset('details');  ?>
+                        <?php echo $this->form->renderFieldset('name');  ?>
                     </div>
                 </div>
             </fieldset>

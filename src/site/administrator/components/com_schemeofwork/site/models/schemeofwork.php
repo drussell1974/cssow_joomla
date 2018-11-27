@@ -72,6 +72,8 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
      */
     public function getItem()
     {
+        var_dump($this->item);
+        
         if (!isset($this->item)) 
         {
             $id    = $this->getState('name.id');
@@ -84,7 +86,9 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
                       ->from('sow_schemeofwork as sow')
                       ->leftJoin('#__categories as c ON sow.catid=c.id')
                       ->where('sow.id=' . (int)$id);
-
+            
+            \JLog::add("SchemeOfWorkModelSchemeOfWork.getItem().query".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            
             $db->setQuery((string)$query);
 
             if ($this->item = $db->loadObject()) 

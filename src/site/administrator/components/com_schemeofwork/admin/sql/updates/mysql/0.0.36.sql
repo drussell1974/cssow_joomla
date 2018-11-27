@@ -1,0 +1,11 @@
+ALTER TABLE sow_content ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_cs_concept ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_exam_board ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_key_stage  ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_ks123_pathway ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_learning_objective ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_play_based ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_solo_taxonomy ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_subject_purpose ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_topic ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;
+ALTER TABLE sow_year ADD COLUMN IF NOT EXISTS `asset_id` INT(10) NOT NULL DEFAULT '0' AFTER created_by;

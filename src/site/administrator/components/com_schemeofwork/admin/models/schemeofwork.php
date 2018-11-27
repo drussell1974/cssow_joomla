@@ -101,9 +101,9 @@ class SchemeOfWorkModelSchemeOfWork extends JModelAdmin
     */
    protected function canDelete($record)
    {
-           if( !empty( $record->id ) )
-           {
-                   return JFactory::getUser()->authorise( "core.delete", "com_schemeofwork.schemeofwork." . $record->id );
-           }
+        if( !empty( $record->id ) )
+        {
+            return JFactory::getUser()->authorise( "core.delete", "com_schemeofwork.schemeofwork." . $record->id );
+        }
    }
 }

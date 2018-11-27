@@ -26,7 +26,7 @@ class SchemeOfWorkViewSchemeOfWork extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
-            \JLog::add("SchemeOfWorkViewSchemeOfWork::display(tpl):".$tpl, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
+            \JLog::add("SchemeOfWorkViewSchemeOfWork.display(tpl):".$tpl, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
 
             // Assign data to the view
             $this->item = $this->get('Item');

@@ -37,7 +37,7 @@ class SchemeOfWorkViewContents extends JViewLegacy {
         $this->filterForm = $this->get('FilterForm');
         $this->activeFilters = $this->get('ActiveFilters');
         // What Access Permissions does this user have? What can (s)he do?
-        //$this->canDo = JHelperContent::getActions('com_schemeofwork');
+        //z$this->canDo = JHelperContent::getActions('com_schemeofwork');
         // Check for errors.
         $errors = $this->get('Errors');
 
