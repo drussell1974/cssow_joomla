@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `sow_content` (
   `published`     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_sow_content_key_stage`
-    FOREIGN KEY (`keystage_id`)
+    FOREIGN KEY (`key_stage_id`)
     REFERENCES `sow_key_stage` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `sow_year` (
   `created`       DATETIME        NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
   `published`     tinyint(4)      NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`, `keystage_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_sow_year_keystage_idx` (`key_stage_id` ASC),
   CONSTRAINT `fk_sow_year_keystage`
     FOREIGN KEY (`key_stage_id`)
