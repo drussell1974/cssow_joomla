@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="description"
+            type="text"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_DESC"
+            size="1000"
+            class="inputbox validate-learningobjectivename"
+            validate="learningobjectivename"
+            required="true"
+            default=""
+        />
+        <field
+            name="solo_taxonomy_id"
+            type="SoloTaxonomies"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_SOLOTAXONOMY_NAME</option>
+        </field>
+        <field
+            name="topic_id"
+            type="Topics"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_TOPIC_NAME</option>
+        </field>
+        <field
+            name="content_id"
+            type="Contents"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_CONTENT_NAME</option>
+        </field>
+        <field
+            name="exam_board_id"
+            type="ExamBoards"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_EXAMBOARD_NAME</option>
+        </field>
+    </fieldset>
+</form>

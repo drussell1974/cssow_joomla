@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * ExamBoards Form Field class for the SchemeOfWork Admin component
+ * SchemeOfWork Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldExamBoards extends JFormFieldList {
+class JFormFieldLearningObjectives extends JFormFieldList {
 
     /**
      * The field type.
      *
      * @var         string
      */
-    protected $type = 'ExamBoards';
+    protected $type = 'LearningObjectives';
 
     /**
      * Method to get a list of options for a list input.
@@ -34,18 +34,18 @@ class JFormFieldExamBoards extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('exam.id as id, exam.name as name');
-        $query->from('sow_exam_board as exam');
-        //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
+        $query->select('id as id, description as description');
+        $query->from('sow_learning_objective');
         
         \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         $db->setQuery((string) $query);
+        
         $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
             foreach ($items as $item) {
-                $options[] = JHtml::_('select.option', $item->id, $item->name);
+                $options[] = JHtml::_('select.option', $item->id, $item->description);
             }
         }
 

@@ -37,6 +37,9 @@ class JFormFieldPathways extends JFormFieldList {
         $query->select('path.id as id, path.objective as objective, path.year_id, path.topic_id,path.subject_purpose_id,path.[Abstraction],path.[Decomposition],path.[Algorithmic Thinking],path.[Evaluation],path.[Generalisation]');
         $query->from('sow_ks123_pathway as path');
         //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
+        
+        \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();
         $options = array();

@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * KeyStages Form Field class for the Scheme of Work Admin component
+ * SchemeOfWork Form Field class for the Scheme of Work Admin component
  *
  * @since  0.0.1
  */
@@ -35,8 +35,11 @@ class JFormFieldKeyStages extends JFormFieldList
 	{
             $db    = JFactory::getDBO();
             $query = $db->getQuery(true);
-            $query->select('ks.id as id, ks.name as name');
-            $query->from('sow_key_stage as ks');
+            $query->select('id as id, name as name');
+            $query->from('sow_key_stage');
+        
+            \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            
             $db->setQuery((string) $query);
             $items = $db->loadObjectList();
             $options  = array();

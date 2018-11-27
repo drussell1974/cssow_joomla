@@ -29,6 +29,11 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 
 	public static function addSubmenu($submenu) 
 	{
+            JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=learningobjectives',
+                $submenu == 'learningobjectives'
+            );
             
             JHtmlSidebar::addEntry(
                 JText::_('COM_SCHEMEOFWORK_PATHWAY_SUBMENU'),

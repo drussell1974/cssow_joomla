@@ -38,6 +38,8 @@ class JFormFieldCSConcepts extends JFormFieldList
             $query->select('con.id as id, con.name as name, con.abbr as abbreviation');
             $query->from('sow_cs_concept as con');
             //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
+        
+            \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             $db->setQuery((string) $query);
             $items = $db->loadObjectList();
             $options  = array();
