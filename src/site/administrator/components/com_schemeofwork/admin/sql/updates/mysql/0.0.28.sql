@@ -1,1 +1,1 @@
-ALTER TABLE `sow_content` CHANGE COLUMN `key_stage` `key_stage_id` INT(11) NOT NULL DEFAULT '4';
+ALTER TABLE `sow_content` CHANGE COLUMN IF EXISTS `key_stage` `key_stage_id` INT(11) NOT NULL DEFAULT '4';

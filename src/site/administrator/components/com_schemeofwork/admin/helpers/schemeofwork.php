@@ -42,6 +42,12 @@ abstract class SchemeOfWorkHelper extends JHelperContent
             );
             
             JHtmlSidebar::addEntry(
+                JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_SUBMENU'),
+                'index.php?option=com_schemeofwork&view=learningobjectivehaspathways',
+                $submenu == 'learningobjectivehaspathways'
+            );
+            
+            JHtmlSidebar::addEntry(
                 JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_SUBMENU'),
                 'index.php?option=com_schemeofwork&view=schemeofworks',
                 $submenu == 'schemeofworks'

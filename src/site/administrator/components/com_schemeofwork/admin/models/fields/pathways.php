@@ -34,7 +34,7 @@ class JFormFieldPathways extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('path.id as id, path.objective as objective, path.year_id, path.topic_id,path.subject_purpose_id,path.[Abstraction],path.[Decomposition],path.[Algorithmic Thinking],path.[Evaluation],path.[Generalisation]');
+        $query->select('path.id as id, path.objective as objective');
         $query->from('sow_ks123_pathway as path');
         //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
         

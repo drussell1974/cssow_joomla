@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+    addrulepath="/administrator/components/com_schemeofwork/models/rules"
+>
+    <fieldset
+        name="details"
+        label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_DETAILS"
+    >
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="learning_objective_id"
+            type="LearningObjectives"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_LEARNINGOBJECTIVEDESCRIPTION_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_LEARNINGOBJECTIVEDESCRIPTION_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_LEARNINGOBJECTIVEDESCRIPTION</option>
+        </field>
+        <field
+            name="ks123_pathway_id"
+            type="Pathways"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_PATHWAYOBJECTIVE</option>
+        </field>
+    </fieldset>
+</form>

@@ -1,1 +1,1 @@
-ALTER TABLE `sow_schemeofwork` ADD `params` VARCHAR(1024) NOT NULL DEFAULT '';
+ALTER TABLE `sow_schemeofwork` ADD COLUMN IF NOT EXISTS `params` VARCHAR(1024) NOT NULL DEFAULT '';
