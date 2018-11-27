@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * SchemeOfWork Form Field class for the SchemeOfWork Admin component
+ * LearningObjectives Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
@@ -34,18 +34,16 @@ class JFormFieldLearningObjectives extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('id as id, description as description');
-        $query->from('sow_learning_objective');
-        
-        \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+        $query->select('lob.id as id, lob.description as name');
+        $query->from('sow_learning_objective as lob');
+        //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
         $db->setQuery((string) $query);
-        
         $items = $db->loadObjectList();
         $options = array();
 
         if ($items) {
             foreach ($items as $item) {
-                $options[] = JHtml::_('select.option', $item->id, $item->description);
+                $options[] = JHtml::_('select.option', $item->id, $item->name);
             }
         }
 

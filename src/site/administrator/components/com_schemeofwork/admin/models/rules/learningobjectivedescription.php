@@ -23,6 +23,6 @@ class JFormRuleLearningObjectiveDescription extends JFormRule {
      * @since	2.5
      */
     // 1 - 3 alphanumeric characters
-    protected $regex = '^[a-zA-Z0s-9 /,/:/./;/[/]]{1,1000}$';
+    protected $regex = '^[a-zA-Z0-9 ,:]{1,1000}$';
 
 }

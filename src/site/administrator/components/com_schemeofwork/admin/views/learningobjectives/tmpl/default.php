@@ -39,7 +39,13 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                     <th width="30%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION', 'description', $listDirn, $listOrder); ?>
                     </th>
-                    <th width="30%">
+                    <th width="20%">
+<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY', 'solo_taxonomy_level', $listDirn, $listOrder); ?>
+                    </th>
+                    <th width="5%">
+<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD', 'examboard', $listDirn, $listOrder); ?>
+                    </th>
+                    <th width="10%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_AUTHOR', 'author', $listDirn, $listOrder); ?>
                     </th>
                     <th width="30%">
@@ -75,6 +81,16 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                 <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EDIT'); ?>">
                                     <?php echo $row->description; ?>
                                 </a>
+                                <div class="small">
+                                    <b><?php echo $this->escape($row->topic_name); ?></b><br>
+                                    <?php echo $this->escape($row->content_description); ?>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <?php echo $row->solo_taxonomy_name . " (" . $row->solo_taxonomy_level . ")"; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row->exam_board_name; ?>
                             </td>
                             <td align="center">
                                 <?php echo $row->author; ?>

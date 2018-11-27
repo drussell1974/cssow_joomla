@@ -45,7 +45,7 @@ class JFormFieldContents extends JFormFieldList {
 
         if ($items) {
             foreach ($items as $item) {
-                $options[] = JHtml::_('select.option', $item->id, $item->name);
+                $options[] = JHtml::_('select.option', $item->id, $item->description);
             }
         }
 

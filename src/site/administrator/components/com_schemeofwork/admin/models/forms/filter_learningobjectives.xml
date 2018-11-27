@@ -25,19 +25,15 @@
             label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_LIST_FULL_ORDERING"
             description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_LIST_FULL_ORDERING_DESC"
             onchange="this.form.submit();"
-            default="name ASC"
+            default="lob.description ASC"
         >
             <option value="">JGLOBAL_SORT_BY</option>
             <option value="description ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_ORDERING_ASC</option>
             <option value="description DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_ORDERING_DESC</option>
-            <option value="solo_taxonomy_id ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_ASC</option>
-            <option value="solo_taxonomy DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_DESC</option>
-            <option value="topic_id ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_ASC</option>
-            <option value="topic_id DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_DESC</option>
-            <option value="content_id ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_ORDERING_ASC</option>
-            <option value="content_id DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_ORDERING_DESC</option>
-            <option value="exam_board_id ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_ORDERING_ASC</option>
-            <option value="exam_board_id DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_ORDERING_DESC</option>
+            <option value="topic_name ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_ASC</option>
+            <option value="topic_name DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_DESC</option>
+            <option value="solo_taxonomy_level ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_ASC</option>
+            <option value="solo_taxonomy_level DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_DESC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
             <option value="published ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_PUBLISHED_ORDERING_ASC</option>

@@ -235,7 +235,7 @@ class BaseController extends \JObject
 
                 \JLog::add("BaseController.getInstance.basePath:".$basePath, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 \JLog::add("BaseController.getInstance.format:".$format, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));                 
-                \JLog::add("BaseController.getInstance.command:".$comm, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                \JLog::add("BaseController.getInstance.command:".$command, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 
                 
 		// Check for array format.
@@ -628,7 +628,7 @@ class BaseController extends \JObject
 		$viewLayout = $this->input->get('layout', 'default', 'string');
 
 		$view = $this->getView($viewName, $viewType, '', array('base_path' => $this->basePath, 'layout' => $viewLayout));
-                \JLog::add("viewType:".$viewType.", viewName:".$viewName."view:".$view, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                \JLog::add("BaseController.display: viewType = ".$viewType.", viewName = ".$viewName."view = ".$view, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 
 		// Get/Create the model
 		if ($model = $this->getModel($viewName))
@@ -638,6 +638,7 @@ class BaseController extends \JObject
 		}
 
 		$view->document = $document;
+                
                 // Display the view
 		if ($cachable && $viewType !== 'feed' && \JFactory::getConfig()->get('caching') >= 1)
 		{

@@ -16,8 +16,8 @@
             label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_LABEL"
             description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_DESC"
             size="1000"
-            class="inputbox validate-learningobjectivename"
-            validate="learningobjectivename"
+            class="inputbox validate-learningobjectivedescription"
+            validate="learningobjectivedescription"
             required="true"
             default=""
         />

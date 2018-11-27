@@ -32,10 +32,9 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
             $config['filter_fields'] = array(
                 'id',
                 'description',
-                'solo_taxonomy_id',
-                'topic_id',
-                'content_id',
-                'exam_board_id',
+                'solo_taxonomy_name',
+                'solo_taxonomy_level',
+                'topic_name',
                 'author',
                 'created',
                 'published'
@@ -57,34 +56,34 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
 
         // Create the base select statement.
         $query->select('lob.id as id, lob.description as description, lob.published as published, lob.created as created ')
-                ->from($db->quoteName('sow_learning_objective', 'lob'));
+                ->from('sow_learning_objective as lob');
 
-        // Join over the sow_solo_taxonomy
-        $query->select('solo.name as solo_taxonomy_name')
-                ->join('LEFT', $db->quoteName('sow_solo_taxonomy', 'solo') . ' ON solo.id = lob.solo_taxonomy_id');
-
-        // Join over the sow_topic
+        // Join over the topics.
         $query->select('top.name as topic_name')
-                ->join('LEFT', $db->quoteName('sow_topic', 'top') . ' ON top.id = lob.topic_id');
+                ->join('LEFT', 'sow_topic as top' . ' ON top.id = lob.topic_id ');
+        
+        // Join over the solo taxonomies.
+        $query->select('solo.name as solo_taxonomy_name, solo.level as solo_taxonomy_level ')
+                ->join('LEFT', 'sow_solo_taxonomy as solo' . ' ON solo.id = lob.solo_taxonomy_id');
+        
+        // Join over the content.
+        $query->select('cnt.description as content_description ')
+                ->join('LEFT', 'sow_content as cnt' . ' ON cnt.id = lob.content_id');
 
-        // Join over the sow_content
-        $query->select('cnt.description as content_decription')
-                ->join('LEFT', $db->quoteName('sow_content', 'cnt') . ' ON cnt.id = lob.content_id');
-
-        // Join over the sow_exam_board
-        $query->select('exam.name as exam_board_name')
-                ->join('LEFT', $db->quoteName('sow_exam_board', 'exam') . ' ON exam.id = lob.exam_board_id');
+        // Join over the exam board.
+        $query->select('exam.name as exam_board_name ')
+                ->join('LEFT', 'sow_exam_board as exam' . ' ON exam.id = lob.exam_board_id');
 
         // Join with users table to get the username of the author
-        $query->select($db->quoteName('u.username', 'author'))
-                ->join('LEFT', $db->quoteName('#__users', 'u') . ' ON u.id = lob.created_by');
+        $query->select('u.username as author')
+                ->join('LEFT', $db->quoteName('#__users', 'u') . ' ON u.id = lob.created_by ');
 
         // Filter: like / search
         $search = $this->getState('filter.search');
 
         if (!empty($search)) {
             $like = $db->quote('%' . $search . '%');
-            $query->where('lob.name LIKE ' . $like);
+            $query->where('lob.description LIKE ' . $like);
         }
 
         // Filter by published state
@@ -97,12 +96,12 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
         }
 
         // Add the list ordering clause.
-        $orderCol = $this->state->get('list.ordering', 'topic_name');
+        $orderCol = $this->state->get('list.ordering', 'lob.description');
         $orderDirn = $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
 
-        \JLog::add("SchemeOfWorkModelLearningObjective.getListQuery=" . $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
+        \JLog::add("SchemeOfWorkModelLearningObjectives.getListQuery=" . $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
 
         return $query;
     }

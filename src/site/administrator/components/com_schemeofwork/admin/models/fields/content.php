@@ -34,9 +34,9 @@ class JFormFieldContents extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('id, description, letter, sow_key_stage.name as key_stage_name, sow_content.key_stage_id as key_stage_id');
-        $query->from('sow_content');
-        $query->leftJoin('sow_key_stage on sow_content.key_stage_id = sow_key_stage.id');
+        $query->select('cnt.id, cnt.description, cnt.letter, ks.name as key_stage_name, cnt.key_stage_id as key_stage_id');
+        $query->from('sow_content cnt');
+        $query->leftJoin('sow_key_stage ks on sow_content.key_stage_id = sow_key_stage.id');
         // Retrieve only published items
 	$query->where('sow_content.published = 1');
         $db->setQuery((string) $query);
