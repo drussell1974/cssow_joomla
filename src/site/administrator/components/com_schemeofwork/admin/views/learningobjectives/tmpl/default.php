@@ -82,7 +82,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                     <?php echo $row->description; ?>
                                 </a>
                                 <div class="small">
-                                    <b><?php echo $this->escape($row->topic_name); ?></b><br>
+                                    <b><?php echo $this->escape($row->parent_topic_name) . ' - ' . $this->escape($row->topic_name); ?></b><br>
                                     <?php echo $this->escape($row->content_description); ?>
                                 </div>
                             </td>
