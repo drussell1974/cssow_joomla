@@ -34,10 +34,13 @@ class JFormFieldTopics extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('top.id as id, top.name as name, top.parent_id as parent_id');
+        $query->select('top.id as id, CONCAT_WS(\' - \', top.name, pnt.name) as name');
         $query->from('sow_topic as top');
-        //$query->leftJoin('#__categories as cat on cs.catid=cat.id');
+        $query->LeftJoin('sow_topic as pnt on pnt.id = top.parent_id');
+        $query->order('top.name ASC');
+        
         $db->setQuery((string) $query);
+        
         $items = $db->loadObjectList();
         $options = array();
 

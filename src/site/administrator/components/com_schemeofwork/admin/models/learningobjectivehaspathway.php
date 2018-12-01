@@ -50,7 +50,9 @@ class SchemeOfWorkModelLearningObjectiveHasPathway extends JModelAdmin {
             'load_data' => $loadData
             )
         );
-
+        
+        //var_dump($form);
+        
         if (empty($form)) {
             return false;
         }
@@ -79,7 +81,6 @@ class SchemeOfWorkModelLearningObjectiveHasPathway extends JModelAdmin {
         $data = JFactory::getApplication()->getUserState(
                 'com_schemeofwork.edit.learningobjectivehaspathway.data', array()
         );
-
         if (empty($data)) {
             $data = $this->getItem();
         }

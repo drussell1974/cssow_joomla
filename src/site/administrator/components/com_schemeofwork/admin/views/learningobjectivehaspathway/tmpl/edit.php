@@ -8,7 +8,8 @@
  */
 // No direct access
 defined('_JEXEC') or die('Restricted access');
-JHtml::_('behavior.formvalidator');
+JHtml::_('behavior.formvalidator'); 
+//$selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_schemeofwork&layout=edit&id=' . (int) $this->item->id); ?>"
       method="post" name="adminForm" id="adminForm" class="form-validate">

@@ -5,12 +5,12 @@
 	<!-- The following elements are optional and free of formatting constraints -->
 	<creationDate>November 2018</creationDate>
 	<author>Dave Russell</author>
-	<authorEmail>dave@velopoint.co.uk</authorEmail>
+	<authorEmail>dave.russell@velopoint.co.uk</authorEmail>
 	<authorUrl>http://velopoint.co.uk</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.37</version>
+	<version>0.0.38</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_SCHEMEOFWORK_DEFAULT_DESCRIPTION</description>
 

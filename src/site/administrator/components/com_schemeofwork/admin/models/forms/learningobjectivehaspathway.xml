@@ -11,6 +11,18 @@
             type="hidden"
         />
         <field
+            name="topic_id"
+            type="Topics"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_TOPIC</option>
+        </field>
+        <field
             name="learning_objective_id"
             type="LearningObjectives"
             extension="com_schemeofwork"

@@ -23,7 +23,7 @@ class SchemeOfWorkViewLearningObjectiveHasPathway extends JViewLegacy {
      * @var         form
      */
     protected $form = null;
-
+    
     /**
      * Display the SchemeOfWork  view
      *
@@ -77,10 +77,13 @@ class SchemeOfWorkViewLearningObjectiveHasPathway extends JViewLegacy {
         }
 
         JToolbarHelper::title($title, 'learningobjectivehaspathway');
-        JToolbarHelper::save('learningobjectivehaspathway.save');
-        JToolbarHelper::cancel(
-                'learningobjectivehaspathway.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
-        );
+        if(LearningObjectiveHasPathwayHelper::wizardGetStep()[0] == "step2"){
+            JToolbarHelper::save('learningobjectivehaspathway.save');
+            JToolbarHelper::custom('learningobjectivehaspathway.wizardPrev', 'previous', 'previous', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_WIZARD_PREV'), false);
+        } else {
+            JToolbarHelper::custom('learningobjectivehaspathway.wizardNext', 'next', 'next', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_WIZARD_NEXT'), false);
+        }    
+        JToolbarHelper::cancel('learningobjectivehaspathway.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE' );
     }
 
     /**
