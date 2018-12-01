@@ -535,8 +535,6 @@ class Pagination
 		// Keep B/C for overrides done with chromes
 		$chromePath = JPATH_THEMES . '/' . $this->app->getTemplate() . '/html/pagination.php';
                 
-                \JLog::add("Pagination.getListFooter.chromePath = ".$chromePath, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-                
                 if (file_exists($chromePath))
 		{
 			include_once $chromePath;

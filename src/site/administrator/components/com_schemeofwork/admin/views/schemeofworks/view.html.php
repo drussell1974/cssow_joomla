@@ -48,7 +48,7 @@ class SchemeOfWorkViewSchemeOfWorks extends JViewLegacy
 
         if (empty($errors) === 1)
         {
-            \JLog::add("Errors:".$error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            //\JLog::add("Errors:".$error_count, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             throw new Exception(implode("\n", $errors), 500);
 
             return false;

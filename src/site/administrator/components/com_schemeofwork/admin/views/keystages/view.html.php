@@ -46,7 +46,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
                 
                 if (empty($errors) === 1)
 		{
-                    \JLog::add("Errors:".$errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                    //\JLog::add("Errors:".$errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                     JError::raiseError(500, implode('<br />', $errors));
 
                     return false;

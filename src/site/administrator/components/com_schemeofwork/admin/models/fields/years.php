@@ -37,7 +37,7 @@ class JFormFieldYears extends JFormFieldList {
         $query->select('yr.id as id, yr.name as name');
         $query->from('sow_year as yr');
         
-        \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+        \JLog::add("getOptions().query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();

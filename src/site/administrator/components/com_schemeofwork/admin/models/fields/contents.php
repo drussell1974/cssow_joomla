@@ -38,7 +38,7 @@ class JFormFieldContents extends JFormFieldList {
         $query->from('sow_content as cnt');
         //$query->leftJoin('sow_key_stage as ks on yr.key_stage_id = ks.id');
         
-        \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+        \JLog::add("getOptions().query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         $db->setQuery((string) $query);
         $items = $db->loadObjectList();
         $options = array();

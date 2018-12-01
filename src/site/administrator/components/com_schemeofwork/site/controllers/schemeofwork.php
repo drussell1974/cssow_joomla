@@ -61,8 +61,6 @@ class SchemeOfWorkControllerSchemeOfWork extends JControllerForm
         // get the data from the HTTP POST request
         $data  = $input->get('jform', array(), 'array');
 
-        \JLog::add("data:".$data, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-        
         // set up context for saving form data
         $context = "$this->option.edit.$this->context";
 

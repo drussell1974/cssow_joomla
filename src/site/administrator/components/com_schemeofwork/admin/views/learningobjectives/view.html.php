@@ -42,7 +42,7 @@ class SchemeOfWorkViewLearningObjectives extends JViewLegacy {
         $errors = $this->get('Errors');
 
         if (empty($errors) === 1) {
-            \JLog::add("Errors:" . $errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
+            //\JLog::add("Errors:" . $errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));
             throw new Exception(implode("\n", $errors), 500);
 
             return false;

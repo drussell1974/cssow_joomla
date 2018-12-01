@@ -50,7 +50,7 @@ class SchemeOfWorkViewForm extends JViewLegacy
                 
             if (empty($errors) === 1)
             {
-                \JLog::add($errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+                //\JLog::add($errors, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 throw new Exception(implode("\n", $errors), 500);
             }
 

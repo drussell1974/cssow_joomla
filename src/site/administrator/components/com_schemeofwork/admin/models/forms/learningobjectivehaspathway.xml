@@ -3,6 +3,35 @@
     addrulepath="/administrator/components/com_schemeofwork/models/rules"
 >
     <fieldset
+        name="filter"
+        label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_FILTER"
+        >
+        <field
+            name="topic_id"
+            type="Topics"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_TOPIC_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_TOPIC_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_TOPIC</option>
+        </field>
+        <field
+            name="year_id"
+            type="Years"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_YEAR_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_YEAR_DESC" 
+            required="true"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_YEAR</option>
+        </field>
+    </fieldset>
+    <fieldset
         name="details"
         label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_DETAILS"
     >
@@ -10,17 +39,18 @@
             name="id"
             type="hidden"
         />
+        
         <field
-            name="topic_id"
-            type="Topics"
+            name="ks123_pathway_id"
+            type="Pathways"
             extension="com_schemeofwork"
             class="inputbox"
             default="0"
-            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_LABEL"
-            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_DESC" 
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_DESC" 
             required="true"
         >
-            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_TOPIC</option>
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_PATHWAYOBJECTIVE</option>
         </field>
         <field
             name="learning_objective_id"
@@ -33,18 +63,6 @@
             required="true"
         >
             <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_LEARNINGOBJECTIVEDESCRIPTION</option>
-        </field>
-        <field
-            name="ks123_pathway_id"
-            type="Pathways"
-            extension="com_schemeofwork"
-            class="inputbox"
-            default="0"
-            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_LABEL"
-            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_DESC" 
-            required="true"
-        >
-            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_JOPTION_SELECT_PATHWAYOBJECTIVE</option>
         </field>
     </fieldset>
 </form>

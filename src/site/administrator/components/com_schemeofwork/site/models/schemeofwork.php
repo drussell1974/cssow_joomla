@@ -76,8 +76,6 @@ class SchemeOfWorkModelSchemeOfWork extends JModelItem
         {
             $id    = $this->getState('name.id');
 
-            \JLog::add("getState('name.id'):".$id, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-
             $db    = JFactory::getDbo();
             $query = $db->getQuery(true);
             $query->select('sow.name, sow.params, c.title as category')

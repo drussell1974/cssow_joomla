@@ -140,7 +140,7 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
         $app = JFactory::getApplication();
         $step = $app->getUserStateFromRequest("learningobjectivehaspathway.step", "learningobjectivehaspathway.step", 'step1');
         $topic = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
-        $year = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.year", null);
+        $year = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
 
         return array($step, $topic, $year);
    }
@@ -159,7 +159,7 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
             $app->setUserState("learningobjectivehaspathway.topic", $topic);
         }
         if($year != null){
-            $app->setUserState("learningobjectivehaspathway.topic", $year);
+            $app->setUserState("learningobjectivehaspathway.year", $year);
         }
    }
 }

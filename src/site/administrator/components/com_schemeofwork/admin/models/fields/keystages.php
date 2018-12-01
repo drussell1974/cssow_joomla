@@ -38,7 +38,7 @@ class JFormFieldKeyStages extends JFormFieldList
             $query->select('id as id, name as name');
             $query->from('sow_key_stage');
         
-            \JLog::add("query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
+            \JLog::add("getOptions().query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             
             $db->setQuery((string) $query);
             $items = $db->loadObjectList();

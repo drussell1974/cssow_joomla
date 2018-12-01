@@ -43,13 +43,10 @@ class JFormFieldLearningObjectives extends JFormFieldList {
         $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as pnt on pnt.id = lob.topic_id');
-            $query->where('pnt.id = '. $selected_topic_id . ' OR lob.topic_id = ' . $selected_topic_id);
+            $query->where('pnt.parent_id = '. $selected_topic_id . ' OR lob.topic_id = ' . $selected_topic_id);
         }
-        
         $query->order('solo.level ASC');
             
-        
-        
         \JLog::add("JFormFieldLearningObjectives.getOptions.query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         
         $db->setQuery((string) $query);

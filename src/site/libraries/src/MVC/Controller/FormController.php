@@ -353,9 +353,7 @@ class FormController extends BaseController
 	 * @since   1.6
 	 */
 	public function edit($key = null, $urlVar = null)
-	{
-            \JLog::add("FormController.edit(key = ".$key.", urlVar = ".$urlVar.")", \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-            
+	{            
             // Do not cache the response to this, its a redirect, and mod_expires and google chrome browser bugs cache it forever!
 		\JFactory::getApplication()->allowCache(false);
 

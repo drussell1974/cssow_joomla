@@ -655,8 +655,6 @@ class HtmlView extends \JObject
 		$file = preg_replace('/[^A-Z0-9_\.-]/i', '', $file);
 		$tpl = isset($tpl) ? preg_replace('/[^A-Z0-9_\.-]/i', '', $tpl) : $tpl;
 
-                \JLog::add("HtmlView - loadTemplate... template=".$template.",layout=".$layout.",layoutTemplate=".$layoutTemplate.", file=".$file.",tpl=".$tpl, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-
                 // Load the language file for the template
 		$lang = \JFactory::getLanguage();
 		$lang->load('tpl_' . $template, JPATH_BASE, null, false, true)
@@ -671,7 +669,6 @@ class HtmlView extends \JObject
 		// Load the template script
 		jimport('joomla.filesystem.path');
 		$filetofind = $this->_createFileName('template', array('name' => $file));
-                \JLog::add("HtmlView - loadTemplate... filetofind=".$filetofind, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 $this->_template = \JPath::find($this->_path['template'], $filetofind);
 
 		// If alternate layout can't be found, fall back to default layout

@@ -232,11 +232,6 @@ class BaseController extends \JObject
 		$basePath = array_key_exists('base_path', $config) ? $config['base_path'] : JPATH_COMPONENT;
 		$format   = $input->getWord('format');
 		$command  = $input->get('task', 'display');
-
-                \JLog::add("BaseController.getInstance.basePath:".$basePath, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-                \JLog::add("BaseController.getInstance.format:".$format, \JLog::DEBUG, \JText::_('LOG_CATEGORY'));                 
-                \JLog::add("BaseController.getInstance.command:".$command, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-                
                 
 		// Check for array format.
 		$filter = \JFilterInput::getInstance();
@@ -279,12 +274,9 @@ class BaseController extends \JObject
 		// Get the controller class name.
 		$class = ucfirst($prefix) . 'Controller' . ucfirst($type);
                 
-                \JLog::add("BaseController.getInstance.class:".$class, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
-                
 		// Include the class if not present.
 		if (!class_exists($class))
 		{
-                    \JLog::add("BaseController.getInstance.path:".$path, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 
 			// If the controller file path exists, include it.
 			if (file_exists($path))
@@ -628,7 +620,6 @@ class BaseController extends \JObject
 		$viewLayout = $this->input->get('layout', 'default', 'string');
 
 		$view = $this->getView($viewName, $viewType, '', array('base_path' => $this->basePath, 'layout' => $viewLayout));
-                \JLog::add("BaseController.display: viewType = ".$viewType.", viewName = ".$viewName."view = ".$view, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
                 
 		// Get/Create the model
 		if ($model = $this->getModel($viewName))
@@ -697,7 +688,6 @@ class BaseController extends \JObject
 	 */
 	public function execute($task)
 	{       
-            \JLog::add("BaseController.execute(task = ".$task.")", \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
             $this->task = $task;
             $task = strtolower($task);
 

@@ -24,10 +24,13 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
    {
         // Get the selected topic
         $data = $this->input->get('jform', array(), 'array');
-        $id = $date['id'];
+
+        // values for setting options
         $topic_id = $data['topic_id'];
+        $year_id = $data['year_id'];
         
-        LearningObjectiveHasPathwayHelper::wizardSetStep("step1");
+        // Store the topic_id ready for the next step
+        LearningObjectiveHasPathwayHelper::wizardSetStep("step1", $topic_id, $year_id);
        
         //... then redirect to the same page
         $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectivehaspathway&layout=edit', false));
@@ -37,8 +40,10 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
    {   
         // Get the selected topic
         $data = $this->input->get('jform', array(), 'array');
-        $id = $data['id'];
+        
+        // values for setting options
         $topic_id = $data['topic_id'];
+        $year_id = $data['year_id'];
         
         // get the data from the HTTP POST request
         $app = JFactory::getApplication();
@@ -48,7 +53,7 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
         $app->setUserState($context . '.data', $data);
         
         // Store the topic_id ready for the next step
-        LearningObjectiveHasPathwayHelper::wizardSetStep("step2", $topic_id);
+        LearningObjectiveHasPathwayHelper::wizardSetStep("step2", $topic_id, $year_id);
         
         //... then redirect to the same page
         $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectivehaspathway&layout=edit&id='.$id, false));
