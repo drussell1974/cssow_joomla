@@ -139,9 +139,10 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
    {
         $app = JFactory::getApplication();
         $step = $app->getUserStateFromRequest("learningobjectivehaspathway.step", "learningobjectivehaspathway.step", 'step1');
-        $topic = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", '0');
+        $topic = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
+        $year = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.year", null);
 
-        return array($step, $topic);
+        return array($step, $topic, $year);
    }
    /**
     * Set the step in the user setUserState "learningobjectivehaspathway.step" and "learningobjectivehaspathway.topic"
@@ -149,13 +150,16 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
     * @param type $step
     * @param type $topic (null by default that will not change the setUserState)
     */
-   public static function wizardSetStep($step, $topic = null){
+   public static function wizardSetStep($step, $topic = null, $year = null){
         $app = JFactory::getApplication();
         
         $app->setUserState("learningobjectivehaspathway.step", $step);
        
         if($step != null){
             $app->setUserState("learningobjectivehaspathway.topic", $topic);
+        }
+        if($year != null){
+            $app->setUserState("learningobjectivehaspathway.topic", $year);
         }
    }
 }

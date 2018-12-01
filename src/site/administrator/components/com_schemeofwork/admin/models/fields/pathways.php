@@ -34,14 +34,22 @@ class JFormFieldPathways extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('path.id as id, CONCAT_WS(\'-\', yr.name, path.objective) as objective');
+        $query->select('path.id as id, path.objective as objective');
         $query->from('sow_ks123_pathway as path');
-        $query->LeftJoin('sow_year as yr on yr.id = path.year_id');
+
         // filter as neccesary
+        // ... by topic
         $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
         if(!empty($selected_topic_id)){
             $query->Join('INNER', 'sow_topic as pnt on pnt.parent_id = path.topic_id');
             $query->where('pnt.id = '. $selected_topic_id . ' OR path.topic_id = ' . $selected_topic_id);
+        }
+        //... by year
+        $selected_year_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[2];
+        if(!empty($selected_year_id)){
+            $query->Join('INNER', 'sow_year as yr on yr.id = path.year_id');
+            $query->where('pnt.id = '. $selected_year_id);
+            $query->order('yr.name ASC');
         }
         
         \JLog::add("JFormFieldPathways.getOptions.query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
