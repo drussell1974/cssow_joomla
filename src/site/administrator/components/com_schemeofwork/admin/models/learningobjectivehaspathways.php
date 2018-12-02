@@ -33,6 +33,9 @@ class SchemeOfWorkModelLearningObjectiveHasPathways extends JModelList {
                 'id',
                 'learning_objective_id',
                 'ks123_pathway_id',
+                'year_name',
+                'pathway_topic_name',
+                'learning_objective_topic_name',
                 'author',
                 'created',
                 'published'
@@ -58,12 +61,28 @@ class SchemeOfWorkModelLearningObjectiveHasPathways extends JModelList {
         
         // Join over the learning objective.
         $query->select('lob.description as learning_objective_description')
-                ->join('LEFT', 'sow_learning_objective as lob' . ' ON lob.id = lob_pw.learning_objective_id ');
+                ->join('LEFT', 'sow_learning_objective as lob ON lob.id = lob_pw.learning_objective_id ');
         
         // Join over the pathway.
         $query->select('pw.objective as pathway_objective')
-                ->join('LEFT', 'sow_ks123_pathway as pw' . ' ON pw.id = lob_pw.ks123_pathway_id ');
+                ->join('LEFT', 'sow_ks123_pathway as pw ON pw.id = lob_pw.ks123_pathway_id ');
 
+        // Join over the pathway and year.
+        $query->select('yr.name as year_name')
+                ->join('LEFT', 'sow_year as yr ON yr.id = pw.year_id ');
+        
+        // Join over the year and key stage.
+        $query->select('ks.name as key_stage_name')
+                ->join('LEFT', 'sow_key_stage as ks ON ks.id = yr.key_stage_id ');
+        
+        // Join over the pathway and topic.
+        $query->select('pwtop.name as pathway_topic_name')
+                ->join('LEFT', 'sow_topic as pwtop ON pwtop.id = pw.topic_id ');
+
+        // Join over the learning objective and topic.
+        $query->select('lotop.name as learningobjective_topic_name')
+                ->join('LEFT', 'sow_topic as lotop ON lotop.id = lob.topic_id ');
+        
         // Join with users table to get the username of the author
         $query->select($db->quoteName('u.username', 'author'))
                 ->join('LEFT', $db->quoteName('#__users', 'u') . ' ON u.id = lob_pw.created_by');
@@ -86,7 +105,7 @@ class SchemeOfWorkModelLearningObjectiveHasPathways extends JModelList {
         }
 
         // Add the list ordering clause.
-        $orderCol = $this->state->get('list.ordering', 'name');
+        $orderCol = $this->state->get('list.ordering', 'year_name');
         $orderDirn = $this->state->get('list.direction', 'asc');
 
         $query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));

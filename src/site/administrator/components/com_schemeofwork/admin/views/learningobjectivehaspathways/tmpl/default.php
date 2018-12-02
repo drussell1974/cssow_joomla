@@ -36,6 +36,9 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                     <th width="2%">
 <?php echo JHtml::_('grid.checkall'); ?>
                     </th>
+                    <th>
+ <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_YEAR_NAME', 'learning_objective_description', $listDirn, $listOrder); ?>
+                    </th>
                     <th width="36%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_LEARNINGOBJECTIVEDESCRIPTION', 'learning_objective_description', $listDirn, $listOrder); ?>
                     </th>
@@ -75,12 +78,24 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                 <?php echo JHtml::_('grid.id', $i, $row->id); ?>
                             </td>
                             <td>
+                                <?php echo $row->year_name ?>
+                                <div class="small">
+                                    <?php $row->key_stage_name ?>
+                                </div>
+                            </td>
+                            <td>
                                 <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_EDIT'); ?>">
                                     <?php echo $row->learning_objective_description; ?>
                                 </a>
+                                <div class="small">
+                                    <?php echo $row->learningobjective_topic_name ?>
+                                </div>
                             </td>
                             <td>
                                 <?php echo $row->pathway_objective; ?>
+                                <div class="small">
+                                    <?php echo $row->pathway_topic_name; ?>
+                                </div>
                             </td>
                             <td align="center">
                                 <?php echo $row->author; ?>
