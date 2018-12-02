@@ -32,40 +32,24 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 
     public static function addSubmenu($submenu) 
     {
-        JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SUBMENU'),
-            'index.php?option=com_schemeofwork&view=learningobjectives',
-            $submenu == 'learningobjectives'
-        );
+
 
         JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_PATHWAY_SUBMENU'),
-            'index.php?option=com_schemeofwork&view=pathways',
-            $submenu == 'pathways'
-        );
-
-        JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_SUBMENU'),
-            'index.php?option=com_schemeofwork&view=learningobjectivehaspathways',
-            $submenu == 'learningobjectivehaspathways'
-        );
-
-        JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_SUBMENU'),
-            'index.php?option=com_schemeofwork&view=schemeofworks',
-            $submenu == 'schemeofworks'
-        );
-
-        JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_CONTENT_SUBMENU'),
-            'index.php?option=com_schemeofwork&view=contents',
-            $submenu == 'contents'
+            JText::_('COM_SCHEMEOFWORK_CATEGORIES_SUBMENU'),
+            'index.php?option=com_categories&view=categories&extension=com_schemeofwork',
+            $submenu == 'categories'
         );
 
         JHtmlSidebar::addEntry(
             JText::_('COM_SCHEMEOFWORK_CSCONCEPT_SUBMENU'),
             'index.php?option=com_schemeofwork&view=csconcepts',
             $submenu == 'csconcepts'
+        );
+
+        JHtmlSidebar::addEntry(
+            JText::_('COM_SCHEMEOFWORK_CONTENT_SUBMENU'),
+            'index.php?option=com_schemeofwork&view=contents',
+            $submenu == 'contents'
         );
 
         JHtmlSidebar::addEntry(
@@ -79,13 +63,36 @@ abstract class SchemeOfWorkHelper extends JHelperContent
             'index.php?option=com_schemeofwork&view=keystages',
             $submenu == 'keystages'
         );
+        
+        JHtmlSidebar::addEntry(
+            JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SUBMENU'),
+            'index.php?option=com_schemeofwork&view=learningobjectives',
+            $submenu == 'learningobjectives'
+        );
+
+        JHtmlSidebar::addEntry(
+            JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_SUBMENU'),
+            'index.php?option=com_schemeofwork&view=learningobjectivehaspathways',
+            $submenu == 'learningobjectivehaspathways'
+        );
+        
+        JHtmlSidebar::addEntry(
+            JText::_('COM_SCHEMEOFWORK_PATHWAY_SUBMENU'),
+            'index.php?option=com_schemeofwork&view=pathways',
+            $submenu == 'pathways'
+        );
 
         JHtmlSidebar::addEntry(
             JText::_('COM_SCHEMEOFWORK_PLAYBASEDOBJECTIVE_SUBMENU'),
             'index.php?option=com_schemeofwork&view=playbasedobjectives',
             $submenu == 'playbasedobjectives'
         );
-
+        
+        JHtmlSidebar::addEntry(
+            JText::_('COM_SCHEMEOFWORK_SCHEMEOFWORK_SUBMENU'),
+            'index.php?option=com_schemeofwork&view=schemeofworks',
+            $submenu == 'schemeofworks'
+        );
 
         JHtmlSidebar::addEntry(
             JText::_('COM_SCHEMEOFWORK_SOLOTAXONOMY_SUBMENU'),
@@ -109,12 +116,6 @@ abstract class SchemeOfWorkHelper extends JHelperContent
             JText::_('COM_SCHEMEOFWORK_YEAR_SUBMENU'),
             'index.php?option=com_schemeofwork&view=years',
             $submenu == 'years'
-        );
-
-        JHtmlSidebar::addEntry(
-            JText::_('COM_SCHEMEOFWORK_CATEGORIES_SUBMENU'),
-            'index.php?option=com_categories&view=categories&extension=com_schemeofwork',
-            $submenu == 'categories'
         );
 
         // Set some global property

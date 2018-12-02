@@ -53,7 +53,7 @@ class SchemeOfWorkViewKeyStages extends JViewLegacy
 		}
 
                 // Set the submenu
-                SchemeOfWorkHelper::addSubmenu('schemeofworks');
+                SchemeOfWorkHelper::addSubmenu('keystages');
 
 		// Set the toolbar and number of found items
 		$this->addToolBar();

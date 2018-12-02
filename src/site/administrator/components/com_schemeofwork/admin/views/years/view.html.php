@@ -49,7 +49,7 @@ class SchemeOfWorkViewYears extends JViewLegacy {
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('years');
 
         // Set the toolbar and number of found items
         $this->addToolBar();

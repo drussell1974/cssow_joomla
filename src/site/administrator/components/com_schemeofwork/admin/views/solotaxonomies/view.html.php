@@ -49,7 +49,7 @@ class SchemeOfWorkViewSoloTaxonomies extends JViewLegacy {
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('solotaxonomies');
 
         // Set the toolbar and number of found items
         $this->addToolBar();

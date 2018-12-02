@@ -49,7 +49,7 @@ class SchemeOfWorkViewContents extends JViewLegacy {
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('contents');
 
         // Set the toolbar and number of found items
         $this->addToolBar();

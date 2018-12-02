@@ -53,7 +53,7 @@ class SchemeOfWorkViewCSConcepts extends JViewLegacy {
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('csconcepts');
 
         // Set the toolbar and number of found items
         $this->addToolBar();

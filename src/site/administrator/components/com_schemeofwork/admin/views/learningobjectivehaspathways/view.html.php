@@ -49,7 +49,7 @@ class SchemeOfWorkViewLearningObjectiveHasPathways extends JViewLegacy {
         }
 
         // Set the submenu
-        SchemeOfWorkHelper::addSubmenu('schemeofworks');
+        SchemeOfWorkHelper::addSubmenu('learningobjectivehaspathways');
 
         // Set the toolbar and number of found items
         $this->addToolBar();
