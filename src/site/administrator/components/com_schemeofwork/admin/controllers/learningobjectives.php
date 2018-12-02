@@ -18,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 class SchemeOfWorkControllerLearningObjectives extends JControllerAdmin {
 
     /**
-     * Proxy for getModel.
+     * Proxy for getModel. 
      *
      * @param   string  $name    The model name. Optional.
      * @param   string  $prefix  The class prefix. Optional.
@@ -32,6 +32,18 @@ class SchemeOfWorkControllerLearningObjectives extends JControllerAdmin {
         $model = parent::getModel($name, $prefix, $config);
 
         return $model;
+    }
+
+    public function delete(){
+        $input = JFactory::getApplication()->input;
+        $recs = $input->get('cid', array(), 'array');
+        $nrecs = $input->get('boxchecked', 0 , 'int');
+        $model = $this->getModel('LearningObjective', 'SchemeOfWorkModel');
+        $model->delete($recs);
+        $msg = JText::sprintf('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_N_ITEMS_DELETED' ,$nrecs);
+        //... then redirect to the same page
+        
+        $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectives', false), $msg);
     }
 
 }

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form
     addrulepath="/administrator/components/com_schemeofwork/models/rules"
->
+    >
+    <fieldset
+        name="filter"
+        label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_FILTER"
+    >
+        <field
+            name="key_stage_id"
+            type="KeyStages"
+            extension="com_schemeofwork"
+            class="inputbox"
+            default="0"
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE_DESC"
+        >
+            <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_KEYSTAGE_NAME</option>
+        </field>
+    </fieldset>
     <fieldset
         name="details"
         label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DETAILS"
@@ -54,6 +70,7 @@
             label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_LABEL"
             description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CONTENT_DESC" 
             required="true"
+            showon="key_stage_id!:0"
         >
             <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_CONTENT_NAME</option>
         </field>
@@ -66,6 +83,7 @@
             label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_LABEL"
             description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD_DESC" 
             required="true"
+            showon="key_stage_id:4"
         >
             <option value="0">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_JOPTION_SELECT_EXAMBOARD_NAME</option>
         </field>
