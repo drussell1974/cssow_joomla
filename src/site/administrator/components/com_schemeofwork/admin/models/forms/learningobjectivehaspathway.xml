@@ -52,7 +52,18 @@
             name="id"
             type="hidden"
         />
-        
+        <field
+            name="comment"
+            type="textarea"
+            extension="com_schemeofwork"
+            class="inputbox validate-learningobjectivehaspathwaycomment"
+            validate="learningobjectivehaspathwaycomment"
+            size="500"
+            default=""
+            label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_COMMENT_LABEL"
+            description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_COMMENT_DESC" 
+            required="false"
+        />   
         <field
             name="ks123_pathway_id"
             type="Pathways"
