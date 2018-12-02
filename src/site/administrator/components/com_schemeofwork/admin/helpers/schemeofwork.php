@@ -129,55 +129,35 @@ abstract class SchemeOfWorkHelper extends JHelperContent
 }
 
 abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
-    
     /**
-     * Get the step and topic from getUserStateFromRequest ("learningobjectivehaspathway.step", "learningobjectivehaspathway.topic")
+     * Get learningobjectivehaspathway.$option from getUserStateFromRequest
      * 
-     * @return array($step, $topic) - or array("step1", 0) as default
+     * @return value
      */
-   public static function wizardGetStep()
+   public static function GetSelectedOption($option)
    {
         $app = JFactory::getApplication();
-        $step = $app->getUserStateFromRequest("learningobjectivehaspathway.step", "learningobjectivehaspathway.step", 'step1');
-        $topic_id = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
-        $year_id = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
-        $solo_taxonomy_id = $app->getUserStateFromRequest("learningobjectivehaspathway.solotaxonomy", "learningobjectivehaspathway.solotaxonomy", null);
+    
+        return $app->getUserStateFromRequest("learningobjectivehaspathway.$option", "learningobjectivehaspathway.$option", null);
+        //$topic_id = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
+        //$year_id = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
+        //$solo_taxonomy_id = $app->getUserStateFromRequest("learningobjectivehaspathway.solotaxonomy", "learningobjectivehaspathway.solotaxonomy", null);
 
-        return array($step, $topic_id, $year_id, $solo_taxonomy_id);
+        //return array($topic_id, $year_id, $solo_taxonomy_id);
    }
+   
    /**
-    * Set the step in the user setUserState "learningobjectivehaspathway.step" and "learningobjectivehaspathway.topic"
+    * Set the setUserState topic, year and solo taxonomy 
     * 
     * @param type $step
     * @param type $topic (null by default that will not change the setUserState)
     */
-   public static function wizardSetStep($step, $topic_id = null, $year_id = null, $solo_taxonomy_id = null){
+   public static function SaveSelectedOption($option, $val){
         $app = JFactory::getApplication();
         
-        $app->setUserState("learningobjectivehaspathway.step", $step);
-       
-        if($step != null){
-            $app->setUserState("learningobjectivehaspathway.topic", $topic_id);
-        }
-        if($year_id != null){
-            $app->setUserState("learningobjectivehaspathway.year", $year_id);
-        }
-        if($solo_taxonomy_id != null){
-            $app->setUserState("learningobjectivehaspathway.solotaxonomy", $solo_taxonomy_id);
-        }
+        $app->setUserState("learningobjectivehaspathway.$option", $val);
+        //$app->setUserState("learningobjectivehaspathway.year", $year_id);
+        //$app->setUserState("learningobjectivehaspathway.solotaxonomy", $solo_taxonomy_id);
    }
-   /**
-    * Set the step in the user setUserState "learningobjectivehaspathway.step" and "learningobjectivehaspathway.topic"
-    * 
-    * @param type $step
-    * @param type $topic (null by default that will not change the setUserState)
-    */
-   public static function wizardResetStep(){
-        $app = JFactory::getApplication();
-        
-        $app->setUserState("learningobjectivehaspathway.step", null);
-        $app->setUserState("learningobjectivehaspathway.topic", null);
-        $app->setUserState("learningobjectivehaspathway.year", null);
-        $app->setUserState("learningobjectivehaspathway.solotaxonomy", null);
-   }
+   
 }

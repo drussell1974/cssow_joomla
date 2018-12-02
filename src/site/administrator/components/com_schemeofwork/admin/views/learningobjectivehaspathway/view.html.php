@@ -77,13 +77,10 @@ class SchemeOfWorkViewLearningObjectiveHasPathway extends JViewLegacy {
         }
 
         JToolbarHelper::title($title, 'learningobjectivehaspathway');
-        if(LearningObjectiveHasPathwayHelper::wizardGetStep()[0] == "step2"){
-            JToolbarHelper::save('learningobjectivehaspathway.save');
-            JToolbarHelper::custom('learningobjectivehaspathway.wizardPrev', 'previous', 'previous', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_WIZARD_PREV'), false);
-        } else {
-            JToolbarHelper::custom('learningobjectivehaspathway.wizardNext', 'next', 'next', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_WIZARD_NEXT'), false);
-        }    
+        JToolbarHelper::save('learningobjectivehaspathway.save');
+        JToolbarHelper::custom('learningobjectivehaspathway.refresh', 'refresh', 'refresh', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_REFRESH'), false);
         JToolbarHelper::cancel('learningobjectivehaspathway.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE' );
+        
     }
 
     /**

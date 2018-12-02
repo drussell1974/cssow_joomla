@@ -20,48 +20,34 @@ defined('_JEXEC') or die('Restricted access');
 
 class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm {
    
-   public function wizardPrev()
-   {
-        $this->saveFormState("step1");
-       
-        //... then redirect to the same page
-        $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectivehaspathway&layout=edit', false));
-   }
-   
-   public function wizardNext()
-   {   
-        $this->saveFormState("step2");
-        
-        //... then redirect to the same page
-        $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectivehaspathway&layout=edit&id='.$id, false));
-   }
-   
-   public function cancel($key = null)
-    {
-        parent::cancel($key);
-
-        // Reset for next step
-        LearningObjectiveHasPathwayHelper::wizardResetStep();
-    }
-    
-    private function saveFormState($step){
+    public function refresh(){
         // Get the selected topic
         $data = $this->input->get('jform', array(), 'array');
 
-        // values for setting options
-        $topic_id = $data['topic_id'];
-        $year_id = $data['year_id'];
-        $solo_taxonomy_id = $data['solo_taxonomy_id'];
-        
-        
+        // Store the topic_id, year_id and solo_taxonomy_id ready for the previous step
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("topic", $data['topic_id']);
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("year", $data['year_id']);
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("solotaxomony", $data['solo_taxonomy_id']);
+
         // get the data from the HTTP POST request
         $app = JFactory::getApplication();
         // set up context for saving form data
         $context = "$this->option.edit.$this->context";
         // Save the form data in the session.
         $app->setUserState($context . '.data', $data);
-        
-        // Store the topic_id, year_id and solo_taxonomy_id ready for the previous step
-        LearningObjectiveHasPathwayHelper::wizardSetStep($step, $topic_id, $year_id, $solo_taxonomy_id);
+
+
+        //... then redirect to the same page
+        $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=learningobjectivehaspathway&layout=edit&id='.$id, false));
+    }
+   
+    public function cancel($key = null)
+    {
+        parent::cancel($key);
+
+        // Reset for next step
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("topic", null);
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("year", null);
+        LearningObjectiveHasPathwayHelper::SaveSelectedOption("solotaxomony", null);
     }
 }

@@ -68,7 +68,7 @@
             name="ks123_pathway_id"
             type="Pathways"
             extension="com_schemeofwork"
-                class="radio"
+            class="radio"
             default="0"
             label="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_LABEL"
             description="COM_SCHEMEOFWORK_LEARNINGOBJECTIVEHASPATHWAY_PATHWAYOBJECTIVE_DESC" 

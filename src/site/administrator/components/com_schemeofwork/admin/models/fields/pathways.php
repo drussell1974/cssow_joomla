@@ -38,17 +38,22 @@ class JFormFieldPathways extends JFormFieldRadio {
         $query->from('sow_ks123_pathway as path');
         
         // filter as neccesary
+        
+        
         // ... by topic
-        $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
+        $selected_topic_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("topic");
+                
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as top on top.id = path.topic_id');
             $query->LeftJoin('sow_topic as rtop on rtop.parent_id = top.id');
             $query->where('(path.topic_id = '. $selected_topic_id . ' OR rtop.id = '. $selected_topic_id . ')');
         }
+        
         //... by year
-        $selected_year_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[2];
+        $selected_year_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("year");
+        
         if(!empty($selected_year_id)){
-            $query->where(' path.year_id = '. $selected_year_id);
+            $query->where('path.year_id = '. $selected_year_id);
         }
         
         \JLog::add("JFormFieldPathways.getOptions().query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 

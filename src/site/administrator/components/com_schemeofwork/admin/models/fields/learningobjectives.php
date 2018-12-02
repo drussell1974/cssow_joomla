@@ -36,25 +36,30 @@ class JFormFieldLearningObjectives extends JFormFieldRadio {
         $query = $db->getQuery(true);
         
         
-        $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
-        $selected_solo_taxonomy_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[3];
-        
-        $query->select('lob.id as id, CONCAT(lob.description, \' (\', SUBSTRING_INDEX(solo.name, \':\', 1), \')\') as description');    $query->from('sow_learning_objective as lob');
+        $query->select('lob.id as id, CONCAT(lob.description, \' (\', SUBSTRING_INDEX(solo.name, \':\', 1), \')\') as description');    
+        $query->from('sow_learning_objective as lob');
         $query->LeftJoin('sow_solo_taxonomy as solo on solo.id = lob.solo_taxonomy_id');
         $query->order('solo.level ASC');
         
         // filter as neccesary
+        
         // ... by Topic
+        
+        $selected_topic_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("topic");
+        
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as pnt on pnt.id = lob.topic_id');
             $query->where('(pnt.parent_id = '. $selected_topic_id . ' OR lob.topic_id = ' . $selected_topic_id . ')');
         }
+        
         // ... By Solo Taxonomy
+        
+        $selected_solo_taxonomy_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("solotaxomony");
+        
         if(!empty($selected_solo_taxonomy_id)){
             $query->where('solo.id = '. $selected_solo_taxonomy_id);
         }
         
-            
         \JLog::add("JFormFieldLearningObjectives.getOptions.query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         
         $db->setQuery((string) $query);
