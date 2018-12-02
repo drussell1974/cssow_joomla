@@ -159,11 +159,25 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
         if($step != null){
             $app->setUserState("learningobjectivehaspathway.topic", $topic_id);
         }
-        if($year != null){
+        if($year_id != null){
             $app->setUserState("learningobjectivehaspathway.year", $year_id);
         }
         if($solo_taxonomy_id != null){
             $app->setUserState("learningobjectivehaspathway.solotaxonomy", $solo_taxonomy_id);
         }
+   }
+   /**
+    * Set the step in the user setUserState "learningobjectivehaspathway.step" and "learningobjectivehaspathway.topic"
+    * 
+    * @param type $step
+    * @param type $topic (null by default that will not change the setUserState)
+    */
+   public static function wizardResetStep(){
+        $app = JFactory::getApplication();
+        
+        $app->setUserState("learningobjectivehaspathway.step", null);
+        $app->setUserState("learningobjectivehaspathway.topic", null);
+        $app->setUserState("learningobjectivehaspathway.year", null);
+        $app->setUserState("learningobjectivehaspathway.solotaxonomy", null);
    }
 }

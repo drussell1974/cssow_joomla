@@ -39,9 +39,9 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
    public function cancel($key = null)
     {
         parent::cancel($key);
-        
+
         // Reset for next step
-        LearningObjectiveHasPathwayHelper::wizardSetStep("step1");
+        LearningObjectiveHasPathwayHelper::wizardResetStep();
     }
     
     private function saveFormState($step){

@@ -34,21 +34,23 @@ class JFormFieldPathways extends JFormFieldRadio {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('path.id as id, path.objective as objective');
+        $query->select('DISTINCT path.id as id, path.objective as objective');
         $query->from('sow_ks123_pathway as path');
         
         // filter as neccesary
         // ... by topic
         $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
         if(!empty($selected_topic_id)){
-            $query->Join('INNER', 'sow_topic as pnt on pnt.id = path.topic_id');
-            $query->where('(pnt.id = '. $selected_topic_id . ' OR pnt.parent_id = ' . $selected_topic_id. ')');
+            $query->LeftJoin('sow_topic as top on top.id = path.topic_id');
+            $query->LeftJoin('sow_topic as rtop on rtop.parent_id = top.id');
+            $query->where('(path.topic_id = '. $selected_topic_id . ' OR rtop.id = '. $selected_topic_id . ')');
         }
         //... by year
         $selected_year_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[2];
         if(!empty($selected_year_id)){
             $query->where(' path.year_id = '. $selected_year_id);
         }
+        
         \JLog::add("JFormFieldPathways.getOptions().query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         
         $db->setQuery((string) $query);
