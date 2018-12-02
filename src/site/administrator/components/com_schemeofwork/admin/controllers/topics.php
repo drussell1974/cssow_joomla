@@ -40,7 +40,7 @@ class SchemeOfWorkControllerTopics extends JControllerAdmin {
         $nrecs = $input->get('boxchecked', 0 , 'int');
         $model = $this->getModel('Topic', 'SchemeOfWorkModel');
         $model->delete($recs);
-        $msg = JText::sprintf('COM_SCHEMEOFWORK_YEAR_N_ITEMS_DELETED' ,$nrecs);
+        $msg = JText::sprintf('COM_SCHEMEOFWORK_TOPIC_N_ITEMS_DELETED' ,$nrecs);
         //... then redirect to the same page
         
         $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=topics', false), $msg);
