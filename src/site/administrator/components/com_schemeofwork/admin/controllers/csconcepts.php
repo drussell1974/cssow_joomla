@@ -33,4 +33,16 @@ class SchemeOfWorkControllerCSConcepts extends JControllerAdmin
 
         return $model;
     }
+
+    public function delete(){
+        $input = JFactory::getApplication()->input;
+        $recs = $input->get('cid', array(), 'array');
+        $nrecs = $input->get('boxchecked', 0 , 'int');
+        $model = $this->getModel('CSConcept', 'SchemeOfWorkModel');
+        $model->delete($recs);
+        $msg = JText::sprintf('COM_SCHEMEOFWORK_CSCONCEPT_N_ITEMS_DELETED' ,$nrecs);
+        //... then redirect to the same page
+        
+        $this->setRedirect(JRoute::_('index.php?option=com_schemeofwork&view=csconcepts', false), $msg);
+    }
 }
