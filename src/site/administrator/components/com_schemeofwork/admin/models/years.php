@@ -91,5 +91,4 @@ class SchemeOfWorkModelYears extends JModelList {
 
         return $query;
     }
-
 }
