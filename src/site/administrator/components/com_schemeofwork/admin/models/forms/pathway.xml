@@ -22,17 +22,6 @@
             default=""
         />
         <field
-            name="objective"
-            type="text"
-            label="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_LABEL"
-            description="COM_SCHEMEOFWORK_PATHWAY_OBJECTIVE_DESC"
-            size="1000"
-            class="inputbox validate-pathwayobjective"
-            validate="pathwayobjective"
-            required="true"
-            default=""
-        />
-        <field
             name="year_id"
             type="Years"
             extension="com_schemeofwork"
@@ -73,8 +62,6 @@
             type="select"
             label="COM_SCHEMEOFWORK_PATHWAY_ABSTRACTION_LABEL"
             description="COM_SCHEMEOFWORK_PATHWAY_ABSTRACTION_DESC"
-            class="inputbox validate-pathwaytrueorfalse"
-            validate="pathwaytrueorfalse"
             required="true"
             default="False"
         >
@@ -86,8 +73,6 @@
             type="select"
             label="COM_SCHEMEOFWORK_PATHWAY_DECOMPOSITION_LABEL"
             description="COM_SCHEMEOFWORK_PATHWAY_DECOMPOSITION_DESC"
-            class="inputbox validate-pathwaytrueorfalse"
-            validate="pathwaytrueorfalse"
             required="true"
             default="False"
         >
