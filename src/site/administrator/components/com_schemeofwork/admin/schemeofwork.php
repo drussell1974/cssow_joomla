@@ -35,7 +35,7 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_schemeofwork'))
 
 // Require helper file
 JLoader::register('SchemeOfWorkHelper', JPATH_COMPONENT . '/helpers/schemeofwork.php');
-JLoader::register('LearningObjectiveHasPathwayHelper', JPATH_COMPONENT . '/helpers/schemeofwork.php');
+JLoader::register('FormOptionsHelper', JPATH_COMPONENT . '/helpers/schemeofwork.php');
 
 // Get an instance of the controller prefixed by SchemeOfWorks
 $controller = JControllerLegacy::getInstance('SchemeOfWork');

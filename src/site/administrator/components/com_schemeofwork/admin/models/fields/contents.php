@@ -34,9 +34,17 @@ class JFormFieldContents extends JFormFieldList {
     protected function getOptions() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter, cnt.key_stage_id as key_stage_id');
+        $query->select('cnt.id as id, cnt.description as description, cnt.letter as letter');
         $query->from('sow_content as cnt');
-        //$query->leftJoin('sow_key_stage as ks on yr.key_stage_id = ks.id');
+        
+        // ... By Key Stage
+        
+        $selected_key_stage_id = FormOptionsHelper::GetSelectedOption("learningobjective","keystage");
+        
+        if(!empty($selected_key_stage_id)){
+            $query->select('cnt.key_stage_id as key_stage_id');
+            $query->where('cnt.key_stage_id = '. $selected_key_stage_id);
+        }
         
         \JLog::add("getOptions().query:".$query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         $db->setQuery((string) $query);

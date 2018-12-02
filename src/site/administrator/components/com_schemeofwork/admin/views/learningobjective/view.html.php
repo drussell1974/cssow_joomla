@@ -78,9 +78,8 @@ class SchemeOfWorkViewLearningObjective extends JViewLegacy {
 
         JToolbarHelper::title($title, 'learningobjective');
         JToolbarHelper::save('learningobjective.save');
-        JToolbarHelper::cancel(
-                'learningobjective.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
-        );
+        JToolbarHelper::custom('learningobjective.refresh', 'refresh', 'refresh', JText::_('COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_REFRESH'), false);
+        JToolbarHelper::cancel('learningobjective.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
     }
 
     /**

@@ -24,17 +24,18 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
         // Get the selected topic
         $data = $this->input->get('jform', array(), 'array');
 
-        // Store the topic_id, year_id and solo_taxonomy_id ready for the previous step
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("topic", $data['topic_id']);
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("year", $data['year_id']);
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("solotaxomony", $data['solo_taxonomy_id']);
-
         // get the data from the HTTP POST request
         $app = JFactory::getApplication();
         // set up context for saving form data
         $context = "$this->option.edit.$this->context";
         // Save the form data in the session.
         $app->setUserState($context . '.data', $data);
+        
+        // Store the topic_id, year_id and solo_taxonomy_id ready for the previous step
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "topic", $data['topic_id']);
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "year", $data['year_id']);
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "solotaxomony", $data['solo_taxonomy_id']);
+
 
 
         //... then redirect to the same page
@@ -46,8 +47,8 @@ class SchemeOfWorkControllerLearningObjectiveHasPathway extends JControllerForm 
         parent::cancel($key);
 
         // Reset for next step
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("topic", null);
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("year", null);
-        LearningObjectiveHasPathwayHelper::SaveSelectedOption("solotaxomony", null);
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "topic", null);
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "year", null);
+        FormOptionsHelper::SaveSelectedOption("learningobjectivehaspathway", "solotaxomony", null);
     }
 }

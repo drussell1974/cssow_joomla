@@ -41,7 +41,7 @@ class JFormFieldPathways extends JFormFieldRadio {
         
         
         // ... by topic
-        $selected_topic_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("topic");
+        $selected_topic_id = FormOptionsHelper::GetSelectedOption("learningobjectivehaspathway", "topic");
                 
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as top on top.id = path.topic_id');
@@ -50,7 +50,7 @@ class JFormFieldPathways extends JFormFieldRadio {
         }
         
         //... by year
-        $selected_year_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("year");
+        $selected_year_id = FormOptionsHelper::GetSelectedOption("learningobjectivehaspathway", "year");
         
         if(!empty($selected_year_id)){
             $query->where('path.year_id = '. $selected_year_id);

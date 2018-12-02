@@ -128,17 +128,17 @@ abstract class SchemeOfWorkHelper extends JHelperContent
     }
 }
 
-abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
+abstract class FormOptionsHelper extends JHelperContent {
     /**
-     * Get learningobjectivehaspathway.$option from getUserStateFromRequest
+     * Get formoptions.$option from getUserStateFromRequest
      * 
      * @return value
      */
-   public static function GetSelectedOption($option)
+   public static function GetSelectedOption($context, $option)
    {
         $app = JFactory::getApplication();
     
-        return $app->getUserStateFromRequest("learningobjectivehaspathway.$option", "learningobjectivehaspathway.$option", null);
+        return $app->getUserStateFromRequest("$context.$option", "learningobjectivehaspathway.$option", null);
         //$topic_id = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
         //$year_id = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
         //$solo_taxonomy_id = $app->getUserStateFromRequest("learningobjectivehaspathway.solotaxonomy", "learningobjectivehaspathway.solotaxonomy", null);
@@ -152,12 +152,11 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
     * @param type $step
     * @param type $topic (null by default that will not change the setUserState)
     */
-   public static function SaveSelectedOption($option, $val){
+   public static function SaveSelectedOption($context, $option, $val){
         $app = JFactory::getApplication();
         
-        $app->setUserState("learningobjectivehaspathway.$option", $val);
+        $app->setUserState("$context.$option", $val);
         //$app->setUserState("learningobjectivehaspathway.year", $year_id);
         //$app->setUserState("learningobjectivehaspathway.solotaxonomy", $solo_taxonomy_id);
    }
-   
 }

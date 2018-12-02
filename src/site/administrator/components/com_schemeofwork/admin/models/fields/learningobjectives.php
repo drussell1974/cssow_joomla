@@ -45,7 +45,7 @@ class JFormFieldLearningObjectives extends JFormFieldRadio {
         
         // ... by Topic
         
-        $selected_topic_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("topic");
+        $selected_topic_id = FormOptionsHelper::GetSelectedOption("learningobjectivehaspathway", "topic");
         
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as pnt on pnt.id = lob.topic_id');
@@ -54,11 +54,12 @@ class JFormFieldLearningObjectives extends JFormFieldRadio {
         
         // ... By Solo Taxonomy
         
-        $selected_solo_taxonomy_id = LearningObjectiveHasPathwayHelper::GetSelectedOption("solotaxomony");
+        $selected_solo_taxonomy_id = FormOptionsHelper::GetSelectedOption("learningobjectivehaspathway","solotaxomony");
         
         if(!empty($selected_solo_taxonomy_id)){
             $query->where('solo.id = '. $selected_solo_taxonomy_id);
         }
+        
         
         \JLog::add("JFormFieldLearningObjectives.getOptions.query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         
