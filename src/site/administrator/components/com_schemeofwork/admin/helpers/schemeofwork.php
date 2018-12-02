@@ -139,10 +139,11 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
    {
         $app = JFactory::getApplication();
         $step = $app->getUserStateFromRequest("learningobjectivehaspathway.step", "learningobjectivehaspathway.step", 'step1');
-        $topic = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
-        $year = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
+        $topic_id = $app->getUserStateFromRequest("learningobjectivehaspathway.topic", "learningobjectivehaspathway.topic", null);
+        $year_id = $app->getUserStateFromRequest("learningobjectivehaspathway.year", "learningobjectivehaspathway.year", null);
+        $solo_taxonomy_id = $app->getUserStateFromRequest("learningobjectivehaspathway.solotaxonomy", "learningobjectivehaspathway.solotaxonomy", null);
 
-        return array($step, $topic, $year);
+        return array($step, $topic_id, $year_id, $solo_taxonomy_id);
    }
    /**
     * Set the step in the user setUserState "learningobjectivehaspathway.step" and "learningobjectivehaspathway.topic"
@@ -150,16 +151,19 @@ abstract class LearningObjectiveHasPathwayHelper extends JHelperContent {
     * @param type $step
     * @param type $topic (null by default that will not change the setUserState)
     */
-   public static function wizardSetStep($step, $topic = null, $year = null){
+   public static function wizardSetStep($step, $topic_id = null, $year_id = null, $solo_taxonomy_id = null){
         $app = JFactory::getApplication();
         
         $app->setUserState("learningobjectivehaspathway.step", $step);
        
         if($step != null){
-            $app->setUserState("learningobjectivehaspathway.topic", $topic);
+            $app->setUserState("learningobjectivehaspathway.topic", $topic_id);
         }
         if($year != null){
-            $app->setUserState("learningobjectivehaspathway.year", $year);
+            $app->setUserState("learningobjectivehaspathway.year", $year_id);
+        }
+        if($solo_taxonomy_id != null){
+            $app->setUserState("learningobjectivehaspathway.solotaxonomy", $solo_taxonomy_id);
         }
    }
 }

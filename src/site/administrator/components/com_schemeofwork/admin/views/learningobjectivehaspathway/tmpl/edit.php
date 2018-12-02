@@ -9,7 +9,17 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.formvalidator'); 
-//$selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
+
+$document = JFactory::getDocument();
+$document->addScriptDeclaration('
+    function showSelectedPathwayText(){
+        jQuery("#jform_ks123_pathway_text").val(jQuery("#jform_ks123_pathway_id option:selected").text());
+    }
+    function showSelectedObjectiveText(){
+        jQuery("#jform_learning_objective_text").val(jQuery("#jform_learning_objective_id option:selected").text());
+    }
+');
+
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_schemeofwork&layout=edit&id=' . (int) $this->item->id); ?>"
       method="post" name="adminForm" id="adminForm" class="form-validate">

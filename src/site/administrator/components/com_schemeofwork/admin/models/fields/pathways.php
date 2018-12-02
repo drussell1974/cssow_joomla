@@ -10,14 +10,14 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-JFormHelper::loadFieldClass('list');
+JFormHelper::loadFieldClass('radio');
 
 /**
  * Pathways Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldPathways extends JFormFieldList {
+class JFormFieldPathways extends JFormFieldRadio {
 
     /**
      * The field type.

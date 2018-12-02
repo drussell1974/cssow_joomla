@@ -10,14 +10,14 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
-JFormHelper::loadFieldClass('list');
+JFormHelper::loadFieldClass('radio');
 
 /**
  * LearningObjectives Form Field class for the SchemeOfWork Admin component
  *
  * @since  0.0.1
  */
-class JFormFieldLearningObjectives extends JFormFieldList {
+class JFormFieldLearningObjectives extends JFormFieldRadio {
 
     /**
      * The field type.
@@ -36,16 +36,24 @@ class JFormFieldLearningObjectives extends JFormFieldList {
         $query = $db->getQuery(true);
         
         
-        $query->select('lob.id as id, CONCAT(lob.description, \' (\', SUBSTRING_INDEX(solo.name, \':\', 1), \')\') as description');
-        $query->from('sow_learning_objective as lob');
-        $query->LeftJoin('sow_solo_taxonomy as solo on solo.id = lob.solo_taxonomy_id');
-        // filter as neccesary
         $selected_topic_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[1];
+        $selected_solo_taxonomy_id = LearningObjectiveHasPathwayHelper::wizardGetStep()[3];
+        
+        $query->select('lob.id as id, CONCAT(lob.description, \' (\', SUBSTRING_INDEX(solo.name, \':\', 1), \')\') as description');    $query->from('sow_learning_objective as lob');
+        $query->LeftJoin('sow_solo_taxonomy as solo on solo.id = lob.solo_taxonomy_id');
+        $query->order('solo.level ASC');
+        
+        // filter as neccesary
+        // ... by Topic
         if(!empty($selected_topic_id)){
             $query->LeftJoin('sow_topic as pnt on pnt.id = lob.topic_id');
-            $query->where('pnt.parent_id = '. $selected_topic_id . ' OR lob.topic_id = ' . $selected_topic_id);
+            $query->where('(pnt.parent_id = '. $selected_topic_id . ' OR lob.topic_id = ' . $selected_topic_id . ')');
         }
-        $query->order('solo.level ASC');
+        // ... By Solo Taxonomy
+        if(!empty($selected_solo_taxonomy_id)){
+            $query->where('solo.id = '. $selected_solo_taxonomy_id);
+        }
+        
             
         \JLog::add("JFormFieldLearningObjectives.getOptions.query = ". $query, \JLog::DEBUG, \JText::_('LOG_CATEGORY')); 
         
