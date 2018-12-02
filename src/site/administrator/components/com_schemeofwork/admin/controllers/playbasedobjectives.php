@@ -33,5 +33,5 @@ class SchemeOfWorkControllerPlayBasedObjectives extends JControllerAdmin {
 
         return $model;
     }
-
+        
 }
