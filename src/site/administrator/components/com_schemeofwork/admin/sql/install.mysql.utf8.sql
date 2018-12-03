@@ -153,7 +153,6 @@ CREATE TABLE IF NOT EXISTS sow_learning_objective_has_ks123_pathway (
   created_by    INT(10) UNSIGNED NOT NULL DEFAULT '0',
   published     tinyint(4)      NOT NULL DEFAULT '1',
   PRIMARY KEY (id),
-  PRIMARY KEY (learning_objective_id, ks123_pathway_id),
   INDEX fk_sow_learning_objective_has_ks123_pathway_ks123_pathway_idx (ks123_pathway_id ASC),
   INDEX fk_learning_objective_has_ks123_pathway_learning_objective_idx (learning_objective_id ASC),
   CONSTRAINT fk_sow_learning_objective_has_ks123_pathway_ks123_pathway1
