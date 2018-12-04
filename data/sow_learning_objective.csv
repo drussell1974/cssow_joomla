@@ -1,4 +1,4 @@
-"id";"description";"solo_taxonomy_id";"topic_id";"ks4_content_id";"exam_board_id"
+"id";"description";"solo_taxonomy_id";"topic_id";"content_id";"exam_board_id"
 1;"Describe the term hardware";2;9;9;3
 2;"Describe the difference between early and modern computers";2;9;11;3
 3;"Explain the purpose of memory in terms of Von Neumann architecture";2;7;9;3
@@ -174,7 +174,7 @@
 173;"Identify file permissions for owner, group and all users";1;30;8;3
 174;"Explain how an Operating System manages free memory";3;30;8;3
 175;"Explain how the operating system manages peripheral devices";3;30;8;3
-176;"Describe how the operating system uses interrupt codes ";1;30;8;3
+176;"Describe how the operating system uses interrupt codes ";1;7;8;3
 177;"Define the term disk fragmenter";1;32;8;3
 178;"Describe how a disk can become fragmented";2;32;8;3
 179;"Name six types of utility software";2;32;8;3
@@ -386,3 +386,9 @@
 385;"Describe that computers are made from toxic materials";2;69;14;3
 386;"Describe that computers produce hazardous waste";2;69;14;3
 387;"Explain the positive and negative impacts of electricity output from data centres.";3;69;14;3
+394;"Use a keyboard";1;73;17;-1
+395;"Define the term Interrupt";1;7;25;3
+396;"Describe how the interrupt is triggered";2;7;25;3
+397;"Explain the Interrupt Service Routine and its effect on the Fetch Decode Execute cycle";3;7;25;3
+398;"Give three examples of interrupts";2;7;25;3
+399;"Describe how the operating system uses interrupt codes ";1;30;9;3
