@@ -46,7 +46,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY', 'solo_taxonomy_level', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE', 'examboard', $listDirn, $listOrder); ?>
+<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE', 'key_stage_name', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD', 'examboard', $listDirn, $listOrder); ?>

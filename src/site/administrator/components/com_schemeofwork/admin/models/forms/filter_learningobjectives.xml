@@ -32,6 +32,8 @@
             <option value="description DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION_ORDERING_DESC</option>
             <option value="topic_name ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_ASC</option>
             <option value="topic_name DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC_ORDERING_DESC</option>
+            <option value="key_stage_name ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE_ORDERING_ASC</option>
+            <option value="key_stage_name DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE_ORDERING_DESC</option>
             <option value="solo_taxonomy_level ASC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_ASC</option>
             <option value="solo_taxonomy_level DESC">COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY_ORDERING_DESC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>

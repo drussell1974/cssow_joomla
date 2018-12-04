@@ -36,6 +36,7 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
                 'solo_taxonomy_level',
                 'parent_topic_name',
                 'topic_name',
+                'key_stage_name',
                 'published'
             );
         }
