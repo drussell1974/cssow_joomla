@@ -36,8 +36,6 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
                 'solo_taxonomy_level',
                 'parent_topic_name',
                 'topic_name',
-                'author',
-                'created',
                 'published'
             );
         }
@@ -74,6 +72,10 @@ class SchemeOfWorkModelLearningObjectives extends JModelList {
         // Join over the content.
         $query->select('cnt.description as content_description ')
                 ->join('LEFT', 'sow_content as cnt' . ' ON cnt.id = lob.content_id');
+        
+        // Join over the content.
+        $query->select('ks.name as key_stage_name ')
+                ->join('LEFT', 'sow_key_stage as ks' . ' ON ks.id = cnt.key_stage_id');
 
         // Join over the exam board.
         $query->select('exam.name as exam_board_name ')

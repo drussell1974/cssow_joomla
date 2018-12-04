@@ -39,17 +39,17 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                     <th width="30%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_DESCRIPTION', 'description', $listDirn, $listOrder); ?>
                     </th>
+                    <th width="10%">
+<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_TOPIC', 'topic_name', $listDirn, $listOrder); ?>
+                    </th>
                     <th width="20%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_SOLOTAXONOMY', 'solo_taxonomy_level', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
+<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_KEYSTAGE', 'examboard', $listDirn, $listOrder); ?>
+                    </th>
+                    <th width="5%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_EXAMBOARD', 'examboard', $listDirn, $listOrder); ?>
-                    </th>
-                    <th width="10%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_AUTHOR', 'author', $listDirn, $listOrder); ?>
-                    </th>
-                    <th width="30%">
-<?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_CREATED_DATE', 'created', $listDirn, $listOrder); ?>
                     </th>
                     <th width="5%">
 <?php echo JHtml::_('searchtools.sort', 'COM_SCHEMEOFWORK_LEARNINGOBJECTIVE_PUBLISHED', 'published', $listDirn, $listOrder); ?>
@@ -82,21 +82,23 @@ $listDirn = $this->escape($this->state->get('list.direction'));
                                     <?php echo $row->description; ?>
                                 </a>
                                 <div class="small">
-                                    <b><?php echo $this->escape($row->parent_topic_name) . ' - ' . $this->escape($row->topic_name); ?></b><br>
                                     <?php echo $this->escape($row->content_description); ?>
+                                </div>
+                            </td>
+                            <td>
+                                <?php echo $this->escape($row->parent_topic_name) ?>
+                                <div class="small"> 
+                                    <?php echo $this->escape($row->topic_name); ?>
                                 </div>
                             </td>
                             <td align="center">
                                 <?php echo $row->solo_taxonomy_name . " (" . $row->solo_taxonomy_level . ")"; ?>
                             </td>
                             <td align="center">
+                                <?php echo $row->key_stage_name; ?>
+                            </td>
+                            <td align="center">
                                 <?php echo $row->exam_board_name; ?>
-                            </td>
-                            <td align="center">
-                                <?php echo $row->author; ?>
-                            </td>
-                            <td align="center">
-                                <?php echo substr($row->created, 0, 10); ?>
                             </td>
                             <td align="center">
                                 <?php echo JHtml::_('jgrid.published', $row->published, $i, 'learningobjectives.', true, 'cb'); ?>
